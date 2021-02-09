@@ -89,6 +89,7 @@ Table of Contents
      3.3.  Two Types of Environments of an Attester
      3.4.  Layered Attestation Environments
      3.5.  Composite Device
+     3.6.  Implementation Considerations
    4.  Terminology
      4.1.  Roles
      4.2.  Artifacts
@@ -119,6 +120,7 @@ Table of Contents
        12.1.1.  On-Device Attester and Key Protection
        12.1.2.  Attestation Key Provisioning Processes
      12.2.  Integrity Protection
+     12.3.  Handle-based Attestation
    13. IANA Considerations
    14. Acknowledgments
    15. Notable Contributions
@@ -189,7 +191,7 @@ Table of Contents
    audit, anomaly detection, record maintenance and/or trending reports
    (logging).  The network operator may also want a policy by which full
    access is only granted to devices that meet some definition of
-   hygiene, and so wants to get claims about such information and verify
+   hygiene, and so wants to get Claims about such information and verify
    its validity.  Remote attestation is desired to prevent vulnerable or
    compromised devices from getting access to the network and
    potentially harming others.
@@ -286,13 +288,11 @@ Table of Contents
    be a significant problem, because it allows a fleet of devices to be
    held hostage for ransom.
 
-   In the case, the Relying Party is the watchdog timer in the TPM/
-   secure enclave itself, as described in [TCGarch] section 43.3.  The
-   Attestation Results are returned to the device, and provided to the
-   enclave.
-
-   If the watchdog does not receive regular, and fresh, Attestation
-   Results as to the systems' health, then it forces a reboot.
+   A solution to this problem is a watchdog timer implemented in a
+   protected environment such as a Trusted Platform Module (TPM), as
+   described in [TCGarch] section 43.3.  If the watchdog does not
+   receive regular, and fresh, Attestation Results as to the system's
+   health, then it forces a reboot.
 
    Attester:  The device that should be protected from being held
       hostage for a long period of time
@@ -455,11 +455,17 @@ Table of Contents
    hardware or software environments that can be used to implement an
    Attesting Environment, for example: Trusted Execution Environments
    (TEEs), embedded Secure Elements (eSEs), Trusted Platform Modules
-   (TPMs), or BIOS firmware.  An arbitrary execution environment may
-   not, by default, be capable of claims collection for a given Target
-   Environment.  Execution environments that are designed specifically
-   to be capable of claims collection are referred to in this document
-   as Attesting Environments.
+   (TPMs), or BIOS firmware.
+
+   An arbitrary execution environment may not, by default, be capable of
+   claims collection for a given Target Environment.  Execution
+   environments that are designed specifically to be capable of claims
+   collection are referred to in this document as Attesting
+   Environments.  For example, a TPM doesn't actively collect claims
+   itself, it instead requires another component to feed various values
+   to the TPM.  Thus, an Attesting Environment in such a case would be
+   the combination of the TPM together with whatever component is
+   feeding it the measurements.
 
 3.4.  Layered Attestation Environments
 
@@ -473,9 +479,11 @@ Table of Contents
    transitively via an Endorser (e.g., the Verifier puts the Endorser's
    public key into its trust anchor store).  In layered attestation, a
    root of trust is the initial Attesting Environment.  Claims can be
-   collected from or about each layer.  The corresponding claims can be
+   collected from or about each layer.  The corresponding Claims can be
    structured in a nested fashion that reflects the nesting of the
-   Attester's layers.
+   Attester's layers.  Normally, Claims are not self-asserted, rather a
+   previous layer acts as the Attesting Environment for the next layer.
+   Claims about a root of trust typically are asserted by Endorsers.
 
    The device illustrated in Figure 3 includes (A) a BIOS stored in
    read-only memory, (B) an updatable bootloader, and (C) an operating
@@ -495,7 +503,7 @@ Table of Contents
            |   | C                         |    |    |   for
            |   '---------------------------'    |    | B and C
            |           Collect |                |    |
-           |           claims  |                |    |
+           |           Claims  |                |    |
            |   .---------------|-----------.    |    |
            |   | Target        v           |    |    |
            |   | Environment .-----------. |    |    |
@@ -506,7 +514,7 @@ Table of Contents
            |   |                     ^     |    |
            |   '---------------------|-----'    |
            |           Collect |     | Evidence |
-           |           claims  v     |  for B   |
+           |           Claims  v     |  for B   |
            |                 .-----------.      |
            |                 | Attesting |      |
            |                 |Environment|      |
@@ -623,25 +631,31 @@ Table of Contents
 
    In the Composite Device, each Attester generates its own Evidence by
    its Attesting Environment(s) collecting the Claims from its Target
-   Environment(s).  The lead Attester collects the Evidence of all other
-   Attesters and then generates the Evidence of the whole Composite
-   Attester.
-
-   An entity can take on multiple RATS roles (e.g., Attester, Verifier,
-   Relying Party, etc.) at the same time.  The combination of roles can
-   be arbitrary.  For example, in this Composite Device scenario, the
-   entity inside the lead Attester can also take on the role of a
-   Verifier, and the outside entity of Verifier can take on the role of
-   a Relying Party.  After collecting the Evidence of other Attesters,
-   this inside Verifier uses Endorsements and appraisal policies
-   (obtained the same way as any other Verifier) in the verification
-   process to generate Attestation Results.  The inside Verifier then
-   conveys the Attestation Results of other Attesters, whether in the
-   same conveyance protocol as the Evidence or not, to the outside
-   Verifier.
+   Environment(s).  The lead Attester collects the Evidence from the
+   other Attesters and conveys it to a Verifier.  Collection of Evidence
+   from sub-entities may itself be a form of Claims collection that
+   results in Evidence asserted by the lead Attester.  The lead Attester
+   generates the Evidence about the layout of the Composite Device,
+   while sub-Attesters generate Evidence about their respective modules.
 
    In this situation, the trust model described in Section 7 is also
    suitable for this inside Verifier.
+
+3.6.  Implementation Considerations
+
+   An entity can take on multiple RATS roles (e.g., Attester, Verifier,
+   Relying Party, etc.) at the same time.  Multiple entities can
+   cooperate to implement a single RATS role as well.  The combination
+   of roles and entities can be arbitrary.  For example, in the
+   Composite Device scenario, the entity inside the lead Attester can
+   also take on the role of a Verifier, and the outer entity of Verifier
+   can take on the role of a Relying Party.  After collecting the
+   Evidence of other Attesters, this inside Verifier uses Endorsements
+   and appraisal policies (obtained the same way as any other Verifier)
+   in the verification process to generate Attestation Results.  The
+   inside Verifier then conveys the Attestation Results of other
+   Attesters to the outside Verifier, whether in the same conveyance
+   protocol as the Evidence or not.
 
 4.  Terminology
 
@@ -1373,6 +1387,17 @@ Table of Contents
    buffering incoming messages that might be associated with a handle
    that the receiver has not yet obtained.
 
+   More generally, in order to prevent an appraising entity from
+   generating false negatives (e.g., discarding Evidence that is deemed
+   stale even if it is not), the appraising entity should keep an "epoch
+   window" consisting of the most recently received handles.  The depth
+   of such epoch window is directly proportional to the maximum network
+   propagation delay between the first to receive the handle and the
+   last to receive the handle, and it is inversely proportional to the
+   epoch duration.  The appraising entity shall compare the handle
+   carried in the received Evidence or Attestation Result with the
+   handles in its epoch window to find a suitable match.
+
    Whereas the nonce approach typically requires the appraising entity
    to keep state for each nonce generated, the handle approach minimizes
    the state kept to be independent of the number of Attesters or
@@ -1395,6 +1420,8 @@ Table of Contents
    established to the remote Verifier and a nonce is obtained.
 
    A more detailed discussion with examples appears in Section 16.
+
+   For a discussion on the security of handles see Section 12.3.
 
 11.  Privacy Considerations
 
@@ -1476,26 +1503,28 @@ Table of Contents
    In many cases the user or owner of the device must not be able to
    modify or exfiltrate keys from the Attesting Environment of the
    Attester.  For example the owner or user of a mobile phone or FIDO
-   authenticator is not trusted.  The point of remote attestation is for
-   the Relying Party to be able to trust the Attester even though they
-   don't trust the user or owner.
+   authenticator, having full control over the keys, might not be
+   trusted to use the keys to report Evidence about the environment that
+   protects the keys.  The point of remote attestation is for the
+   Relying Party to be able to trust the Attester even though they don't
+   trust the user or owner.
 
-   Some of the measures for low level security include process or
-   application isolation by a high-level operating system, and perhaps
-   restricting access to root or system privilege.  For extremely simple
-   single-use devices that don't use a protected mode operating system,
-   like a Bluetooth speaker, the isolation might only be the plastic
-   housing for the device.
+   Some of the measures for a minimally protected system might include
+   process or application isolation by a high-level operating system,
+   and perhaps restricting access to root or system privilege.  For
+   extremely simple single-use devices that don't use a protected mode
+   operating system, like a Bluetooth speaker, the isolation might only
+   be the plastic housing for the device.
 
-   At medium level security, a special restricted operating environment
-   like a Trusted Execution Environment (TEE) might be used.  In this
-   case, only security-oriented software has access to the Attester and
-   key material.
+   Measures for a moderately protected system could include a special
+   restricted operating environment like a Trusted Execution Environment
+   (TEE) might be used.  In this case, only security-oriented software
+   has access to the Attester and key material.
 
-   For high level security, specialized hardware will likely be used
-   providing protection against chip decapping attacks, power supply and
-   clock glitching, faulting injection and RF and power side channel
-   attacks.
+   Measures for a highly protected system could include specialized
+   hardware that is used to provide protection against chip decapping
+   attacks, power supply and clock glitching, faulting injection and RF
+   and power side channel attacks.
 
 12.1.2.  Attestation Key Provisioning Processes
 
@@ -1507,8 +1536,9 @@ Table of Contents
    One way to provision a key is to first generate it external to the
    device and then copy the key onto the device.  In this case,
    confidentiality of the generator, as well as the path over which the
-   key is provisioned, is necessary.  This can be achieved in a number
-   of ways.
+   key is provisioned, is necessary.  The manufacturer needs to take
+   care to protect it with measures consistent with its value.  This can
+   be achieved in a number of ways.
 
    Confidentiality can be achieved entirely with physical provisioning
    facility security involving no encryption at all.  For low-security
@@ -1565,10 +1595,9 @@ Table of Contents
    boot, or immutable hardware/ROM.
 
    It is also important that the appraisal policy was itself obtained
-   securely.  As such, if appraisal policies for a Relying Party or for
-   a Verifier can be configured via a network protocol, the ability to
-   create Evidence about the integrity of the entity providing the
-   appraisal policy needs to be considered.
+   securely.  If an attacker can configure appraisal policies for a
+   Relying Party or for a Verifier, then integrity of the process is
+   compromised.
 
    The security of conveyed information may be applied at different
    layers, whether by a conveyance protocol, or an information encoding
@@ -1579,6 +1608,40 @@ Table of Contents
    relayed through some other entity that doesn't implement the Attester
    or the intended Verifier roles, then the relaying entity should not
    expect to have access to the Evidence.
+
+12.3.  Handle-based Attestation
+
+   Handles, described in Section 10.3, can be tampered with, dropped,
+   delayed and reordered by an attacker.
+
+   An attacker could be either external or belong to the distribution
+   group, for example if one of the Attester entities have been
+   compromised.
+
+   An attacker who is able to tamper with handles can potentially lock
+   all the participants in a certain epoch of choice for ever,
+   effectively freezing time.  This is problematic since it destroys the
+   ability to ascertain freshness of Evidence and Attestation Results.
+
+   To mitigate this threat, the transport should be at least integrity
+   protected and provide origin authentication.
+
+   Selective dropping of handles is equivalent to pinning the victim
+   node to a past epoch.  An attacker could drop handles to only some
+   entities and not others, which will typically result in a denial of
+   service due to the permanent staleness of the Attestation Result or
+   Evidence.
+
+   Delaying or reordering handles is equivalent to manipulating the
+   victim's timeline at will.  This ability could be used by a malicious
+   actor (e.g., a compromised router) to mount a confusion attack where,
+   for example, a Verifier is tricked into accepting Evidence coming
+   from a past epoch as fresh, while in the meantime the Attester has
+   been compromised.
+
+   Reordering and dropping attacks are mitigated if the transport
+   provides the ability to detect reordering and drop.  However, the
+   delay attack described above can't be thwarted in this manner.
 
 13.  IANA Considerations
 
@@ -1627,8 +1690,8 @@ Table of Contents
    | NR | Nonce      | A nonce is relayed to an Attester by            |
    |    | relayed    | another entity.                                 |
    +----+------------+-------------------------------------------------+
-   | HR | Handle     | A handle distributed by a Handle                |
-   |    | received   | Distributor was received.                       |
+   | HR | Handle     | A handle is successfully received and           |
+   |    | received   | processed by an entity.                         |
    +----+------------+-------------------------------------------------+
    | EG | Evidence   | An Attester creates Evidence from collected     |
    |    | generation | Claims.                                         |
@@ -1699,7 +1762,6 @@ Table of Contents
            ~                                                 ~
            |                                                 |
            |                                              time(OP_r)
-           |                                                 |
 
    In the figures above and in subsequent sections, curly braces
    indicate containment.  For example, the notation Evidence{foo}
@@ -1803,65 +1865,63 @@ Table of Contents
 
 16.3.  Example 3: Handle-based Passport Model Example
 
-   The following example illustrates a hypothetical Passport Model
-   solution that uses handles instead of nonces or timestamps.  In this
-   example, Evidence generation based on received handles always uses
-   the current (most recent) handle.  As handles are distributed over
-   the network, all involved entities receive a fresh handle at roughly
-   the same time.  Due to distribution over the network, there is some
-   jitter with respect to the time the Handle is received, time(HR), for
-   each involved entity.  To compensate for this jitter, there is a
-   small period of overlap (a specified offset) in which both a current
-   handle and corresponding former handle are valid in Evidence
-   appraisal: "validity-duration = time(HR'_v) + offset - time(HR_v)".
-   The offset is typically based on a network's round trip time.
-   Analogously, the generation of valid Evidence is only possible, if
-   the age of the handle used is lower than the validity-duration:
-   "time(HR_v) - time(EG_a) < validity-duration".
+   The example in Figure 10 illustrates a hypothetical Passport Model
+   solution that uses handles instead of nonces or timestamps.
 
-   From the point of view of a Verifier, the generation of valid
-   Evidence is only possible, if the age of the handle used in the
-   Evidence generation is younger than the duration of the distribution
-   interval -- "(time(HR'_v)-time(HR_v)) - (time(HR_a)-time(EG_a)) <
-   validity-duration".
+   The Handle Distributor broadcasts handle "H" which starts a new epoch
+   "E" for a protocol participant upon reception at "time(HR)".
 
-   Due to the validity-duration of handles, multiple different pieces of
-   Evidence can be generated based on the same handle.  The resulting
-   granularity (time resolution) of Evidence freshness is typically
-   lower than the resolution of clock-based tickcounters.
+   The Attester generates Evidence incorporating handle "H" and conveys
+   it to the Verifier.
 
-   The following example illustrates a hypothetical Background-Check
-   Model solution that uses handles and requires a trustworthy time
-   source available to the Handle Distributor role.
+   The Verifier appraises that the received handle "H" is "fresh"
+   according to the definition provided in Section 10.3 whereby retries
+   are required in the case of mismatching handles, and generates an
+   Attestation Result.  The Attestation Result is conveyed to the
+   Attester.
 
-                     .-------------.
-      .----------.   | Handle      |   .----------.  .---------------.
-      | Attester |   | Distributor |   | Verifier |  | Relying Party |
-      '----------'   '-------------'   '----------'  '---------------'
-        time(VG_a)          |                |               |
-           |                |                |               |
-           ~                ~                ~               ~
-           |                |                |               |
-        time(HR_a)<---------+-------------time(HR_v)------>time(HR_r)
-           |                |                |               |
-        time(EG_a)          |                |               |
-           |----Evidence{time(EG_a)}-------->|               |
-           | {Handle1,time(EG_a)-time(VG_a)}|                |
-           |                |             time(RG_v)         |
-           |<-----Attestation Result---------|               |
-           |   {time(RG_v),time(RX_v)}       |               |
-           |                |                                |
-           ~                ~                                ~
-           |                |                                |
-        time(HR_a')<--------'---------------------------->time(HR_r')
-           |                                                 |
-        time(RR_a)                                           /
-           |--Attestation Result{time(RX_v)-time(RG_v)}-->time(RA_r)
-           |    {Handle2, time(RR_a)-time(EG_a)}             |
-           ~                                                 ~
-           |                                                 |
-           |                                              time(OP_r)
-           |                                                 |
+   After the transmission of handle "H'" a new epoch "E'" is established
+   when "H'" is received by each protocol participant.  The Attester
+   relays the Attestation Result obtained during epoch "E" (associated
+   with handle "H") to the Relying Party using the handle for the
+   current epoch "H'".  If the Relying Party had not yet received "H'",
+   then the Attestation Result would be rejected, but in this example,
+   it is received.
+
+   In the illustrated scenario, the handle for relaying an Attestation
+   Result to the Relying Party is current, while a previous handle was
+   used to generate Verifier evaluated evidence.  This indicates that at
+   least one epoch transition has occurred, and the Attestation Results
+   may only be as fresh as the previous epoch.
+
+                    .-------------.
+     .----------.   | Handle      |   .----------.  .---------------.
+     | Attester |   | Distributor |   | Verifier |  | Relying Party |
+     '----------'   '-------------'   '----------'  '---------------'
+       time(VG_a)          |                |               |
+          |                |                |               |
+          ~                ~                ~               ~
+          |                |                |               |
+       time(HR_a)<---------+-----------time(HR_v)----->time(HR_r)
+          |                |                |               |
+       time(EG_a)          |                |               |
+          |---Evidence{H,time(EG_a)-time(VG_a)}----->|               |
+          |                |                |               |
+          |                |           time(RG_v)           |
+          |<--Attestation Result------------|               |
+          |   {H,time(RX_v)-time(RG_v)}                |               |
+          |                |                |               |
+       time(HR'_a)<--------+-----------time(HR'_v)---->time(HR'_r)
+          |                |                |               |
+       time(RR_a)          |                |               |
+          |---Attestation Result---------------------->time(RA_r)
+          |   {H',R{H,time(RX_v)-time(RG_v)}}          |               |
+          |                |                |               |
+          ~                ~                ~               ~
+          |                |                |               |
+          |                |                |          time(OP_r)
+
+                  Figure 10: Handle-based Passport Model
 
 16.4.  Example 4: Timestamp-based Background-Check Model Example
 
