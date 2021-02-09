@@ -191,7 +191,7 @@ Table of Contents
    audit, anomaly detection, record maintenance and/or trending reports
    (logging).  The network operator may also want a policy by which full
    access is only granted to devices that meet some definition of
-   hygiene, and so wants to get claims about such information and verify
+   hygiene, and so wants to get Claims about such information and verify
    its validity.  Remote attestation is desired to prevent vulnerable or
    compromised devices from getting access to the network and
    potentially harming others.
@@ -380,12 +380,12 @@ Table of Contents
 3.1.  Appraisal Policies
 
    The Verifier, when appraising Evidence, or the Relying Party, when
-   appraising Attestation Results, checks the values of some claims
+   appraising Attestation Results, checks the values of some Claims
    against constraints specified in its appraisal policy.  Such
    constraints might involve a comparison for equality against a
    Reference Value, or a check for being in a range bounded by Reference
    Values, or membership in a set of Reference Values, or a check
-   against values in other claims, or any other test.
+   against values in other Claims, or any other test.
 
 3.2.  Reference Values
 
@@ -404,7 +404,7 @@ Table of Contents
    *  via separate communication.
 
    The actual data format and semantics of any Reference Values are
-   specific to claims and implementations.  This architecture document
+   specific to Claims and implementations.  This architecture document
    does not define any general purpose format for them or general means
    for comparison.
 
@@ -454,7 +454,7 @@ Table of Contents
    in Claims, by reading system registers and variables, calling into
    subsystems, taking measurements on code, memory, or other security
    related assets of the Target Environment.  Attesting Environments
-   then format the claims appropriately, and typically use key material
+   then format the Claims appropriately, and typically use key material
    and cryptographic functions, such as signing or cipher algorithms, to
    create Evidence.  There is no limit to or requirement on the types of
    hardware or software environments that can be used to implement an
@@ -508,7 +508,7 @@ Table of Contents
            |   | C                         |    |    |   for
            |   '---------------------------'    |    | B and C
            |           Collect |                |    |
-           |           claims  |                |    |
+           |           Claims  |                |    |
            |   .---------------|-----------.    |    |
            |   | Target        v           |    |    |
            |   | Environment .-----------. |    |    |
@@ -519,7 +519,7 @@ Table of Contents
            |   |                     ^     |    |
            |   '---------------------|-----'    |
            |           Collect |     | Evidence |
-           |           claims  v     |  for B   |
+           |           Claims  v     |  for B   |
            |                 .-----------.      |
            |                 | Attesting |      |
            |                 |Environment|      |
@@ -575,7 +575,7 @@ Table of Contents
    of all these sub-entities.
 
    Each sub-entity has at least one Attesting Environment collecting the
-   claims from at least one Target Environment, then this sub-entity
+   Claims from at least one Target Environment, then this sub-entity
    generates Evidence about its trustworthiness.  Therefore each sub-
    entity can be called an Attester.  Among all the Attesters, there may
    be only some which have the ability to communicate with the Verifier
@@ -584,8 +584,8 @@ Table of Contents
    For example, a carrier-grade router consists of a chassis and
    multiple slots.  The trustworthiness of the router depends on all its
    slots' trustworthiness.  Each slot has an Attesting Environment such
-   as a TEE collecting the claims of its boot process, after which it
-   generates Evidence from the claims.  Among these slots, only a main
+   as a TEE collecting the Claims of its boot process, after which it
+   generates Evidence from the Claims.  Among these slots, only a main
    slot can communicate with the Verifier while other slots cannot.  But
    other slots can communicate with the main slot by the links between
    them inside the router.  So the main slot collects the Evidence of
@@ -635,7 +635,7 @@ Table of Contents
                          Figure 4: Composite Device
 
    In the Composite Device, each Attester generates its own Evidence by
-   its Attesting Environment(s) collecting the claims from its Target
+   its Attesting Environment(s) collecting the Claims from its Target
    Environment(s).  The lead Attester collects the Evidence from the
    other Attesters and conveys it to a Verifier.  Collection of Evidence
    from sub-entities may itself be a form of Claims collection that
@@ -1140,17 +1140,17 @@ Table of Contents
 
 8.1.  Evidence
 
-   Evidence is a set of claims about the target environment that reveal
+   Evidence is a set of Claims about the target environment that reveal
    operational status, health, configuration or construction that have
    security relevance.  Evidence is evaluated by a Verifier to establish
    its relevance, compliance, and timeliness.  Claims need to be
    collected in a manner that is reliable.  Evidence needs to be
    securely associated with the target environment so that the Verifier
-   cannot be tricked into accepting claims originating from a different
+   cannot be tricked into accepting Claims originating from a different
    environment (that may be more trustworthy).  Evidence also must be
    protected from man-in-the-middle attackers who may observe, change or
    misdirect Evidence as it travels from Attester to Verifier.  The
-   timeliness of Evidence can be captured using claims that pinpoint the
+   timeliness of Evidence can be captured using Claims that pinpoint the
    time or interval when changes in operational status, health, and so
    forth occur.
 
@@ -1277,15 +1277,15 @@ Table of Contents
    This motivates having a common "information model" that describes the
    set of remote attestation related information in an encoding-agnostic
    way, and allowing multiple encoding formats (CWT, JWT, X.509, etc.)
-   that encode the same information into the claims format needed by the
+   that encode the same information into the Claims format needed by the
    Relying Party.
 
    The following diagram illustrates that Evidence and Attestation
    Results might each have multiple possible encoding formats, so that
    they can be conveyed by various existing protocols.  It also
    motivates why the Verifier might also be responsible for accepting
-   Evidence that encodes claims in one format, while issuing Attestation
-   Results that encode claims in a different format.
+   Evidence that encodes Claims in one format, while issuing Attestation
+   Results that encode Claims in a different format.
 
                    Evidence           Attestation Results
    .--------------.   CWT                    CWT   .-------------------.
@@ -1452,7 +1452,7 @@ Table of Contents
    In some cases, an attacker may be able to make inferences about
    attestations from the results or timing of the processing.  For
    example, an attacker might be able to infer the value of specific
-   claims if it knew that only certain values were accepted by the
+   Claims if it knew that only certain values were accepted by the
    Relying Party.
 
    Evidence and Attestation Results data structures are expected to
