@@ -1,6 +1,6 @@
 {
   "magic": "E!vIA5L86J2I",
-  "timestamp": "2021-02-09T02:11:33.449267+00:00",
+  "timestamp": "2021-02-09T15:08:20.821174+00:00",
   "repo": "ietf-rats-wg/architecture",
   "labels": [
     {
@@ -25828,13 +25828,13 @@
       "labels": [],
       "body": "Reworded 2nd and 3rd paragraphs fix #215 ",
       "createdAt": "2021-02-02T22:24:33Z",
-      "updatedAt": "2021-02-05T21:53:47Z",
+      "updatedAt": "2021-02-09T15:07:47Z",
       "baseRepository": "ietf-rats-wg/architecture",
       "baseRefName": "master",
       "baseRefOid": "648215506253ce0d365d3ed5f3151867a4c96607",
       "headRepository": "ietf-rats-wg/architecture",
       "headRefName": "Issue-#215---Attestation-Results",
-      "headRefOid": "244d1e3352ad6cb21bcb99cbbfedd22b37517058",
+      "headRefOid": "7574fb165bc67ada883b65fad22687b1677a806c",
       "closedAt": null,
       "mergedAt": null,
       "mergedBy": null,
@@ -25857,7 +25857,7 @@
               "originalPosition": 16,
               "body": "This seems really awkward.\r\n\r\n```suggestion\r\nBy default, the Relying Party does not believe the Attester to be compliant. \r\n```",
               "createdAt": "2021-02-04T14:45:14Z",
-              "updatedAt": "2021-02-05T17:13:14Z"
+              "updatedAt": "2021-02-09T15:07:47Z"
             }
           ]
         },
@@ -25877,7 +25877,7 @@
               "originalPosition": 18,
               "body": "```suggestion\r\nUpon receipt of an authentic Attestation Result and given the Appraisal Policy for Attestation Results is satisfied, then\r\nthe Attester is allowed to perform the prescribed actions or access. \r\n```",
               "createdAt": "2021-02-04T14:46:01Z",
-              "updatedAt": "2021-02-05T21:52:55Z"
+              "updatedAt": "2021-02-09T15:07:47Z"
             }
           ]
         },
@@ -25910,13 +25910,13 @@
               "originalPosition": 16,
               "body": "+1 to mcr's suggested text",
               "createdAt": "2021-02-04T22:03:21Z",
-              "updatedAt": "2021-02-05T17:13:14Z"
+              "updatedAt": "2021-02-09T15:07:47Z"
             },
             {
               "originalPosition": 18,
               "body": "Better, but \"Appraisal Policy for Relying Party\" also needs to be \"Appraisal Policy for Attestation Results\" which is the defined term.",
               "createdAt": "2021-02-04T22:05:12Z",
-              "updatedAt": "2021-02-05T17:13:14Z"
+              "updatedAt": "2021-02-09T15:07:47Z"
             }
           ]
         },
@@ -25936,7 +25936,7 @@
               "originalPosition": 18,
               "body": "One more question: Checking the Attestation Result's authenticity is included in the Appraisal Policy for Attestation Results or not?\r\nI.e., should we call an Attestation Result authentic only after the Appraisal Policy for Attestation Results is satisfied?",
               "createdAt": "2021-02-05T03:38:14Z",
-              "updatedAt": "2021-02-05T17:13:14Z"
+              "updatedAt": "2021-02-09T15:07:47Z"
             }
           ]
         },
@@ -25956,7 +25956,7 @@
               "originalPosition": 18,
               "body": "okay, what wording change do you suggest?",
               "createdAt": "2021-02-05T21:53:47Z",
-              "updatedAt": "2021-02-05T21:53:47Z"
+              "updatedAt": "2021-02-09T15:07:47Z"
             }
           ]
         }
@@ -26213,25 +26213,33 @@
       "id": "MDExOlB1bGxSZXF1ZXN0NTY3NzI4NTA2",
       "title": "change prefix for strongest, fix #220",
       "url": "https://github.com/ietf-rats-wg/architecture/pull/279",
-      "state": "OPEN",
+      "state": "CLOSED",
       "author": "mcr",
       "authorAssociation": "COLLABORATOR",
       "assignees": [],
       "labels": [],
       "body": "",
       "createdAt": "2021-02-04T15:49:25Z",
-      "updatedAt": "2021-02-04T22:12:37Z",
+      "updatedAt": "2021-02-09T15:06:01Z",
       "baseRepository": "ietf-rats-wg/architecture",
       "baseRefName": "master",
       "baseRefOid": "648215506253ce0d365d3ed5f3151867a4c96607",
       "headRepository": "ietf-rats-wg/architecture",
       "headRefName": "high-level-security",
       "headRefOid": "57b14e8068236ef284a9f6a3ea6b0050f0e520b4",
-      "closedAt": null,
+      "closedAt": "2021-02-09T15:06:01Z",
       "mergedAt": null,
       "mergedBy": null,
       "mergeCommit": null,
-      "comments": [],
+      "comments": [
+        {
+          "author": "mcr",
+          "authorAssociation": "COLLABORATOR",
+          "body": "Closed in favour of #272 ",
+          "createdAt": "2021-02-09T15:06:01Z",
+          "updatedAt": "2021-02-09T15:06:01Z"
+        }
+      ],
       "reviews": [
         {
           "id": "MDE3OlB1bGxSZXF1ZXN0UmV2aWV3NTgzODU4Njg0",
