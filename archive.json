@@ -1,6 +1,6 @@
 {
   "magic": "E!vIA5L86J2I",
-  "timestamp": "2021-02-05T21:51:26.045324+00:00",
+  "timestamp": "2021-02-09T02:11:33.449267+00:00",
   "repo": "ietf-rats-wg/architecture",
   "labels": [
     {
@@ -3629,7 +3629,7 @@
       "id": "MDU6SXNzdWU3NTU0MTk1ODM=",
       "title": "12.1 --- Integrity at different layers",
       "url": "https://github.com/ietf-rats-wg/architecture/issues/223",
-      "state": "OPEN",
+      "state": "CLOSED",
       "author": "mcr",
       "authorAssociation": "COLLABORATOR",
       "assignees": [
@@ -3640,8 +3640,8 @@
       ],
       "body": "````\r\n   The security of conveyed information may be applied at different\r\n   layers, whether by a conveyance protocol, or an information encoding\r\n   format.  This architecture expects attestation messages (i.e.,\r\n   Evidence, Attestation Results, Endorsements and Policies) are end-to-\r\n   end protected based on the role interaction context.  For example, if\r\n   an Attester produces Evidence that is relayed through some other\r\n````\r\n\r\nThe first sentence seems to say \u2018you can do whatever you want\u2019, but the second seems to say \u201cyou should sign the messages\u201d\r\n\r\nThis doesn\u2019t seem to be about integrity; it says Evidence must be confidential.  Is that actually a requirement?\r\n",
       "createdAt": "2020-12-02T16:23:02Z",
-      "updatedAt": "2021-02-04T15:13:40Z",
-      "closedAt": null,
+      "updatedAt": "2021-02-05T21:51:47Z",
+      "closedAt": "2021-02-05T21:51:47Z",
       "comments": [
         {
           "author": "nedmsmith",
@@ -25828,7 +25828,7 @@
       "labels": [],
       "body": "Reworded 2nd and 3rd paragraphs fix #215 ",
       "createdAt": "2021-02-02T22:24:33Z",
-      "updatedAt": "2021-02-05T17:13:14Z",
+      "updatedAt": "2021-02-05T21:53:47Z",
       "baseRepository": "ietf-rats-wg/architecture",
       "baseRefName": "master",
       "baseRefOid": "648215506253ce0d365d3ed5f3151867a4c96607",
@@ -25875,9 +25875,9 @@
           "comments": [
             {
               "originalPosition": 18,
-              "body": "```suggestion\r\nUpon receipt of an authentic Attestation Result and given the Appraisal Policy for Relying Party is satisfied, then\r\nthe Attester is allowed to perform the prescribed actions or access. \r\n```",
+              "body": "```suggestion\r\nUpon receipt of an authentic Attestation Result and given the Appraisal Policy for Attestation Results is satisfied, then\r\nthe Attester is allowed to perform the prescribed actions or access. \r\n```",
               "createdAt": "2021-02-04T14:46:01Z",
-              "updatedAt": "2021-02-05T17:13:14Z"
+              "updatedAt": "2021-02-05T21:52:55Z"
             }
           ]
         },
@@ -25937,6 +25937,26 @@
               "body": "One more question: Checking the Attestation Result's authenticity is included in the Appraisal Policy for Attestation Results or not?\r\nI.e., should we call an Attestation Result authentic only after the Appraisal Policy for Attestation Results is satisfied?",
               "createdAt": "2021-02-05T03:38:14Z",
               "updatedAt": "2021-02-05T17:13:14Z"
+            }
+          ]
+        },
+        {
+          "id": "MDE3OlB1bGxSZXF1ZXN0UmV2aWV3NTg0NzMzNzk5",
+          "commit": {
+            "abbreviatedOid": "244d1e3"
+          },
+          "author": "mcr",
+          "authorAssociation": "COLLABORATOR",
+          "state": "COMMENTED",
+          "body": "",
+          "createdAt": "2021-02-05T21:53:46Z",
+          "updatedAt": "2021-02-05T21:53:47Z",
+          "comments": [
+            {
+              "originalPosition": 18,
+              "body": "okay, what wording change do you suggest?",
+              "createdAt": "2021-02-05T21:53:47Z",
+              "updatedAt": "2021-02-05T21:53:47Z"
             }
           ]
         }
@@ -26130,24 +26150,26 @@
       "id": "MDExOlB1bGxSZXF1ZXN0NTY3NzAxODIx",
       "title": "Integrity at different layers",
       "url": "https://github.com/ietf-rats-wg/architecture/pull/278",
-      "state": "OPEN",
+      "state": "MERGED",
       "author": "mcr",
       "authorAssociation": "COLLABORATOR",
       "assignees": [],
       "labels": [],
       "body": "",
       "createdAt": "2021-02-04T15:13:03Z",
-      "updatedAt": "2021-02-05T21:51:23Z",
+      "updatedAt": "2021-02-05T21:51:48Z",
       "baseRepository": "ietf-rats-wg/architecture",
       "baseRefName": "master",
       "baseRefOid": "693d54fd4629b335d57794059eabd5e91c7495f4",
       "headRepository": "ietf-rats-wg/architecture",
       "headRefName": "integrity-at-different-layers",
       "headRefOid": "9829f18565ab1ef2e0d0b61dd107b852b399dcb3",
-      "closedAt": null,
-      "mergedAt": null,
-      "mergedBy": null,
-      "mergeCommit": null,
+      "closedAt": "2021-02-05T21:51:46Z",
+      "mergedAt": "2021-02-05T21:51:46Z",
+      "mergedBy": "mcr",
+      "mergeCommit": {
+        "oid": "9868a954ba67e64288bf09bfc4c5fa2e1b67cc8f"
+      },
       "comments": [
         {
           "author": "mcr",
@@ -26652,24 +26674,26 @@
       "id": "MDExOlB1bGxSZXF1ZXN0NTY4NTAzODky",
       "title": "Fix formatting of bullet list in Sec 3.2",
       "url": "https://github.com/ietf-rats-wg/architecture/pull/286",
-      "state": "OPEN",
+      "state": "MERGED",
       "author": "thomas-fossati",
       "authorAssociation": "COLLABORATOR",
       "assignees": [],
       "labels": [],
       "body": "The list in sec 3.2 didn't render properly.\r\n\r\nAlso fix Pete's surname which got garbled for some reason.",
       "createdAt": "2021-02-05T17:29:56Z",
-      "updatedAt": "2021-02-05T17:29:56Z",
+      "updatedAt": "2021-02-09T02:10:48Z",
       "baseRepository": "ietf-rats-wg/architecture",
       "baseRefName": "master",
       "baseRefOid": "693d54fd4629b335d57794059eabd5e91c7495f4",
       "headRepository": "ietf-rats-wg/architecture",
       "headRefName": "formatting-section-3.2",
       "headRefOid": "e9928d5dfef33316ee87c64567ea790922844df4",
-      "closedAt": null,
-      "mergedAt": null,
-      "mergedBy": null,
-      "mergeCommit": null,
+      "closedAt": "2021-02-09T02:10:46Z",
+      "mergedAt": "2021-02-09T02:10:46Z",
+      "mergedBy": "mcr",
+      "mergeCommit": {
+        "oid": "fdee2ff617896bcf9991672d65216404282e1f1a"
+      },
       "comments": [],
       "reviews": []
     },
@@ -26685,7 +26709,7 @@
       "labels": [],
       "body": "Biggest bug in the last pull request is that the diagram had the attester sending a different Attestation Result than the one the Verifier gave it, which would invalidate the signature.\r\n\r\nSecond issue was that the lines didn't line up.\r\n\r\nThird issue was that it was missing the tie to the \"epoch window\" discussion in {{epochfreshness}} to explain how the Relying Party deals with the mismatched handles that the example diagram has.\r\n\r\nFixes #198\r\n\r\nSigned-off-by: Dave Thaler <dthaler@ntdev.microsoft.com>",
       "createdAt": "2021-02-05T17:51:00Z",
-      "updatedAt": "2021-02-05T21:48:06Z",
+      "updatedAt": "2021-02-06T16:11:05Z",
       "baseRepository": "ietf-rats-wg/architecture",
       "baseRefName": "master",
       "baseRefOid": "693d54fd4629b335d57794059eabd5e91c7495f4",
@@ -26709,6 +26733,19 @@
           "body": "Thanks for aligning the diagram, I knew I had forgotten something.\r\nThe changes look good to me.",
           "createdAt": "2021-02-05T21:48:06Z",
           "updatedAt": "2021-02-05T21:48:06Z",
+          "comments": []
+        },
+        {
+          "id": "MDE3OlB1bGxSZXF1ZXN0UmV2aWV3NTg0ODk0NTYy",
+          "commit": {
+            "abbreviatedOid": "d185bfa"
+          },
+          "author": "thomas-fossati",
+          "authorAssociation": "COLLABORATOR",
+          "state": "APPROVED",
+          "body": "Ship it!",
+          "createdAt": "2021-02-06T16:11:05Z",
+          "updatedAt": "2021-02-06T16:11:05Z",
           "comments": []
         }
       ]
