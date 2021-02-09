@@ -5,14 +5,14 @@
 RATS Working Group                                           H. Birkholz
 Internet-Draft                                            Fraunhofer SIT
 Intended status: Informational                                 D. Thaler
-Expires: 9 August 2021                                         Microsoft
+Expires: 13 August 2021                                        Microsoft
                                                            M. Richardson
                                                 Sandelman Software Works
                                                                 N. Smith
                                                                    Intel
                                                                   W. Pan
                                                      Huawei Technologies
-                                                         5 February 2021
+                                                         9 February 2021
 
 
                Remote Attestation Procedures Architecture
@@ -56,7 +56,7 @@ Status of This Memo
    time.  It is inappropriate to use Internet-Drafts as reference
    material or to cite them other than as "work in progress."
 
-   This Internet-Draft will expire on 9 August 2021.
+   This Internet-Draft will expire on 13 August 2021.
 
 Copyright Notice
 
@@ -1190,14 +1190,14 @@ Table of Contents
 
    By default, the Relying Party does not believe the Attester to be
    compliant.  Upon receipt of an authentic Attestation Result and given
-   the Appraisal Policy for Relying Party is satisfied.  The Attester is
-   allowed to perform the prescribed actions or access.  The simplest
-   such Appraisal Policy might authorize granting the Attester full
-   access or control over the resources guarded by the Relying Party.  A
-   more complex Appraisal Policy might involve using the information
-   provided in the Attestation Result to compare against expected
-   values, or to apply complex analysis of other information contained
-   in the Attestation Result.
+   the Appraisal Policy for Attestation Results is satisfied, then the
+   Attester is allowed to perform the prescribed actions or access.  The
+   simplest such Appraisal Policy might authorize granting the Attester
+   full access or control over the resources guarded by the Relying
+   Party.  A more complex Appraisal Policy might involve using the
+   information provided in the Attestation Result to compare against
+   expected values, or to apply complex analysis of other information
+   contained in the Attestation Result.
 
    Thus, Attestation Results often need to include detailed information
    about the Attester, for use by Relying Parties, much like physical
