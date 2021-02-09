@@ -5,14 +5,14 @@
 RATS Working Group                                           H. Birkholz
 Internet-Draft                                            Fraunhofer SIT
 Intended status: Informational                                 D. Thaler
-Expires: 6 August 2021                                         Microsoft
+Expires: 13 August 2021                                        Microsoft
                                                            M. Richardson
                                                 Sandelman Software Works
                                                                 N. Smith
                                                                    Intel
                                                                   W. Pan
                                                      Huawei Technologies
-                                                         2 February 2021
+                                                         9 February 2021
 
 
                Remote Attestation Procedures Architecture
@@ -56,7 +56,7 @@ Status of This Memo
    time.  It is inappropriate to use Internet-Drafts as reference
    material or to cite them other than as "work in progress."
 
-   This Internet-Draft will expire on 6 August 2021.
+   This Internet-Draft will expire on 13 August 2021.
 
 Copyright Notice
 
@@ -189,7 +189,7 @@ Table of Contents
    audit, anomaly detection, record maintenance and/or trending reports
    (logging).  The network operator may also want a policy by which full
    access is only granted to devices that meet some definition of
-   hygiene, and so wants to get Claims about such information and verify
+   hygiene, and so wants to get claims about such information and verify
    its validity.  Remote attestation is desired to prevent vulnerable or
    compromised devices from getting access to the network and
    potentially harming others.
