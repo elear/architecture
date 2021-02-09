@@ -491,8 +491,8 @@ Table of Contents
    Claims about a root of trust typically are asserted by Endorsers.
 
    The device illustrated in Figure 3 includes (A) a BIOS stored in
-   read-only memory, (B) an operting stem kernel, and (C) an application
-   or workload.
+   read-only memory, (B) an operating system kernel, and (C) an
+   application or workload.
 
                .----------.                    .----------.
                |          |                    |          |
