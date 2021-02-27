@@ -1,6 +1,6 @@
 {
   "magic": "E!vIA5L86J2I",
-  "timestamp": "2021-02-09T15:08:20.821174+00:00",
+  "timestamp": "2021-02-27T00:11:47.869721+00:00",
   "repo": "ietf-rats-wg/architecture",
   "labels": [
     {
@@ -2708,7 +2708,7 @@
       "id": "MDU6SXNzdWU3NTQ0NTYwOTQ=",
       "title": "4.3 claims collection",
       "url": "https://github.com/ietf-rats-wg/architecture/issues/189",
-      "state": "OPEN",
+      "state": "CLOSED",
       "author": "mcr",
       "authorAssociation": "COLLABORATOR",
       "assignees": [
@@ -2719,8 +2719,8 @@
       ],
       "body": "````\r\nAn execution environment\r\n   may not, by default, be capable of claims collection for a given\r\n````\r\n\r\nWhy not?  What\u2019s the message you want to convey here?  What would disqualify an execution environment from being capable of claims collection?\r\nHow would you know if an Execution Environment is an Attesting Environment?",
       "createdAt": "2020-12-01T14:43:11Z",
-      "updatedAt": "2021-02-04T15:44:48Z",
-      "closedAt": null,
+      "updatedAt": "2021-02-09T15:31:55Z",
+      "closedAt": "2021-02-09T15:31:55Z",
       "comments": [
         {
           "author": "mcr",
@@ -2760,7 +2760,7 @@
       "id": "MDU6SXNzdWU3NTQ0NTc5MzU=",
       "title": "4.4 how does loader environment work",
       "url": "https://github.com/ietf-rats-wg/architecture/issues/192",
-      "state": "OPEN",
+      "state": "CLOSED",
       "author": "mcr",
       "authorAssociation": "COLLABORATOR",
       "assignees": [
@@ -2771,8 +2771,8 @@
       ],
       "body": "````\r\n       |   .---------------|-----------.    |    |\r\n           |   | Target        v           |    |    |\r\n           |   | Environment .-----------. |    |    |\r\n           |   | B           | Attesting | |    |    |\r\n           |   |             |Environment|-----------'\r\n\r\n````\r\n\r\nThe loader environment only exists for a second or two, and has few resources\u2026 how it is supposed to report evidence to a verifier in that window?",
       "createdAt": "2020-12-01T14:45:25Z",
-      "updatedAt": "2021-02-04T15:44:29Z",
-      "closedAt": null,
+      "updatedAt": "2021-02-09T15:43:04Z",
+      "closedAt": "2021-02-09T15:43:04Z",
       "comments": [
         {
           "author": "mcr",
@@ -2937,7 +2937,7 @@
       "id": "MDU6SXNzdWU3NTQ0NjQ4MzI=",
       "title": "Handles appendix needs some care",
       "url": "https://github.com/ietf-rats-wg/architecture/issues/198",
-      "state": "OPEN",
+      "state": "CLOSED",
       "author": "mcr",
       "authorAssociation": "COLLABORATOR",
       "assignees": [
@@ -2946,8 +2946,8 @@
       "labels": [],
       "body": "The appendix on Handles needs some work to better clarify the concepts and simplify the flow.\r\n\r\nSome things about the text:\r\n\r\n* Clearly define what is a handle;\r\n* Explain its relation with epoch establishment;\r\n* Clarify network jitter impact on handle validity;\r\n* Explain what are the base rules for working with handles;\r\n\r\nSome further points on the sequence diagram:\r\n\r\n* Fix confusing legend;\r\n* Add some accompanying prose to explain the depicted use case as it's not self-evident;",
       "createdAt": "2020-12-01T14:53:42Z",
-      "updatedAt": "2021-02-05T17:32:28Z",
-      "closedAt": null,
+      "updatedAt": "2021-02-09T15:12:49Z",
+      "closedAt": "2021-02-09T15:12:49Z",
       "comments": []
     },
     {
@@ -2955,7 +2955,7 @@
       "id": "MDU6SXNzdWU3NTU0MDY2NDU=",
       "title": "5.1 - password model, evaluation of evidence",
       "url": "https://github.com/ietf-rats-wg/architecture/issues/203",
-      "state": "OPEN",
+      "state": "CLOSED",
       "author": "mcr",
       "authorAssociation": "COLLABORATOR",
       "assignees": [
@@ -2966,8 +2966,8 @@
       ],
       "body": "````\r\nThe format of the Evidence on the other hand is only\r\n   constrained by the Attester-Verifier remote attestation protocol.\r\n````\r\n\r\nYes but for real passports, the Relying Party must separately evaluate the trustworthiness of 192 different Verifiers, i.e., nation states, no?  This seems to imply that relying parties had better get ready to validate a limitless variety of Attestation Results?\r\n\r\n[mcr: yes, in fact, in real passports, Relying Parties do not treat all 192 nation states equally, which is why, I'm told, Israeli Mossad agents apprently like Canadian passports...]",
       "createdAt": "2020-12-02T16:07:15Z",
-      "updatedAt": "2021-02-04T15:41:55Z",
-      "closedAt": null,
+      "updatedAt": "2021-02-09T15:31:19Z",
+      "closedAt": "2021-02-09T15:31:19Z",
       "comments": [
         {
           "author": "William-PanWei",
@@ -3124,14 +3124,14 @@
       "author": "mcr",
       "authorAssociation": "COLLABORATOR",
       "assignees": [
-        "henkbirkholz"
+        "mcr"
       ],
       "labels": [
-        "help wanted"
+        "wontfix"
       ],
       "body": "````\r\nIn some cases where Evidence contains sensitive information, an\r\n   Attester might even require that a Verifier first go through a TLS\r\n   authentication or a remote attestation procedure with it before the\r\n   Attester will send the sensitive Evidence.  _This can be done by\r\n   having the Attester first act as a Verifier/Relying Party, and the\r\n   Verifier act as its own Attester, as discussed above._\r\n````\r\n\r\nI don\u2019t know what it means, but all the cases here seem to ultimately rely on a unitary Verifier/Relying-Party somewhere in the chain.\r\n\r\nMaybe that\u2019s not true\u2026  if the verifier and relying party trust each other by fiat, the roles need not be combined.",
       "createdAt": "2020-12-02T16:11:27Z",
-      "updatedAt": "2021-02-04T15:40:41Z",
+      "updatedAt": "2021-02-09T21:33:46Z",
       "closedAt": null,
       "comments": [
         {
@@ -3147,6 +3147,20 @@
           "body": "I can see how:\r\n* \"Verifier/Relying Party\" looks misleading here\r\n* Dave illustrated well that this text is not about a \"unitary Verifier/Relying-Party\"\r\n* this is related to the current mutual authentication/attestation discussion that recently emerged\r\n\r\nI'll try to pitch this issues in the next meeting so we can deal with it in the same swoop as mutual authentication. Personally, I'd simply leave the text as is.",
           "createdAt": "2021-01-28T20:22:04Z",
           "updatedAt": "2021-01-28T20:22:04Z"
+        },
+        {
+          "author": "mcr",
+          "authorAssociation": "COLLABORATOR",
+          "body": "reference #268 ",
+          "createdAt": "2021-02-09T15:47:07Z",
+          "updatedAt": "2021-02-09T15:47:07Z"
+        },
+        {
+          "author": "mcr",
+          "authorAssociation": "COLLABORATOR",
+          "body": "closed with email: https://mailarchive.ietf.org/arch/msg/rats/e0QYhqWO0MxmZHWx654AB5vrHtw",
+          "createdAt": "2021-02-09T21:33:46Z",
+          "updatedAt": "2021-02-09T21:33:46Z"
         }
       ]
     },
@@ -3385,7 +3399,7 @@
       "id": "MDU6SXNzdWU3NTU0MTM3ODI=",
       "title": "8.3 Attestation Results - authorization",
       "url": "https://github.com/ietf-rats-wg/architecture/issues/215",
-      "state": "OPEN",
+      "state": "CLOSED",
       "author": "mcr",
       "authorAssociation": "COLLABORATOR",
       "assignees": [
@@ -3396,8 +3410,8 @@
       ],
       "body": "````\r\nhe passport model) or a Relying Party (in the background-check\r\n   model) to indicate that the _Attester should not be treated as\r\n   authorized_ and may be in need of remediation.  In some cases, it may\r\n   even indicate that the Evidence itself cannot be authenticated as\r\n   being correct.\r\n````\r\n\r\nIs there a different way to say this?  I assume in Passport, we\u2019re not relying on the Attester to report itself as untrustworthy?\r\nI think it\u2019s more that it doesn\u2019t get a passport, so it has nothing to hand the dude at the immigration desk?  i.e. untrustworthiness is indicated by lack of a passport?",
       "createdAt": "2020-12-02T16:15:56Z",
-      "updatedAt": "2021-02-04T15:39:33Z",
-      "closedAt": null,
+      "updatedAt": "2021-02-09T15:08:21Z",
+      "closedAt": "2021-02-09T15:08:21Z",
       "comments": [
         {
           "author": "nedmsmith",
@@ -3538,7 +3552,7 @@
       "id": "MDU6SXNzdWU3NTU0MTczNjg=",
       "title": "12.1.1  - HIgh Level Security",
       "url": "https://github.com/ietf-rats-wg/architecture/issues/220",
-      "state": "OPEN",
+      "state": "CLOSED",
       "author": "mcr",
       "authorAssociation": "COLLABORATOR",
       "assignees": [
@@ -3549,8 +3563,8 @@
       ],
       "body": "````\r\n For high level security, specialized hardware will likely be used\r\n   providing protection against chip decapping attacks, power supply and\r\n   clock glitching, faulting injection and RF and power side channel\r\n   attacks.\r\n````\r\n\r\nThis section, as put, is kind of a big leap, no?\r\nI think the important part of this next level, is the introduction of a hardware root of trust like a TPM to *eliminate* the need to trust the device\u2019s operating system software in reporting attestation results.",
       "createdAt": "2020-12-02T16:20:22Z",
-      "updatedAt": "2021-02-04T15:49:39Z",
-      "closedAt": null,
+      "updatedAt": "2021-02-09T15:35:16Z",
+      "closedAt": "2021-02-09T15:33:55Z",
       "comments": [
         {
           "author": "laurencelundblade",
@@ -3558,6 +3572,13 @@
           "body": "@laurencelundblade \r\n\r\nHow about \"For strongest security,....\" to avoid confusion with high level OS.",
           "createdAt": "2020-12-15T15:55:40Z",
           "updatedAt": "2020-12-15T15:55:40Z"
+        },
+        {
+          "author": "mcr",
+          "authorAssociation": "COLLABORATOR",
+          "body": "This also already fixed by existing text #272.",
+          "createdAt": "2021-02-09T15:33:55Z",
+          "updatedAt": "2021-02-09T15:35:16Z"
         }
       ]
     },
@@ -25638,24 +25659,26 @@
       "id": "MDExOlB1bGxSZXF1ZXN0NTY2MDYxODg5",
       "title": "capitalize Claims in appropriate places",
       "url": "https://github.com/ietf-rats-wg/architecture/pull/270",
-      "state": "OPEN",
+      "state": "MERGED",
       "author": "mcr",
       "authorAssociation": "COLLABORATOR",
       "assignees": [],
       "labels": [],
       "body": "",
       "createdAt": "2021-02-02T16:03:44Z",
-      "updatedAt": "2021-02-04T21:59:21Z",
+      "updatedAt": "2021-02-09T15:25:33Z",
       "baseRepository": "ietf-rats-wg/architecture",
       "baseRefName": "master",
-      "baseRefOid": "648215506253ce0d365d3ed5f3151867a4c96607",
+      "baseRefOid": "c633f7bd08029bdef45abd0b5cca6734d6604d58",
       "headRepository": "ietf-rats-wg/architecture",
       "headRefName": "capitalize-claims",
-      "headRefOid": "6ec8bceba7cb9da7b99dfa58fac6a055e8819b99",
-      "closedAt": null,
-      "mergedAt": null,
-      "mergedBy": null,
-      "mergeCommit": null,
+      "headRefOid": "fb91ab831fc78f5d273d3d923650b20e81a8cacb",
+      "closedAt": "2021-02-09T15:25:29Z",
+      "mergedAt": "2021-02-09T15:25:29Z",
+      "mergedBy": "mcr",
+      "mergeCommit": {
+        "oid": "b2ff910f5256a26b0ce8719a4f20bb59ebb1bbb0"
+      },
       "comments": [],
       "reviews": [
         {
@@ -25674,7 +25697,27 @@
               "originalPosition": 5,
               "body": "I don't feel strongly either way but it does seem odd to me to capitalize a term before it's defined in line 582, for the same reason it's not capitalized in the abstract.  (Relying Party etc are defined earlier, but Claim is only defined later.)\r\n\r\nI am ok either way, but I expect this is an area that will confuse the RFC editor.",
               "createdAt": "2021-02-04T21:58:04Z",
-              "updatedAt": "2021-02-04T21:59:21Z"
+              "updatedAt": "2021-02-09T15:23:40Z"
+            }
+          ]
+        },
+        {
+          "id": "MDE3OlB1bGxSZXF1ZXN0UmV2aWV3NTg2NjYwNTM0",
+          "commit": {
+            "abbreviatedOid": "6ec8bce"
+          },
+          "author": "mcr",
+          "authorAssociation": "COLLABORATOR",
+          "state": "COMMENTED",
+          "body": "",
+          "createdAt": "2021-02-09T15:17:24Z",
+          "updatedAt": "2021-02-09T15:17:25Z",
+          "comments": [
+            {
+              "originalPosition": 5,
+              "body": "```suggestion\r\nof hygiene, and so wants to get claims about such information and verify\r\n```",
+              "createdAt": "2021-02-09T15:17:24Z",
+              "updatedAt": "2021-02-09T15:23:40Z"
             }
           ]
         }
@@ -25821,24 +25864,26 @@
       "id": "MDExOlB1bGxSZXF1ZXN0NTY2MzU3NTY5",
       "title": "Issue #215 - Attestation Results",
       "url": "https://github.com/ietf-rats-wg/architecture/pull/273",
-      "state": "OPEN",
+      "state": "MERGED",
       "author": "nedmsmith",
       "authorAssociation": "COLLABORATOR",
       "assignees": [],
       "labels": [],
       "body": "Reworded 2nd and 3rd paragraphs fix #215 ",
       "createdAt": "2021-02-02T22:24:33Z",
-      "updatedAt": "2021-02-09T15:07:47Z",
+      "updatedAt": "2021-02-09T15:08:25Z",
       "baseRepository": "ietf-rats-wg/architecture",
       "baseRefName": "master",
       "baseRefOid": "648215506253ce0d365d3ed5f3151867a4c96607",
       "headRepository": "ietf-rats-wg/architecture",
       "headRefName": "Issue-#215---Attestation-Results",
       "headRefOid": "7574fb165bc67ada883b65fad22687b1677a806c",
-      "closedAt": null,
-      "mergedAt": null,
-      "mergedBy": null,
-      "mergeCommit": null,
+      "closedAt": "2021-02-09T15:08:21Z",
+      "mergedAt": "2021-02-09T15:08:21Z",
+      "mergedBy": "mcr",
+      "mergeCommit": {
+        "oid": "f5c7d2403ad8c101c2657aa315c0deab01d1b2b4"
+      },
       "comments": [],
       "reviews": [
         {
@@ -26022,25 +26067,33 @@
       "id": "MDExOlB1bGxSZXF1ZXN0NTY2MzkyMDg2",
       "title": "Issue #189 - Claims Collection",
       "url": "https://github.com/ietf-rats-wg/architecture/pull/275",
-      "state": "OPEN",
+      "state": "CLOSED",
       "author": "nedmsmith",
       "authorAssociation": "COLLABORATOR",
       "assignees": [],
       "labels": [],
       "body": "Added a sentence after \"An execution environment may not, by default, be capable of claims collection...\"\r\nfix #189 ",
       "createdAt": "2021-02-02T23:06:15Z",
-      "updatedAt": "2021-02-04T22:19:06Z",
+      "updatedAt": "2021-02-09T15:11:51Z",
       "baseRepository": "ietf-rats-wg/architecture",
       "baseRefName": "master",
       "baseRefOid": "648215506253ce0d365d3ed5f3151867a4c96607",
       "headRepository": "ietf-rats-wg/architecture",
       "headRefName": "Issue-#189---Claims-Collection",
       "headRefOid": "9cff0d7816ab3afd55f6fb6c196e1df7bf237e66",
-      "closedAt": null,
+      "closedAt": "2021-02-09T15:11:51Z",
       "mergedAt": null,
       "mergedBy": null,
       "mergeCommit": null,
-      "comments": [],
+      "comments": [
+        {
+          "author": "mcr",
+          "authorAssociation": "COLLABORATOR",
+          "body": "closing, as other text fixed this well enough.",
+          "createdAt": "2021-02-09T15:11:51Z",
+          "updatedAt": "2021-02-09T15:11:51Z"
+        }
+      ],
       "reviews": [
         {
           "id": "MDE3OlB1bGxSZXF1ZXN0UmV2aWV3NTgzNDYxODA5",
@@ -26710,24 +26763,26 @@
       "id": "MDExOlB1bGxSZXF1ZXN0NTY4NTE1MTgx",
       "title": "More fixes to handle example",
       "url": "https://github.com/ietf-rats-wg/architecture/pull/287",
-      "state": "OPEN",
+      "state": "MERGED",
       "author": "dthaler",
       "authorAssociation": "COLLABORATOR",
       "assignees": [],
       "labels": [],
       "body": "Biggest bug in the last pull request is that the diagram had the attester sending a different Attestation Result than the one the Verifier gave it, which would invalidate the signature.\r\n\r\nSecond issue was that the lines didn't line up.\r\n\r\nThird issue was that it was missing the tie to the \"epoch window\" discussion in {{epochfreshness}} to explain how the Relying Party deals with the mismatched handles that the example diagram has.\r\n\r\nFixes #198\r\n\r\nSigned-off-by: Dave Thaler <dthaler@ntdev.microsoft.com>",
       "createdAt": "2021-02-05T17:51:00Z",
-      "updatedAt": "2021-02-06T16:11:05Z",
+      "updatedAt": "2021-02-09T15:12:52Z",
       "baseRepository": "ietf-rats-wg/architecture",
       "baseRefName": "master",
       "baseRefOid": "693d54fd4629b335d57794059eabd5e91c7495f4",
       "headRepository": "ietf-rats-wg/architecture",
       "headRefName": "epochfreshness",
       "headRefOid": "d185bfaa1fb8279e1eb69aec5d485d3911844010",
-      "closedAt": null,
-      "mergedAt": null,
-      "mergedBy": null,
-      "mergeCommit": null,
+      "closedAt": "2021-02-09T15:12:49Z",
+      "mergedAt": "2021-02-09T15:12:49Z",
+      "mergedBy": "mcr",
+      "mergeCommit": {
+        "oid": "c633f7bd08029bdef45abd0b5cca6734d6604d58"
+      },
       "comments": [],
       "reviews": [
         {
@@ -26757,6 +26812,83 @@
           "comments": []
         }
       ]
+    },
+    {
+      "number": 288,
+      "id": "MDExOlB1bGxSZXF1ZXN0NTcwMzg4Mzg1",
+      "title": "added sentence to say why attestation results are relevant",
+      "url": "https://github.com/ietf-rats-wg/architecture/pull/288",
+      "state": "MERGED",
+      "author": "mcr",
+      "authorAssociation": "COLLABORATOR",
+      "assignees": [],
+      "labels": [],
+      "body": "fix #203 ",
+      "createdAt": "2021-02-09T15:30:11Z",
+      "updatedAt": "2021-02-09T15:31:22Z",
+      "baseRepository": "ietf-rats-wg/architecture",
+      "baseRefName": "master",
+      "baseRefOid": "b2ff910f5256a26b0ce8719a4f20bb59ebb1bbb0",
+      "headRepository": "ietf-rats-wg/architecture",
+      "headRefName": "relevance-of-attestation-results",
+      "headRefOid": "089e13a2dbbecff40c7d820dc1d90bcd904e2fc7",
+      "closedAt": "2021-02-09T15:31:19Z",
+      "mergedAt": "2021-02-09T15:31:19Z",
+      "mergedBy": "mcr",
+      "mergeCommit": {
+        "oid": "9613015242eab80a0384290f4f6bf47a2df38c1c"
+      },
+      "comments": [],
+      "reviews": [
+        {
+          "id": "MDE3OlB1bGxSZXF1ZXN0UmV2aWV3NTg2Njc2MDI1",
+          "commit": {
+            "abbreviatedOid": "631dd56"
+          },
+          "author": "mcr",
+          "authorAssociation": "COLLABORATOR",
+          "state": "COMMENTED",
+          "body": "",
+          "createdAt": "2021-02-09T15:30:35Z",
+          "updatedAt": "2021-02-09T15:30:36Z",
+          "comments": [
+            {
+              "originalPosition": 4,
+              "body": "```suggestion\r\nThis implies that interoperability and standardization is more relevant for Attestation Results than it is for Evidence.\r\n```",
+              "createdAt": "2021-02-09T15:30:35Z",
+              "updatedAt": "2021-02-09T15:31:02Z"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "number": 289,
+      "id": "MDExOlB1bGxSZXF1ZXN0NTcwMzk3MzQ1",
+      "title": "change labelling of diagram, fix #192",
+      "url": "https://github.com/ietf-rats-wg/architecture/pull/289",
+      "state": "MERGED",
+      "author": "mcr",
+      "authorAssociation": "COLLABORATOR",
+      "assignees": [],
+      "labels": [],
+      "body": "",
+      "createdAt": "2021-02-09T15:42:05Z",
+      "updatedAt": "2021-02-09T15:43:06Z",
+      "baseRepository": "ietf-rats-wg/architecture",
+      "baseRefName": "master",
+      "baseRefOid": "9613015242eab80a0384290f4f6bf47a2df38c1c",
+      "headRepository": "ietf-rats-wg/architecture",
+      "headRefName": "application-workload",
+      "headRefOid": "d5119c43433c783122360c37ab0f80c64bc26440",
+      "closedAt": "2021-02-09T15:43:03Z",
+      "mergedAt": "2021-02-09T15:43:03Z",
+      "mergedBy": "mcr",
+      "mergeCommit": {
+        "oid": "6d177ca0fa9f28406b0cda8487b5304ec54b1e11"
+      },
+      "comments": [],
+      "reviews": []
     }
   ]
 }
