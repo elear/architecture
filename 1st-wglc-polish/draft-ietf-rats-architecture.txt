@@ -300,7 +300,7 @@ Table of Contents
    health, then it forces a reboot.
 
    Attester:  The device that should be protected from being held
-      hostage for a long period of time
+      hostage for a long period of time.
 
    Relying Party:  A watchdog capable of triggering a procedure that
       resets a device into a known, good operational state.
