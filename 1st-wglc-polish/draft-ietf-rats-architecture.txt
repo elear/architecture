@@ -315,8 +315,8 @@ Table of Contents
    verifies the biometric, PIN and password inputs from the user, not
    the server.  For the Relying Party to know that the authentication is
    trustworthy, the Relying Party needs to know that the Authenticator
-   part of the device is trustworthy.  The FIDO protocol employs remote
-   attestation for this.
+   part of the device is trustworthy.  The FIDO protocol employs Remote
+   Attestation Procedures for this.
 
    The FIDO protocol supports several remote attestation protocols and a
    mechanism by which new ones can be registered and added.  Remote
@@ -324,8 +324,8 @@ Table of Contents
    protocol.
 
    Other biometric authentication protocols such as the Chinese IFAA
-   standard and WeChat Pay as well as Google Pay make use of attestation
-   in one form or another.
+   standard and WeChat Pay as well as Google Pay make use of remote
+   attestation in one form or another.
 
    Attester:  Every FIDO Authenticator contains an Attester.
 
@@ -365,22 +365,27 @@ Table of Contents
 
                       Figure 1: Conceptual Data Flow
 
+   The text below summarizes the activities conducted by the roles
+   illustrated in Figure 1.
+
    An Attester creates Evidence that is conveyed to a Verifier.
 
-   The Verifier uses the Evidence, any Reference Values from Reference
+   An Verifier uses the Evidence, any Reference Values from Reference
    Value Providers, and any Endorsements from Endorsers, by applying an
    Appraisal Policy for Evidence to assess the trustworthiness of the
-   Attester, and generates Attestation Results for use by Relying
-   Parties.  The Appraisal Policy for Evidence might be obtained from an
-   Endorser along with the Endorsements, and/or might be obtained via
-   some other mechanism such as being configured in the Verifier by the
-   Verifier Owner.
+   Attester.
 
-   The Relying Party uses Attestation Results by applying its own
-   appraisal policy to make application-specific decisions such as
-   authorization decisions.  The Appraisal Policy for Attestation
-   Results is configured in the Relying Party by the Relying Party
-   Owner, and/or is programmed into the Relying Party.
+   Consecutively, the Verifier generates Attestation Results for use by
+   Relying Parties.  Appraisal Policies for Evidence might be obtained
+   from an Endorser along with the Endorsements, and/or might be
+   obtained via some other mechanism, such as being configured in the
+   Verifier by the Verifier Owner.
+
+   A Relying Party uses Attestation Results by applying its own
+   appraisal policies to make application-specific decisions, such as
+   authorization decisions.  Appraisal Policies for Attestation Results
+   are configured in the Relying Party by the Relying Party Owner, and/
+   or are programmed into the Relying Party.
 
 3.1.  Appraisal Policies
 
