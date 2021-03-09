@@ -26,21 +26,21 @@ operational state.
 <meta content="draft-ietf-rats-architecture-latest" name="ietf.draft">
 <!-- Generator version information:
   xml2rfc 3.5.0
-    Python 3.8.5
+    Python 3.8.7
     appdirs 1.4.4
     ConfigArgParse 1.2.3
     google-i18n-address 2.4.0
     html5lib 1.1
-    intervaltree 3.0.2
+    intervaltree 3.1.0
     Jinja2 2.11.2
     kitchen 1.2.6
-    lxml 4.5.0
-    pycountry 19.8.18
-    pyflakes 2.1.1
+    lxml 4.6.2
+    pycountry 20.7.3
+    pyflakes 2.2.0
     PyYAML 5.4.1
-    requests 2.22.0
-    setuptools 45.2.0
-    six 1.14.0
+    requests 2.25.1
+    setuptools 51.3.3
+    six 1.15.0
 -->
 <link href="draft-ietf-rats-architecture.xml" rel="alternate" type="application/rfc+xml">
 <link href="#copyright" rel="license">
@@ -849,11 +849,11 @@ address div.right {
 <thead><tr>
 <td class="left">Internet-Draft</td>
 <td class="center">RATS Arch &amp; Terms</td>
-<td class="right">February 2021</td>
+<td class="right">March 2021</td>
 </tr></thead>
 <tfoot><tr>
 <td class="left">Birkholz, et al.</td>
-<td class="center">Expires 6 August 2021</td>
+<td class="center">Expires 10 September 2021</td>
 <td class="right">[Page]</td>
 </tr></tfoot>
 </table>
@@ -866,12 +866,12 @@ address div.right {
 <dd class="internet-draft">draft-ietf-rats-architecture-latest</dd>
 <dt class="label-published">Published:</dt>
 <dd class="published">
-<time datetime="2021-02-02" class="published">2 February 2021</time>
+<time datetime="2021-03-09" class="published">9 March 2021</time>
     </dd>
 <dt class="label-intended-status">Intended Status:</dt>
 <dd class="intended-status">Informational</dd>
 <dt class="label-expires">Expires:</dt>
-<dd class="expires"><time datetime="2021-08-06">6 August 2021</time></dd>
+<dd class="expires"><time datetime="2021-09-10">10 September 2021</time></dd>
 <dt class="label-authors">Authors:</dt>
 <dd class="authors">
 <div class="author">
@@ -939,7 +939,7 @@ operational state.<a href="#section-abstract-1" class="pilcrow">¶</a></p>
         time. It is inappropriate to use Internet-Drafts as reference
         material or to cite them other than as "work in progress."<a href="#section-boilerplate.1-3" class="pilcrow">¶</a></p>
 <p id="section-boilerplate.1-4">
-        This Internet-Draft will expire on 6 August 2021.<a href="#section-boilerplate.1-4" class="pilcrow">¶</a></p>
+        This Internet-Draft will expire on 10 September 2021.<a href="#section-boilerplate.1-4" class="pilcrow">¶</a></p>
 </section>
 </div>
 <div id="copyright">
@@ -967,204 +967,210 @@ operational state.<a href="#section-abstract-1" class="pilcrow">¶</a></p>
         <a href="#" onclick="scroll(0,0)" class="toplink">▲</a><h2 id="name-table-of-contents">
 <a href="#name-table-of-contents" class="section-name selfRef">Table of Contents</a>
         </h2>
-<nav class="toc"><ul class="ulEmpty compact toc">
-<li class="ulEmpty compact toc" id="section-toc.1-1.1">
+<nav class="toc"><ul class="ulEmpty toc compact">
+<li class="ulEmpty toc compact" id="section-toc.1-1.1">
             <p id="section-toc.1-1.1.1" class="keepWithNext"><a href="#section-1" class="xref">1</a>.  <a href="#name-introduction" class="xref">Introduction</a><a href="#section-toc.1-1.1.1" class="pilcrow">¶</a></p>
 </li>
-          <li class="ulEmpty compact toc" id="section-toc.1-1.2">
+          <li class="ulEmpty toc compact" id="section-toc.1-1.2">
             <p id="section-toc.1-1.2.1"><a href="#section-2" class="xref">2</a>.  <a href="#name-reference-use-cases" class="xref">Reference Use Cases</a><a href="#section-toc.1-1.2.1" class="pilcrow">¶</a></p>
-<ul class="ulEmpty compact toc">
-<li class="ulEmpty compact toc" id="section-toc.1-1.2.2.1">
+<ul class="ulEmpty toc compact">
+<li class="ulEmpty toc compact" id="section-toc.1-1.2.2.1">
                 <p id="section-toc.1-1.2.2.1.1" class="keepWithNext"><a href="#section-2.1" class="xref">2.1</a>.  <a href="#name-network-endpoint-assessment" class="xref">Network Endpoint Assessment</a><a href="#section-toc.1-1.2.2.1.1" class="pilcrow">¶</a></p>
 </li>
-              <li class="ulEmpty compact toc" id="section-toc.1-1.2.2.2">
+              <li class="ulEmpty toc compact" id="section-toc.1-1.2.2.2">
                 <p id="section-toc.1-1.2.2.2.1" class="keepWithNext"><a href="#section-2.2" class="xref">2.2</a>.  <a href="#name-confidential-machine-learni" class="xref">Confidential Machine Learning (ML) Model Protection</a><a href="#section-toc.1-1.2.2.2.1" class="pilcrow">¶</a></p>
 </li>
-              <li class="ulEmpty compact toc" id="section-toc.1-1.2.2.3">
+              <li class="ulEmpty toc compact" id="section-toc.1-1.2.2.3">
                 <p id="section-toc.1-1.2.2.3.1"><a href="#section-2.3" class="xref">2.3</a>.  <a href="#name-confidential-data-protectio" class="xref">Confidential Data Protection</a><a href="#section-toc.1-1.2.2.3.1" class="pilcrow">¶</a></p>
 </li>
-              <li class="ulEmpty compact toc" id="section-toc.1-1.2.2.4">
+              <li class="ulEmpty toc compact" id="section-toc.1-1.2.2.4">
                 <p id="section-toc.1-1.2.2.4.1"><a href="#section-2.4" class="xref">2.4</a>.  <a href="#name-critical-infrastructure-con" class="xref">Critical Infrastructure Control</a><a href="#section-toc.1-1.2.2.4.1" class="pilcrow">¶</a></p>
 </li>
-              <li class="ulEmpty compact toc" id="section-toc.1-1.2.2.5">
+              <li class="ulEmpty toc compact" id="section-toc.1-1.2.2.5">
                 <p id="section-toc.1-1.2.2.5.1"><a href="#section-2.5" class="xref">2.5</a>.  <a href="#name-trusted-execution-environme" class="xref">Trusted Execution Environment (TEE) Provisioning</a><a href="#section-toc.1-1.2.2.5.1" class="pilcrow">¶</a></p>
 </li>
-              <li class="ulEmpty compact toc" id="section-toc.1-1.2.2.6">
+              <li class="ulEmpty toc compact" id="section-toc.1-1.2.2.6">
                 <p id="section-toc.1-1.2.2.6.1"><a href="#section-2.6" class="xref">2.6</a>.  <a href="#name-hardware-watchdog" class="xref">Hardware Watchdog</a><a href="#section-toc.1-1.2.2.6.1" class="pilcrow">¶</a></p>
 </li>
-              <li class="ulEmpty compact toc" id="section-toc.1-1.2.2.7">
+              <li class="ulEmpty toc compact" id="section-toc.1-1.2.2.7">
                 <p id="section-toc.1-1.2.2.7.1"><a href="#section-2.7" class="xref">2.7</a>.  <a href="#name-fido-biometric-authenticati" class="xref">FIDO Biometric Authentication</a><a href="#section-toc.1-1.2.2.7.1" class="pilcrow">¶</a></p>
 </li>
             </ul>
 </li>
-          <li class="ulEmpty compact toc" id="section-toc.1-1.3">
+          <li class="ulEmpty toc compact" id="section-toc.1-1.3">
             <p id="section-toc.1-1.3.1"><a href="#section-3" class="xref">3</a>.  <a href="#name-architectural-overview" class="xref">Architectural Overview</a><a href="#section-toc.1-1.3.1" class="pilcrow">¶</a></p>
-<ul class="ulEmpty compact toc">
-<li class="ulEmpty compact toc" id="section-toc.1-1.3.2.1">
+<ul class="ulEmpty toc compact">
+<li class="ulEmpty toc compact" id="section-toc.1-1.3.2.1">
                 <p id="section-toc.1-1.3.2.1.1"><a href="#section-3.1" class="xref">3.1</a>.  <a href="#name-appraisal-policies" class="xref">Appraisal Policies</a><a href="#section-toc.1-1.3.2.1.1" class="pilcrow">¶</a></p>
 </li>
-              <li class="ulEmpty compact toc" id="section-toc.1-1.3.2.2">
+              <li class="ulEmpty toc compact" id="section-toc.1-1.3.2.2">
                 <p id="section-toc.1-1.3.2.2.1"><a href="#section-3.2" class="xref">3.2</a>.  <a href="#name-reference-values" class="xref">Reference Values</a><a href="#section-toc.1-1.3.2.2.1" class="pilcrow">¶</a></p>
 </li>
-              <li class="ulEmpty compact toc" id="section-toc.1-1.3.2.3">
+              <li class="ulEmpty toc compact" id="section-toc.1-1.3.2.3">
                 <p id="section-toc.1-1.3.2.3.1"><a href="#section-3.3" class="xref">3.3</a>.  <a href="#name-two-types-of-environments-o" class="xref">Two Types of Environments of an Attester</a><a href="#section-toc.1-1.3.2.3.1" class="pilcrow">¶</a></p>
 </li>
-              <li class="ulEmpty compact toc" id="section-toc.1-1.3.2.4">
+              <li class="ulEmpty toc compact" id="section-toc.1-1.3.2.4">
                 <p id="section-toc.1-1.3.2.4.1"><a href="#section-3.4" class="xref">3.4</a>.  <a href="#name-layered-attestation-environ" class="xref">Layered Attestation Environments</a><a href="#section-toc.1-1.3.2.4.1" class="pilcrow">¶</a></p>
 </li>
-              <li class="ulEmpty compact toc" id="section-toc.1-1.3.2.5">
+              <li class="ulEmpty toc compact" id="section-toc.1-1.3.2.5">
                 <p id="section-toc.1-1.3.2.5.1"><a href="#section-3.5" class="xref">3.5</a>.  <a href="#name-composite-device" class="xref">Composite Device</a><a href="#section-toc.1-1.3.2.5.1" class="pilcrow">¶</a></p>
+</li>
+              <li class="ulEmpty toc compact" id="section-toc.1-1.3.2.6">
+                <p id="section-toc.1-1.3.2.6.1"><a href="#section-3.6" class="xref">3.6</a>.  <a href="#name-implementation-consideratio" class="xref">Implementation Considerations</a><a href="#section-toc.1-1.3.2.6.1" class="pilcrow">¶</a></p>
 </li>
             </ul>
 </li>
-          <li class="ulEmpty compact toc" id="section-toc.1-1.4">
+          <li class="ulEmpty toc compact" id="section-toc.1-1.4">
             <p id="section-toc.1-1.4.1"><a href="#section-4" class="xref">4</a>.  <a href="#name-terminology" class="xref">Terminology</a><a href="#section-toc.1-1.4.1" class="pilcrow">¶</a></p>
-<ul class="ulEmpty compact toc">
-<li class="ulEmpty compact toc" id="section-toc.1-1.4.2.1">
+<ul class="ulEmpty toc compact">
+<li class="ulEmpty toc compact" id="section-toc.1-1.4.2.1">
                 <p id="section-toc.1-1.4.2.1.1"><a href="#section-4.1" class="xref">4.1</a>.  <a href="#name-roles" class="xref">Roles</a><a href="#section-toc.1-1.4.2.1.1" class="pilcrow">¶</a></p>
 </li>
-              <li class="ulEmpty compact toc" id="section-toc.1-1.4.2.2">
+              <li class="ulEmpty toc compact" id="section-toc.1-1.4.2.2">
                 <p id="section-toc.1-1.4.2.2.1"><a href="#section-4.2" class="xref">4.2</a>.  <a href="#name-artifacts" class="xref">Artifacts</a><a href="#section-toc.1-1.4.2.2.1" class="pilcrow">¶</a></p>
 </li>
             </ul>
 </li>
-          <li class="ulEmpty compact toc" id="section-toc.1-1.5">
+          <li class="ulEmpty toc compact" id="section-toc.1-1.5">
             <p id="section-toc.1-1.5.1"><a href="#section-5" class="xref">5</a>.  <a href="#name-topological-patterns" class="xref">Topological Patterns</a><a href="#section-toc.1-1.5.1" class="pilcrow">¶</a></p>
-<ul class="ulEmpty compact toc">
-<li class="ulEmpty compact toc" id="section-toc.1-1.5.2.1">
+<ul class="ulEmpty toc compact">
+<li class="ulEmpty toc compact" id="section-toc.1-1.5.2.1">
                 <p id="section-toc.1-1.5.2.1.1"><a href="#section-5.1" class="xref">5.1</a>.  <a href="#name-passport-model" class="xref">Passport Model</a><a href="#section-toc.1-1.5.2.1.1" class="pilcrow">¶</a></p>
 </li>
-              <li class="ulEmpty compact toc" id="section-toc.1-1.5.2.2">
+              <li class="ulEmpty toc compact" id="section-toc.1-1.5.2.2">
                 <p id="section-toc.1-1.5.2.2.1"><a href="#section-5.2" class="xref">5.2</a>.  <a href="#name-background-check-model" class="xref">Background-Check Model</a><a href="#section-toc.1-1.5.2.2.1" class="pilcrow">¶</a></p>
 </li>
-              <li class="ulEmpty compact toc" id="section-toc.1-1.5.2.3">
+              <li class="ulEmpty toc compact" id="section-toc.1-1.5.2.3">
                 <p id="section-toc.1-1.5.2.3.1"><a href="#section-5.3" class="xref">5.3</a>.  <a href="#name-combinations" class="xref">Combinations</a><a href="#section-toc.1-1.5.2.3.1" class="pilcrow">¶</a></p>
 </li>
             </ul>
 </li>
-          <li class="ulEmpty compact toc" id="section-toc.1-1.6">
+          <li class="ulEmpty toc compact" id="section-toc.1-1.6">
             <p id="section-toc.1-1.6.1"><a href="#section-6" class="xref">6</a>.  <a href="#name-roles-and-entities" class="xref">Roles and Entities</a><a href="#section-toc.1-1.6.1" class="pilcrow">¶</a></p>
 </li>
-          <li class="ulEmpty compact toc" id="section-toc.1-1.7">
+          <li class="ulEmpty toc compact" id="section-toc.1-1.7">
             <p id="section-toc.1-1.7.1"><a href="#section-7" class="xref">7</a>.  <a href="#name-trust-model" class="xref">Trust Model</a><a href="#section-toc.1-1.7.1" class="pilcrow">¶</a></p>
-<ul class="ulEmpty compact toc">
-<li class="ulEmpty compact toc" id="section-toc.1-1.7.2.1">
+<ul class="ulEmpty toc compact">
+<li class="ulEmpty toc compact" id="section-toc.1-1.7.2.1">
                 <p id="section-toc.1-1.7.2.1.1"><a href="#section-7.1" class="xref">7.1</a>.  <a href="#name-relying-party" class="xref">Relying Party</a><a href="#section-toc.1-1.7.2.1.1" class="pilcrow">¶</a></p>
 </li>
-              <li class="ulEmpty compact toc" id="section-toc.1-1.7.2.2">
+              <li class="ulEmpty toc compact" id="section-toc.1-1.7.2.2">
                 <p id="section-toc.1-1.7.2.2.1"><a href="#section-7.2" class="xref">7.2</a>.  <a href="#name-attester" class="xref">Attester</a><a href="#section-toc.1-1.7.2.2.1" class="pilcrow">¶</a></p>
 </li>
-              <li class="ulEmpty compact toc" id="section-toc.1-1.7.2.3">
+              <li class="ulEmpty toc compact" id="section-toc.1-1.7.2.3">
                 <p id="section-toc.1-1.7.2.3.1"><a href="#section-7.3" class="xref">7.3</a>.  <a href="#name-relying-party-owner" class="xref">Relying Party Owner</a><a href="#section-toc.1-1.7.2.3.1" class="pilcrow">¶</a></p>
 </li>
-              <li class="ulEmpty compact toc" id="section-toc.1-1.7.2.4">
+              <li class="ulEmpty toc compact" id="section-toc.1-1.7.2.4">
                 <p id="section-toc.1-1.7.2.4.1"><a href="#section-7.4" class="xref">7.4</a>.  <a href="#name-verifier" class="xref">Verifier</a><a href="#section-toc.1-1.7.2.4.1" class="pilcrow">¶</a></p>
 </li>
-              <li class="ulEmpty compact toc" id="section-toc.1-1.7.2.5">
+              <li class="ulEmpty toc compact" id="section-toc.1-1.7.2.5">
                 <p id="section-toc.1-1.7.2.5.1"><a href="#section-7.5" class="xref">7.5</a>.  <a href="#name-endorser-reference-value-pr" class="xref">Endorser, Reference Value Provider, and Verifier Owner</a><a href="#section-toc.1-1.7.2.5.1" class="pilcrow">¶</a></p>
 </li>
             </ul>
 </li>
-          <li class="ulEmpty compact toc" id="section-toc.1-1.8">
+          <li class="ulEmpty toc compact" id="section-toc.1-1.8">
             <p id="section-toc.1-1.8.1"><a href="#section-8" class="xref">8</a>.  <a href="#name-conceptual-messages" class="xref">Conceptual Messages</a><a href="#section-toc.1-1.8.1" class="pilcrow">¶</a></p>
-<ul class="ulEmpty compact toc">
-<li class="ulEmpty compact toc" id="section-toc.1-1.8.2.1">
+<ul class="ulEmpty toc compact">
+<li class="ulEmpty toc compact" id="section-toc.1-1.8.2.1">
                 <p id="section-toc.1-1.8.2.1.1"><a href="#section-8.1" class="xref">8.1</a>.  <a href="#name-evidence" class="xref">Evidence</a><a href="#section-toc.1-1.8.2.1.1" class="pilcrow">¶</a></p>
 </li>
-              <li class="ulEmpty compact toc" id="section-toc.1-1.8.2.2">
+              <li class="ulEmpty toc compact" id="section-toc.1-1.8.2.2">
                 <p id="section-toc.1-1.8.2.2.1"><a href="#section-8.2" class="xref">8.2</a>.  <a href="#name-endorsements" class="xref">Endorsements</a><a href="#section-toc.1-1.8.2.2.1" class="pilcrow">¶</a></p>
 </li>
-              <li class="ulEmpty compact toc" id="section-toc.1-1.8.2.3">
+              <li class="ulEmpty toc compact" id="section-toc.1-1.8.2.3">
                 <p id="section-toc.1-1.8.2.3.1"><a href="#section-8.3" class="xref">8.3</a>.  <a href="#name-attestation-results" class="xref">Attestation Results</a><a href="#section-toc.1-1.8.2.3.1" class="pilcrow">¶</a></p>
 </li>
             </ul>
 </li>
-          <li class="ulEmpty compact toc" id="section-toc.1-1.9">
+          <li class="ulEmpty toc compact" id="section-toc.1-1.9">
             <p id="section-toc.1-1.9.1"><a href="#section-9" class="xref">9</a>.  <a href="#name-claims-encoding-formats" class="xref">Claims Encoding Formats</a><a href="#section-toc.1-1.9.1" class="pilcrow">¶</a></p>
 </li>
-          <li class="ulEmpty compact toc" id="section-toc.1-1.10">
+          <li class="ulEmpty toc compact" id="section-toc.1-1.10">
             <p id="section-toc.1-1.10.1"><a href="#section-10" class="xref">10</a>. <a href="#name-freshness" class="xref">Freshness</a><a href="#section-toc.1-1.10.1" class="pilcrow">¶</a></p>
-<ul class="ulEmpty compact toc">
-<li class="ulEmpty compact toc" id="section-toc.1-1.10.2.1">
+<ul class="ulEmpty toc compact">
+<li class="ulEmpty toc compact" id="section-toc.1-1.10.2.1">
                 <p id="section-toc.1-1.10.2.1.1"><a href="#section-10.1" class="xref">10.1</a>.  <a href="#name-explicit-timekeeping-using-" class="xref">Explicit Timekeeping using Synchronized Clocks</a><a href="#section-toc.1-1.10.2.1.1" class="pilcrow">¶</a></p>
 </li>
-              <li class="ulEmpty compact toc" id="section-toc.1-1.10.2.2">
+              <li class="ulEmpty toc compact" id="section-toc.1-1.10.2.2">
                 <p id="section-toc.1-1.10.2.2.1"><a href="#section-10.2" class="xref">10.2</a>.  <a href="#name-implicit-timekeeping-using-" class="xref">Implicit Timekeeping using Nonces</a><a href="#section-toc.1-1.10.2.2.1" class="pilcrow">¶</a></p>
 </li>
-              <li class="ulEmpty compact toc" id="section-toc.1-1.10.2.3">
+              <li class="ulEmpty toc compact" id="section-toc.1-1.10.2.3">
                 <p id="section-toc.1-1.10.2.3.1"><a href="#section-10.3" class="xref">10.3</a>.  <a href="#name-implicit-timekeeping-using-e" class="xref">Implicit Timekeeping using Epoch Handles</a><a href="#section-toc.1-1.10.2.3.1" class="pilcrow">¶</a></p>
 </li>
-              <li class="ulEmpty compact toc" id="section-toc.1-1.10.2.4">
+              <li class="ulEmpty toc compact" id="section-toc.1-1.10.2.4">
                 <p id="section-toc.1-1.10.2.4.1"><a href="#section-10.4" class="xref">10.4</a>.  <a href="#name-discussion" class="xref">Discussion</a><a href="#section-toc.1-1.10.2.4.1" class="pilcrow">¶</a></p>
 </li>
             </ul>
 </li>
-          <li class="ulEmpty compact toc" id="section-toc.1-1.11">
+          <li class="ulEmpty toc compact" id="section-toc.1-1.11">
             <p id="section-toc.1-1.11.1"><a href="#section-11" class="xref">11</a>. <a href="#name-privacy-considerations" class="xref">Privacy Considerations</a><a href="#section-toc.1-1.11.1" class="pilcrow">¶</a></p>
 </li>
-          <li class="ulEmpty compact toc" id="section-toc.1-1.12">
+          <li class="ulEmpty toc compact" id="section-toc.1-1.12">
             <p id="section-toc.1-1.12.1"><a href="#section-12" class="xref">12</a>. <a href="#name-security-considerations" class="xref">Security Considerations</a><a href="#section-toc.1-1.12.1" class="pilcrow">¶</a></p>
-<ul class="ulEmpty compact toc">
-<li class="ulEmpty compact toc" id="section-toc.1-1.12.2.1">
+<ul class="ulEmpty toc compact">
+<li class="ulEmpty toc compact" id="section-toc.1-1.12.2.1">
                 <p id="section-toc.1-1.12.2.1.1"><a href="#section-12.1" class="xref">12.1</a>.  <a href="#name-attester-and-attestation-ke" class="xref">Attester and Attestation Key Protection</a><a href="#section-toc.1-1.12.2.1.1" class="pilcrow">¶</a></p>
-<ul class="ulEmpty compact toc">
-<li class="ulEmpty compact toc" id="section-toc.1-1.12.2.1.2.1">
+<ul class="ulEmpty toc compact">
+<li class="ulEmpty toc compact" id="section-toc.1-1.12.2.1.2.1">
                     <p id="section-toc.1-1.12.2.1.2.1.1"><a href="#section-12.1.1" class="xref">12.1.1</a>.  <a href="#name-on-device-attester-and-key-" class="xref">On-Device Attester and Key Protection</a><a href="#section-toc.1-1.12.2.1.2.1.1" class="pilcrow">¶</a></p>
 </li>
-                  <li class="ulEmpty compact toc" id="section-toc.1-1.12.2.1.2.2">
+                  <li class="ulEmpty toc compact" id="section-toc.1-1.12.2.1.2.2">
                     <p id="section-toc.1-1.12.2.1.2.2.1"><a href="#section-12.1.2" class="xref">12.1.2</a>.  <a href="#name-attestation-key-provisionin" class="xref">Attestation Key Provisioning Processes</a><a href="#section-toc.1-1.12.2.1.2.2.1" class="pilcrow">¶</a></p>
 </li>
                 </ul>
 </li>
-              <li class="ulEmpty compact toc" id="section-toc.1-1.12.2.2">
+              <li class="ulEmpty toc compact" id="section-toc.1-1.12.2.2">
                 <p id="section-toc.1-1.12.2.2.1"><a href="#section-12.2" class="xref">12.2</a>.  <a href="#name-integrity-protection" class="xref">Integrity Protection</a><a href="#section-toc.1-1.12.2.2.1" class="pilcrow">¶</a></p>
+</li>
+              <li class="ulEmpty toc compact" id="section-toc.1-1.12.2.3">
+                <p id="section-toc.1-1.12.2.3.1"><a href="#section-12.3" class="xref">12.3</a>.  <a href="#name-handle-based-attestation" class="xref">Handle-based Attestation</a><a href="#section-toc.1-1.12.2.3.1" class="pilcrow">¶</a></p>
 </li>
             </ul>
 </li>
-          <li class="ulEmpty compact toc" id="section-toc.1-1.13">
+          <li class="ulEmpty toc compact" id="section-toc.1-1.13">
             <p id="section-toc.1-1.13.1"><a href="#section-13" class="xref">13</a>. <a href="#name-iana-considerations" class="xref">IANA Considerations</a><a href="#section-toc.1-1.13.1" class="pilcrow">¶</a></p>
 </li>
-          <li class="ulEmpty compact toc" id="section-toc.1-1.14">
+          <li class="ulEmpty toc compact" id="section-toc.1-1.14">
             <p id="section-toc.1-1.14.1"><a href="#section-14" class="xref">14</a>. <a href="#name-acknowledgments" class="xref">Acknowledgments</a><a href="#section-toc.1-1.14.1" class="pilcrow">¶</a></p>
 </li>
-          <li class="ulEmpty compact toc" id="section-toc.1-1.15">
+          <li class="ulEmpty toc compact" id="section-toc.1-1.15">
             <p id="section-toc.1-1.15.1"><a href="#section-15" class="xref">15</a>. <a href="#name-notable-contributions" class="xref">Notable Contributions</a><a href="#section-toc.1-1.15.1" class="pilcrow">¶</a></p>
 </li>
-          <li class="ulEmpty compact toc" id="section-toc.1-1.16">
+          <li class="ulEmpty toc compact" id="section-toc.1-1.16">
             <p id="section-toc.1-1.16.1"><a href="#section-16" class="xref">16</a>. <a href="#name-appendix-a-time-considerati" class="xref">Appendix A: Time Considerations</a><a href="#section-toc.1-1.16.1" class="pilcrow">¶</a></p>
-<ul class="ulEmpty compact toc">
-<li class="ulEmpty compact toc" id="section-toc.1-1.16.2.1">
+<ul class="ulEmpty toc compact">
+<li class="ulEmpty toc compact" id="section-toc.1-1.16.2.1">
                 <p id="section-toc.1-1.16.2.1.1"><a href="#section-16.1" class="xref">16.1</a>.  <a href="#name-example-1-timestamp-based-p" class="xref">Example 1: Timestamp-based Passport Model Example</a><a href="#section-toc.1-1.16.2.1.1" class="pilcrow">¶</a></p>
 </li>
-              <li class="ulEmpty compact toc" id="section-toc.1-1.16.2.2">
+              <li class="ulEmpty toc compact" id="section-toc.1-1.16.2.2">
                 <p id="section-toc.1-1.16.2.2.1"><a href="#section-16.2" class="xref">16.2</a>.  <a href="#name-example-2-nonce-based-passp" class="xref">Example 2: Nonce-based Passport Model Example</a><a href="#section-toc.1-1.16.2.2.1" class="pilcrow">¶</a></p>
 </li>
-              <li class="ulEmpty compact toc" id="section-toc.1-1.16.2.3">
+              <li class="ulEmpty toc compact" id="section-toc.1-1.16.2.3">
                 <p id="section-toc.1-1.16.2.3.1"><a href="#section-16.3" class="xref">16.3</a>.  <a href="#name-example-3-handle-based-pass" class="xref">Example 3: Handle-based Passport Model Example</a><a href="#section-toc.1-1.16.2.3.1" class="pilcrow">¶</a></p>
 </li>
-              <li class="ulEmpty compact toc" id="section-toc.1-1.16.2.4">
+              <li class="ulEmpty toc compact" id="section-toc.1-1.16.2.4">
                 <p id="section-toc.1-1.16.2.4.1"><a href="#section-16.4" class="xref">16.4</a>.  <a href="#name-example-4-timestamp-based-b" class="xref">Example 4: Timestamp-based Background-Check Model Example</a><a href="#section-toc.1-1.16.2.4.1" class="pilcrow">¶</a></p>
 </li>
-              <li class="ulEmpty compact toc" id="section-toc.1-1.16.2.5">
+              <li class="ulEmpty toc compact" id="section-toc.1-1.16.2.5">
                 <p id="section-toc.1-1.16.2.5.1"><a href="#section-16.5" class="xref">16.5</a>.  <a href="#name-example-5-nonce-based-backg" class="xref">Example 5: Nonce-based Background-Check Model Example</a><a href="#section-toc.1-1.16.2.5.1" class="pilcrow">¶</a></p>
 </li>
             </ul>
 </li>
-          <li class="ulEmpty compact toc" id="section-toc.1-1.17">
+          <li class="ulEmpty toc compact" id="section-toc.1-1.17">
             <p id="section-toc.1-1.17.1"><a href="#section-17" class="xref">17</a>. <a href="#name-references" class="xref">References</a><a href="#section-toc.1-1.17.1" class="pilcrow">¶</a></p>
-<ul class="ulEmpty compact toc">
-<li class="ulEmpty compact toc" id="section-toc.1-1.17.2.1">
+<ul class="ulEmpty toc compact">
+<li class="ulEmpty toc compact" id="section-toc.1-1.17.2.1">
                 <p id="section-toc.1-1.17.2.1.1"><a href="#section-17.1" class="xref">17.1</a>.  <a href="#name-normative-references" class="xref">Normative References</a><a href="#section-toc.1-1.17.2.1.1" class="pilcrow">¶</a></p>
 </li>
-              <li class="ulEmpty compact toc" id="section-toc.1-1.17.2.2">
+              <li class="ulEmpty toc compact" id="section-toc.1-1.17.2.2">
                 <p id="section-toc.1-1.17.2.2.1"><a href="#section-17.2" class="xref">17.2</a>.  <a href="#name-informative-references" class="xref">Informative References</a><a href="#section-toc.1-1.17.2.2.1" class="pilcrow">¶</a></p>
 </li>
             </ul>
 </li>
-          <li class="ulEmpty compact toc" id="section-toc.1-1.18">
+          <li class="ulEmpty toc compact" id="section-toc.1-1.18">
             <p id="section-toc.1-1.18.1"><a href="#section-appendix.a" class="xref"></a><a href="#name-contributors" class="xref">Contributors</a><a href="#section-toc.1-1.18.1" class="pilcrow">¶</a></p>
 </li>
-          <li class="ulEmpty compact toc" id="section-toc.1-1.19">
+          <li class="ulEmpty toc compact" id="section-toc.1-1.19">
             <p id="section-toc.1-1.19.1"><a href="#section-appendix.b" class="xref"></a><a href="#name-authors-addresses" class="xref">Authors' Addresses</a><a href="#section-toc.1-1.19.1" class="pilcrow">¶</a></p>
 </li>
         </ul>
@@ -1226,7 +1232,7 @@ machines attached to their network, for purposes such as inventory,
 audit, anomaly detection, record maintenance and/or trending reports (logging).
 The network operator may also want a policy
 by which full access is only granted to devices that meet some definition
-of hygiene, and so wants to get claims about such information and verify
+of hygiene, and so wants to get Claims about such information and verify
 its validity.
 Remote attestation is desired to prevent vulnerable or
 compromised devices from getting access to the network and potentially
@@ -1382,24 +1388,24 @@ Relying Party:  </dt>
 <p id="section-2.6-1">There is a class of malware that holds a device hostage and does
 not allow it to reboot to prevent updates from being applied.
 This can be a significant problem, because it allows a fleet of devices to be held hostage for ransom.<a href="#section-2.6-1" class="pilcrow">¶</a></p>
-<p id="section-2.6-2">In the case, the Relying Party is the watchdog timer in the TPM/secure
-enclave itself, as described in <span>[<a href="#TCGarch" class="xref">TCGarch</a>]</span> section 43.3.
-The Attestation Results are returned to the device, and provided to the enclave.<a href="#section-2.6-2" class="pilcrow">¶</a></p>
-<p id="section-2.6-3">If the watchdog does not receive regular, and fresh, Attestation Results as
-to the systems' health, then it forces a reboot.<a href="#section-2.6-3" class="pilcrow">¶</a></p>
-<span class="break"></span><dl class="dlParallel" id="section-2.6-4">
-          <dt id="section-2.6-4.1">
+<p id="section-2.6-2">A solution to this problem is a watchdog timer implemented in a protected
+environment such as a Trusted Platform Module (TPM),
+as described in <span>[<a href="#TCGarch" class="xref">TCGarch</a>]</span> section 43.3.
+If the watchdog does not receive regular, and fresh, Attestation Results as
+to the system's health, then it forces a reboot.<a href="#section-2.6-2" class="pilcrow">¶</a></p>
+<span class="break"></span><dl class="dlParallel" id="section-2.6-3">
+          <dt id="section-2.6-3.1">
 Attester:  </dt>
-          <dd style="margin-left: 1.5em" id="section-2.6-4.2">
-            <p id="section-2.6-4.2.1">The device that should be protected from being held hostage for
-a long period of time<a href="#section-2.6-4.2.1" class="pilcrow">¶</a></p>
+          <dd style="margin-left: 1.5em" id="section-2.6-3.2">
+            <p id="section-2.6-3.2.1">The device that should be protected from being held hostage for
+a long period of time<a href="#section-2.6-3.2.1" class="pilcrow">¶</a></p>
 </dd>
           <dd class="break"></dd>
-<dt id="section-2.6-4.3">
+<dt id="section-2.6-3.3">
 Relying Party:  </dt>
-          <dd style="margin-left: 1.5em" id="section-2.6-4.4">
-            <p id="section-2.6-4.4.1">A watchdog capable of triggering a procedure that resets a device into
-a known, good operational state.<a href="#section-2.6-4.4.1" class="pilcrow">¶</a></p>
+          <dd style="margin-left: 1.5em" id="section-2.6-3.4">
+            <p id="section-2.6-3.4.1">A watchdog capable of triggering a procedure that resets a device into
+a known, good operational state.<a href="#section-2.6-3.4.1" class="pilcrow">¶</a></p>
 </dd>
         <dd class="break"></dd>
 </dl>
@@ -1491,11 +1497,11 @@ and/or is programmed into the Relying Party.<a href="#section-3-5" class="pilcro
 <a href="#section-3.1" class="section-number selfRef">3.1. </a><a href="#name-appraisal-policies" class="section-name selfRef">Appraisal Policies</a>
         </h3>
 <p id="section-3.1-1">The Verifier, when appraising Evidence, or the Relying Party, when
-appraising Attestation Results, checks the values of some claims
+appraising Attestation Results, checks the values of some Claims
 against constraints specified in its appraisal policy.  Such constraints might
 involve a comparison for equality against a Reference Value, or a check for being in
 a range bounded by Reference Values, or membership in a set of Reference Values,
-or a check against values in other claims, or any other test.<a href="#section-3.1-1" class="pilcrow">¶</a></p>
+or a check against values in other Claims, or any other test.<a href="#section-3.1-1" class="pilcrow">¶</a></p>
 </section>
 </div>
 <div id="reference-values">
@@ -1505,13 +1511,18 @@ or a check against values in other claims, or any other test.<a href="#section-3
         </h3>
 <p id="section-3.2-1">Reference Values used in appraisal come from a Reference Value Provider
 and are then used by the appraisal policy.
-They might be conveyed in any number of ways, including:
-* as part of the appraisal policy itself, if the Verifier Owner either: acquires Reference Values from a Reference Value Provider or is itself a Reference Value Provider;
-* as part of an Endorsement, if the Endorser either acquires Reference Values from a Reference Value Provider or is itself a Reference Value Provider; or
-* via separate communication.<a href="#section-3.2-1" class="pilcrow">¶</a></p>
-<p id="section-3.2-2">The actual data format and semantics of any Reference Values are specific to
-claims and implementations. This architecture document does not define any
-general purpose format for them or general means for comparison.<a href="#section-3.2-2" class="pilcrow">¶</a></p>
+They might be conveyed in any number of ways, including:<a href="#section-3.2-1" class="pilcrow">¶</a></p>
+<ul class="normal">
+<li class="normal" id="section-3.2-2.1">as part of the appraisal policy itself, if the Verifier Owner either: acquires Reference Values from a Reference Value Provider or is itself a Reference Value Provider;<a href="#section-3.2-2.1" class="pilcrow">¶</a>
+</li>
+          <li class="normal" id="section-3.2-2.2">as part of an Endorsement, if the Endorser either acquires Reference Values from a Reference Value Provider or is itself a Reference Value Provider; or<a href="#section-3.2-2.2" class="pilcrow">¶</a>
+</li>
+          <li class="normal" id="section-3.2-2.3">via separate communication.<a href="#section-3.2-2.3" class="pilcrow">¶</a>
+</li>
+        </ul>
+<p id="section-3.2-3">The actual data format and semantics of any Reference Values are specific to
+Claims and implementations. This architecture document does not define any
+general purpose format for them or general means for comparison.<a href="#section-3.2-3" class="pilcrow">¶</a></p>
 </section>
 </div>
 <div id="two-types-of-environments-of-an-attester">
@@ -1565,14 +1576,18 @@ discussed could be combined into even more complex implementations.<a href="#sec
 </div>
 <p id="section-3.3-3">Claims are collected from Target Environments.
 That is, Attesting Environments collect the values and the information to be represented in Claims, by reading system registers and variables, calling into subsystems, taking measurements on code, memory, or other security related assets of the Target Environment.
-Attesting Environments then format the claims appropriately, and typically
+Attesting Environments then format the Claims appropriately, and typically
 use key material and
 cryptographic functions, such as signing or cipher algorithms, to
 create Evidence.
 There is no limit to or requirement on the types of hardware or software environments that can be used to implement an Attesting Environment, for example: Trusted Execution Environments (TEEs), embedded Secure Elements
-(eSEs), Trusted Platform Modules (TPMs), or BIOS firmware.
-An arbitrary execution environment may not, by default, be capable of claims collection for a given Target Environment.
-Execution environments that are designed specifically to be capable of claims collection are referred to in this document as Attesting Environments.<a href="#section-3.3-3" class="pilcrow">¶</a></p>
+(eSEs), Trusted Platform Modules (TPMs), or BIOS firmware.<a href="#section-3.3-3" class="pilcrow">¶</a></p>
+<p id="section-3.3-4">An arbitrary execution environment may not, by default, be capable of claims collection for a given Target Environment.
+Execution environments that are designed specifically to be capable of claims collection are referred to in this document as Attesting Environments.
+For example, a TPM doesn't actively collect claims itself, it instead
+requires another component to feed various values to the TPM.
+Thus, an Attesting Environment in such a case would be the combination
+of the TPM together with whatever component is feeding it the measurements.<a href="#section-3.3-4" class="pilcrow">¶</a></p>
 </section>
 </div>
 <div id="layered-attestation">
@@ -1588,9 +1603,11 @@ In order to appraise Evidence generated by an Attester, the Verifier needs to tr
 Trust in the Attester's root of trust can be established either directly (e.g., the Verifier puts the root of trust's public key into its trust anchor store) or transitively via an Endorser (e.g., the Verifier puts the Endorser's public key into its trust anchor store).
 In layered attestation, a root of trust is the initial Attesting Environment.
 Claims can be collected from or about each layer.
-The corresponding claims can be structured in a nested fashion that reflects the nesting of the Attester's layers.<a href="#section-3.4-1" class="pilcrow">¶</a></p>
+The corresponding Claims can be structured in a nested fashion that reflects the nesting of the Attester's layers.
+Normally, Claims are not self-asserted, rather a previous layer acts as the Attesting Environment for the next layer.
+Claims about a root of trust typically are asserted by Endorsers.<a href="#section-3.4-1" class="pilcrow">¶</a></p>
 <p id="section-3.4-2">The device illustrated in <a href="#layered" class="xref">Figure 3</a> includes (A) a BIOS stored in read-only memory,
-(B) an updatable bootloader, and (C) an operating system kernel.<a href="#section-3.4-2" class="pilcrow">¶</a></p>
+(B) an operating system kernel, and (C) an application or workload.<a href="#section-3.4-2" class="pilcrow">¶</a></p>
 <span id="name-layered-attester"></span><div id="layered">
 <figure id="figure-3">
           <div class="artwork art-text alignCenter art-LAYERED" id="section-3.4-3.1">
@@ -1609,7 +1626,7 @@ The corresponding claims can be structured in a nested fashion that reflects the
 |   | C                         |    |    |   for
 |   '---------------------------'    |    | B and C
 |           Collect |                |    |
-|           claims  |                |    |
+|           Claims  |                |    |
 |   .---------------|-----------.    |    |
 |   | Target        v           |    |    |
 |   | Environment .-----------. |    |    |
@@ -1620,7 +1637,7 @@ The corresponding claims can be structured in a nested fashion that reflects the
 |   |                     ^     |    |
 |   '---------------------|-----'    |
 |           Collect |     | Evidence |
-|           claims  v     |  for B   |
+|           Claims  v     |  for B   |
 |                 .-----------.      |
 |                 | Attesting |      |
 |                 |Environment|      |
@@ -1675,7 +1692,7 @@ that it measures, rather than only one as shown in <a href="#layered" class="xre
         </h3>
 <p id="section-3.5-1">A Composite Device is an entity composed of multiple sub-entities such that its
 trustworthiness has to be determined by the appraisal of all these sub-entities.<a href="#section-3.5-1" class="pilcrow">¶</a></p>
-<p id="section-3.5-2">Each sub-entity has at least one Attesting Environment collecting the claims
+<p id="section-3.5-2">Each sub-entity has at least one Attesting Environment collecting the Claims
 from at least one Target Environment, then this sub-entity generates Evidence
 about its trustworthiness. Therefore each sub-entity can be called an Attester.
 Among all the Attesters, there may be only some which have the ability to communicate
@@ -1683,7 +1700,7 @@ with the Verifier while others do not.<a href="#section-3.5-2" class="pilcrow">�
 <p id="section-3.5-3">For example, a carrier-grade router consists of a chassis and multiple slots.
 The trustworthiness of the router depends on all its slots' trustworthiness.
 Each slot has an Attesting Environment such as a TEE collecting the
-claims of its boot process, after which it generates Evidence from the claims.
+Claims of its boot process, after which it generates Evidence from the Claims.
 Among these slots, only a main slot can communicate with the Verifier
 while other slots cannot. But other slots can communicate with the main
 slot by the links between them inside the router. So the main slot collects
@@ -1701,8 +1718,8 @@ each router is an Attester and the main router is the lead Attester.<a href="#se
 <p id="section-3.5-5"><a href="#composite" class="xref">Figure 4</a> depicts the conceptual data flow for a Composite Device.<a href="#section-3.5-5" class="pilcrow">¶</a></p>
 <span id="name-composite-device-2"></span><div id="composite">
 <figure id="figure-4">
-          <div class="artwork art-text alignLeft art-COMPOSITE" id="section-3.5-6.1">
-<pre>
+          <div id="section-3.5-6.1">
+<pre class="sourcecode lang-COMPOSITE">
                    .-----------------------------.
                    |           Verifier          |
                    '-----------------------------'
@@ -1734,21 +1751,30 @@ each router is an Attester and the main router is the lead Attester.<a href="#se
           </figcaption></figure>
 </div>
 <p id="section-3.5-7">In the Composite Device, each Attester generates its own Evidence by its
-Attesting Environment(s) collecting the claims from its Target Environment(s).
-The lead Attester collects the Evidence of all other Attesters and then
-generates the Evidence of the whole Composite Attester.<a href="#section-3.5-7" class="pilcrow">¶</a></p>
-<p id="section-3.5-8">An entity can take on multiple RATS roles (e.g., Attester, Verifier, Relying
-Party, etc.) at the same time. The combination of roles can be arbitrary.
-For example, in this Composite Device scenario, the entity inside
+Attesting Environment(s) collecting the Claims from its Target Environment(s).
+The lead Attester collects the Evidence from the other Attesters and conveys it to a Verifier.
+Collection of Evidence from sub-entities may itself be a form of Claims collection that results in Evidence asserted by the lead Attester.
+The lead Attester generates the Evidence about the layout of the Composite Device, while sub-Attesters generate Evidence about their respective modules.<a href="#section-3.5-7" class="pilcrow">¶</a></p>
+<p id="section-3.5-8">In this situation, the trust model described in <a href="#trustmodel" class="xref">Section 7</a> is also suitable for this inside Verifier.<a href="#section-3.5-8" class="pilcrow">¶</a></p>
+</section>
+</div>
+<div id="implementation-considerations">
+<section id="section-3.6">
+        <h3 id="name-implementation-consideratio">
+<a href="#section-3.6" class="section-number selfRef">3.6. </a><a href="#name-implementation-consideratio" class="section-name selfRef">Implementation Considerations</a>
+        </h3>
+<p id="section-3.6-1">An entity can take on multiple RATS roles (e.g., Attester, Verifier, Relying
+Party, etc.) at the same time.
+Multiple entities can cooperate to implement a single RATS role as well.
+The combination of roles and entities can be arbitrary.
+For example, in the Composite Device scenario, the entity inside
 the lead Attester can also take on the role of a Verifier, and the
-outside entity of Verifier can take on the role of a Relying Party.
+outer entity of Verifier can take on the role of a Relying Party.
 After collecting the Evidence of other Attesters, this inside Verifier uses
 Endorsements and appraisal policies (obtained the same way as any other
 Verifier) in the verification process to generate Attestation Results.
-The inside Verifier then conveys the Attestation Results of other Attesters,
-whether in the same conveyance protocol as the Evidence or not,
-to the outside Verifier.<a href="#section-3.5-8" class="pilcrow">¶</a></p>
-<p id="section-3.5-9">In this situation, the trust model described in <a href="#trustmodel" class="xref">Section 7</a> is also suitable for this inside Verifier.<a href="#section-3.5-9" class="pilcrow">¶</a></p>
+The inside Verifier then conveys the Attestation Results of other Attesters to the outside Verifier,
+whether in the same conveyance protocol as the Evidence or not.<a href="#section-3.6-1" class="pilcrow">¶</a></p>
 </section>
 </div>
 </section>
@@ -2017,7 +2043,8 @@ appraisal policy.<a href="#section-5.1-2" class="pilcrow">¶</a></p>
 includes an Attestation Result, in this model the details of that protocol
 constrain the serialization format of the Attestation Result. The
 format of the Evidence on the other hand is only constrained by the
-Attester-Verifier remote attestation protocol.<a href="#section-5.1-5" class="pilcrow">¶</a></p>
+Attester-Verifier remote attestation protocol.
+This implies that interoperability and standardization is more relevant for Attestation Results than it is for Evidence.<a href="#section-5.1-5" class="pilcrow">¶</a></p>
 <span id="name-passport-model-2"></span><div id="passport">
 <figure id="figure-5">
           <div class="artwork art-text alignLeft" id="section-5.1-6.1">
@@ -2332,16 +2359,16 @@ See <a href="#privacy-considerations" class="xref">Section 11</a> for more discu
         <h3 id="name-evidence">
 <a href="#section-8.1" class="section-number selfRef">8.1. </a><a href="#name-evidence" class="section-name selfRef">Evidence</a>
         </h3>
-<p id="section-8.1-1">Evidence is a set of claims about the target environment that reveal operational
+<p id="section-8.1-1">Evidence is a set of Claims about the target environment that reveal operational
 status, health, configuration or construction that have security relevance.
 Evidence is evaluated by a Verifier to establish its relevance, compliance, and timeliness.
 Claims need to be collected in a manner that is reliable.
 Evidence needs to be securely associated with the target environment
-so that the Verifier cannot be tricked into accepting claims originating
+so that the Verifier cannot be tricked into accepting Claims originating
 from a different environment (that may be more trustworthy).
 Evidence also must be protected from man-in-the-middle attackers who may observe,
 change or misdirect Evidence as it travels from Attester to Verifier.
-The timeliness of Evidence can be captured using claims that pinpoint the time
+The timeliness of Evidence can be captured using Claims that pinpoint the time
 or interval when changes in operational status, health, and so forth occur.<a href="#section-8.1-1" class="pilcrow">¶</a></p>
 </section>
 </div>
@@ -2380,16 +2407,17 @@ component or user on the device.<a href="#section-8.2-2" class="pilcrow">¶</a><
 <p id="section-8.3-2">Attestation Results may carry a boolean value indicating compliance or non-compliance with a Verifier's appraisal policy, or may carry a richer set of Claims about the Attester, against which the Relying Party applies its Appraisal Policy for Attestation Results.<a href="#section-8.3-2" class="pilcrow">¶</a></p>
 <p id="section-8.3-3">The quality of the Attestation Results depend upon the ability of the Verifier to evaluate the Attester.
 Different Attesters have a different <em>Strength of Function</em> <span>[<a href="#strengthoffunction" class="xref">strengthoffunction</a>]</span>, which results in the Attestation Results being qualitatively different in strength.<a href="#section-8.3-3" class="pilcrow">¶</a></p>
-<p id="section-8.3-4">A result that indicates non-compliance can be used by an Attester (in the passport model) or
+<p id="section-8.3-4">An Attestation Result that indicates non-compliance can be used by an Attester (in the passport model) or
 a Relying Party (in the background-check model) to indicate that the Attester
 should not be treated as authorized and may be in need of remediation.  In some cases,
 it may even indicate that the Evidence itself cannot be authenticated as being correct.<a href="#section-8.3-4" class="pilcrow">¶</a></p>
-<p id="section-8.3-5">An Attestation Result that indicates compliance can be used by a Relying Party to make
-authorization decisions based on the Relying Party's appraisal policy.  The simplest such
-policy might be to simply authorize any party supplying a compliant Attestation Result
-signed by a trusted Verifier.  A more complex policy might also entail comparing information
-provided in the result against Reference Values, or applying more complex logic
-on such information.<a href="#section-8.3-5" class="pilcrow">¶</a></p>
+<p id="section-8.3-5">By default, the Relying Party does not believe the Attester to be compliant.
+Upon receipt of an authentic Attestation Result and given the Appraisal Policy for Attestation Results is satisfied, then
+the Attester is allowed to perform the prescribed actions or access.
+The simplest such Appraisal Policy might authorize granting the Attester full access or control over the resources guarded by the Relying Party.
+A more complex Appraisal Policy might involve using the information
+provided in the Attestation Result to compare against expected values, or to apply complex analysis
+of other information contained in the Attestation Result.<a href="#section-8.3-5" class="pilcrow">¶</a></p>
 <p id="section-8.3-6">Thus, Attestation Results often need to include detailed information about the Attester,
 for use by Relying Parties, much like physical passports and drivers licenses include
 personal information such as name and date of birth.  Unlike Evidence, which is often
@@ -2450,13 +2478,13 @@ natively in the format that is natural for the Relying Party.<a href="#section-9
 <p id="section-9-7">This motivates having a common "information model" that describes
 the set of remote attestation related information in an encoding-agnostic
 way, and allowing multiple encoding formats (CWT, JWT, X.509, etc.)
-that encode the same information into the claims format needed by the
+that encode the same information into the Claims format needed by the
 Relying Party.<a href="#section-9-7" class="pilcrow">¶</a></p>
 <p id="section-9-8">The following diagram illustrates that Evidence and Attestation Results
 might each have multiple possible encoding formats, so that they can be
 conveyed by various existing protocols.  It also motivates why the Verifier
-might also be responsible for accepting Evidence that encodes claims in
-one format, while issuing Attestation Results that encode claims in
+might also be responsible for accepting Evidence that encodes Claims in
+one format, while issuing Attestation Results that encode Claims in
 a different format.<a href="#section-9-8" class="pilcrow">¶</a></p>
 <span id="name-multiple-attesters-and-rely"></span><div id="multievidence_diag">
 <figure id="figure-9">
@@ -2549,7 +2577,7 @@ indistinguishable.<a href="#section-10.2-2.2" class="pilcrow">¶</a>
         </ul>
 </section>
 </div>
-<div id="implicit-timekeeping-using-epoch-handles">
+<div id="epochfreshness">
 <section id="section-10.3">
         <h3 id="name-implicit-timekeeping-using-e">
 <a href="#section-10.3" class="section-number selfRef">10.3. </a><a href="#name-implicit-timekeeping-using-e" class="section-name selfRef">Implicit Timekeeping using Epoch Handles</a>
@@ -2576,11 +2604,19 @@ previous handles in messages and/or checks, by requiring retries
 in case of mismatching handles, or by buffering incoming messages
 that might be associated with a handle that the receiver has not yet
 obtained.<a href="#section-10.3-4" class="pilcrow">¶</a></p>
-<p id="section-10.3-5">Whereas the nonce approach typically requires the appraising entity
+<p id="section-10.3-5">More generally, in order to prevent an appraising entity from generating false
+negatives (e.g., discarding Evidence that is deemed stale even if it is
+not), the appraising entity should keep an "epoch window" consisting of the
+most recently received handles.  The depth of such epoch window is directly
+proportional to the maximum network propagation delay between the first to receive the handle and the last to receive the handle, and it is inversely proportional to the epoch duration.
+The appraising entity shall compare the
+handle carried in the received Evidence or Attestation Result with the handles
+in its epoch window to find a suitable match.<a href="#section-10.3-5" class="pilcrow">¶</a></p>
+<p id="section-10.3-6">Whereas the nonce approach typically requires the appraising entity
 to keep state for each nonce generated, the handle approach minimizes
 the state kept to be independent of the number of Attesters or Verifiers
 from which it expects to receive Evidence or Attestation Results, as long
-as all use the same Handle Distributor.<a href="#section-10.3-5" class="pilcrow">¶</a></p>
+as all use the same Handle Distributor.<a href="#section-10.3-6" class="pilcrow">¶</a></p>
 </section>
 </div>
 <div id="discussion">
@@ -2600,6 +2636,7 @@ signed.  For example, values generated at boot time might have been saved to
 secure storage until network connectivity is established to the remote Verifier
 and a nonce is obtained.<a href="#section-10.4-2" class="pilcrow">¶</a></p>
 <p id="section-10.4-3">A more detailed discussion with examples appears in <a href="#time-considerations" class="xref">Section 16</a>.<a href="#section-10.4-3" class="pilcrow">¶</a></p>
+<p id="section-10.4-4">For a discussion on the security of handles see <a href="#handles-sec" class="xref">Section 12.3</a>.<a href="#section-10.4-4" class="pilcrow">¶</a></p>
 </section>
 </div>
 </section>
@@ -2625,7 +2662,7 @@ Attestation that goes up to include containers and applications may further
 reveal details about a specific system or user.<a href="#section-11-2" class="pilcrow">¶</a></p>
 <p id="section-11-3">In some cases, an attacker may be able to make inferences about attestations
 from the results or timing of the processing.
-For example, an attacker might be able to infer the value of specific claims if it knew that only certain values were accepted by the Relying Party.<a href="#section-11-3" class="pilcrow">¶</a></p>
+For example, an attacker might be able to infer the value of specific Claims if it knew that only certain values were accepted by the Relying Party.<a href="#section-11-3" class="pilcrow">¶</a></p>
 <p id="section-11-4">Evidence and Attestation Results data structures are expected to support
 integrity protection encoding (e.g., COSE, JOSE, X.509) and optionally might
 support confidentiality protection (e.g., COSE, JOSE).
@@ -2674,11 +2711,11 @@ an isolated environment might be provided by a process, a dedicated chip,
 a TEE, a virtual machine, or another secure mode of operation.
 The Attesting Environment must be protected from unauthorized modification to ensure it behaves correctly. There must also be confidentiality so that the signing key is not captured and used elsewhere to forge Evidence.<a href="#section-12.1.1-1" class="pilcrow">¶</a></p>
 <p id="section-12.1.1-2">In many cases the user or owner of the device must not be able to modify or exfiltrate keys from the Attesting Environment of the Attester.
-For example the owner or user of a mobile phone or FIDO authenticator is not trusted.
+For example the owner or user of a mobile phone or FIDO authenticator, having full control over the keys, might not be trusted to use the keys to report Evidence about the environment that protects the keys.
 The point of remote attestation is for the Relying Party to be able to trust the Attester even though they don't trust the user or owner.<a href="#section-12.1.1-2" class="pilcrow">¶</a></p>
-<p id="section-12.1.1-3">Some of the measures for low level security include process or application isolation by a high-level operating system, and perhaps restricting access to root or system privilege. For extremely simple single-use devices that don't use a protected mode operating system, like a Bluetooth speaker, the isolation might only be the plastic housing for the device.<a href="#section-12.1.1-3" class="pilcrow">¶</a></p>
-<p id="section-12.1.1-4">At medium level security, a special restricted operating environment like a Trusted Execution Environment (TEE) might be used. In this case, only security-oriented software has access to the Attester and key material.<a href="#section-12.1.1-4" class="pilcrow">¶</a></p>
-<p id="section-12.1.1-5">For high level security, specialized hardware will likely be used providing protection against chip decapping attacks, power supply and clock glitching, faulting injection and RF and power side channel attacks.<a href="#section-12.1.1-5" class="pilcrow">¶</a></p>
+<p id="section-12.1.1-3">Some of the measures for a minimally protected system might include process or application isolation by a high-level operating system, and perhaps restricting access to root or system privilege. For extremely simple single-use devices that don't use a protected mode operating system, like a Bluetooth speaker, the isolation might only be the plastic housing for the device.<a href="#section-12.1.1-3" class="pilcrow">¶</a></p>
+<p id="section-12.1.1-4">Measures for a moderately protected system could include a special restricted operating environment like a Trusted Execution Environment (TEE) might be used. In this case, only security-oriented software has access to the Attester and key material.<a href="#section-12.1.1-4" class="pilcrow">¶</a></p>
+<p id="section-12.1.1-5">Measures for a highly protected system could include specialized hardware that is used to provide protection against chip decapping attacks, power supply and clock glitching, faulting injection and RF and power side channel attacks.<a href="#section-12.1.1-5" class="pilcrow">¶</a></p>
 </section>
 </div>
 <div id="attestation-key-provisioning-processes">
@@ -2687,7 +2724,10 @@ The point of remote attestation is for the Relying Party to be able to trust the
 <a href="#section-12.1.2" class="section-number selfRef">12.1.2. </a><a href="#name-attestation-key-provisionin" class="section-name selfRef">Attestation Key Provisioning Processes</a>
           </h4>
 <p id="section-12.1.2-1">Attestation key provisioning is the process that occurs in the factory or elsewhere that establishes the signing key material on the device and the verification key material off the device. Sometimes this is referred to as "personalization".<a href="#section-12.1.2-1" class="pilcrow">¶</a></p>
-<p id="section-12.1.2-2">One way to provision a key is to first generate it external to the device and then copy the key onto the device. In this case, confidentiality of the generator, as well as the path over which the key is provisioned, is necessary. This can be achieved in a number of ways.<a href="#section-12.1.2-2" class="pilcrow">¶</a></p>
+<p id="section-12.1.2-2">One way to provision a key is to first generate it external to the device and then copy the key onto the device.
+In this case, confidentiality of the generator, as well as the path over which the key is provisioned, is necessary.
+The manufacturer needs to take care to protect it with measures consistent with its value.
+This can be achieved in a number of ways.<a href="#section-12.1.2-2" class="pilcrow">¶</a></p>
 <p id="section-12.1.2-3">Confidentiality can be achieved entirely with physical provisioning facility security involving no encryption at all. For low-security use cases, this might be simply locking doors and limiting personnel that can enter the facility. For high-security use cases, this might involve a special area of the facility accessible only to select security-trained personnel.<a href="#section-12.1.2-3" class="pilcrow">¶</a></p>
 <p id="section-12.1.2-4">Cryptography can also be used to support confidentiality, but keys that are used to then provision attestation keys must somehow have been provisioned securely beforehand (a recursive problem).<a href="#section-12.1.2-4" class="pilcrow">¶</a></p>
 <p id="section-12.1.2-5">In many cases both some physical security and some cryptography will be necessary and useful to establish confidentiality.<a href="#section-12.1.2-5" class="pilcrow">¶</a></p>
@@ -2728,13 +2768,36 @@ architecture to protect against replay attacks.<a href="#section-12.2-3" class="
 is important to understand the strength of the root of trust, e.g.,
 whether it is mutable software, or firmware that is read-only after
 boot, or immutable hardware/ROM.<a href="#section-12.2-4" class="pilcrow">¶</a></p>
-<p id="section-12.2-5">It is also important that the appraisal policy was itself obtained
-securely.  As such, if appraisal policies for a Relying Party or for a Verifier
-can be configured via a network protocol, the ability to create Evidence about
-the integrity of the entity providing the appraisal policy needs to be
-considered.<a href="#section-12.2-5" class="pilcrow">¶</a></p>
-<p id="section-12.2-6">The security of conveyed information may be applied at different layers, whether by a conveyance protocol, or an information encoding format. This architecture expects attestation messages (i.e., Evidence, Attestation Results, Endorsements, Reference Values, and Policies) are end-to-end protected based on the role interaction context.
+<p id="section-12.2-5">It is also important that the appraisal policy was itself obtained securely.
+If an attacker can configure appraisal policies for a Relying Party or for a Verifier, then integrity of the process is compromised.<a href="#section-12.2-5" class="pilcrow">¶</a></p>
+<p id="section-12.2-6">The security protecting conveyed information may be applied at different layers, whether by a conveyance protocol, or an information encoding format. This architecture expects attestation messages (i.e., Evidence, Attestation Results, Endorsements, Reference Values, and Policies) are end-to-end protected based on the role interaction context.
 For example, if an Attester produces Evidence that is relayed through some other entity that doesn't implement the Attester or the intended Verifier roles, then the relaying entity should not expect to have access to the Evidence.<a href="#section-12.2-6" class="pilcrow">¶</a></p>
+</section>
+</div>
+<div id="handles-sec">
+<section id="section-12.3">
+        <h3 id="name-handle-based-attestation">
+<a href="#section-12.3" class="section-number selfRef">12.3. </a><a href="#name-handle-based-attestation" class="section-name selfRef">Handle-based Attestation</a>
+        </h3>
+<p id="section-12.3-1">Handles, described in <a href="#epochfreshness" class="xref">Section 10.3</a>, can be tampered with, dropped, delayed and
+reordered by an attacker.<a href="#section-12.3-1" class="pilcrow">¶</a></p>
+<p id="section-12.3-2">An attacker could be either external or belong to the distribution group, for
+example if one of the Attester entities have been compromised.<a href="#section-12.3-2" class="pilcrow">¶</a></p>
+<p id="section-12.3-3">An attacker who is able to tamper with handles can potentially lock all the
+participants in a certain epoch of choice for ever, effectively freezing time.
+This is problematic since it destroys the ability to ascertain freshness of
+Evidence and Attestation Results.<a href="#section-12.3-3" class="pilcrow">¶</a></p>
+<p id="section-12.3-4">To mitigate this threat, the transport should be at least integrity protected
+and provide origin authentication.<a href="#section-12.3-4" class="pilcrow">¶</a></p>
+<p id="section-12.3-5">Selective dropping of handles is equivalent to pinning the victim node to a past epoch.
+An attacker could drop handles to only some entities and not others, which will typically result in a denial of service due to the permanent staleness of the Attestation Result or Evidence.<a href="#section-12.3-5" class="pilcrow">¶</a></p>
+<p id="section-12.3-6">Delaying or reordering handles is equivalent to manipulating the victim's
+timeline at will.  This ability could be used by a malicious actor (e.g., a
+compromised router) to mount a confusion attack where, for example, a Verifier
+is tricked into accepting Evidence coming from a past epoch as fresh, while in
+the meantime the Attester has been compromised.<a href="#section-12.3-6" class="pilcrow">¶</a></p>
+<p id="section-12.3-7">Reordering and dropping attacks are mitigated if the transport provides the ability to detect reordering and drop.
+However, the delay attack described above can't be thwarted in this manner.<a href="#section-12.3-7" class="pilcrow">¶</a></p>
 </section>
 </div>
 </section>
@@ -2813,7 +2876,7 @@ or might be defined relative to some other timestamp or timeticks counter.<a hre
           <tr>
             <td class="text-left" rowspan="1" colspan="1">HR</td>
             <td class="text-left" rowspan="1" colspan="1">Handle received</td>
-            <td class="text-left" rowspan="1" colspan="1">A handle distributed by a Handle Distributor was received.</td>
+            <td class="text-left" rowspan="1" colspan="1">A handle is successfully received and processed by an entity.</td>
           </tr>
           <tr>
             <td class="text-left" rowspan="1" colspan="1">EG</td>
@@ -2891,7 +2954,6 @@ timestamp can directly compare it to its own clock and timestamps.<a href="#sect
         ~                                                 ~
         |                                                 |
         |                                              time(OP_r)
-        |                                                 |
 </pre><a href="#section-16.1-2" class="pilcrow">¶</a>
 </div>
 <p id="section-16.1-3">In the figures above and in subsequent sections, curly braces
@@ -2994,18 +3056,29 @@ in terms of <code>time(RX_v)-time(RG_v)</code>, then the Relying Party can check
         <h3 id="name-example-3-handle-based-pass">
 <a href="#section-16.3" class="section-number selfRef">16.3. </a><a href="#name-example-3-handle-based-pass" class="section-name selfRef">Example 3: Handle-based Passport Model Example</a>
         </h3>
-<p id="section-16.3-1">The following example illustrates a hypothetical Passport Model
-solution that uses handles instead of nonces or timestamps.
-In this example, Evidence generation based on received handles always uses the current (most recent) handle.
-As handles are distributed over the network, all involved entities receive a fresh handle at roughly the same time.
-Due to distribution over the network, there is some jitter with respect to the time the Handle is received, time(HR), for each involved entity.
-To compensate for this jitter, there is a small period of overlap (a specified offset) in which both a current handle and corresponding former handle are valid in Evidence appraisal: <code>validity-duration = time(HR'_v) + offset - time(HR_v)</code>. The offset is typically based on a network's round trip time.
-Analogously, the generation of valid Evidence is only possible, if the age of the handle used is lower than the validity-duration: <code>time(HR_v) - time(EG_a) &lt; validity-duration</code>.<a href="#section-16.3-1" class="pilcrow">¶</a></p>
-<p id="section-16.3-2">From the point of view of a Verifier, the generation of valid Evidence is only possible, if the age of the handle used in the Evidence generation is younger than the duration of the distribution interval -- "(time(HR'_v)-time(HR_v)) - (time(HR_a)-time(EG_a)) &lt; validity-duration".<a href="#section-16.3-2" class="pilcrow">¶</a></p>
-<p id="section-16.3-3">Due to the validity-duration of handles, multiple different pieces of Evidence can be generated based on the same handle.
-The resulting granularity (time resolution) of Evidence freshness is typically lower than the resolution of clock-based tickcounters.<a href="#section-16.3-3" class="pilcrow">¶</a></p>
-<p id="section-16.3-4">The following example illustrates a hypothetical Background-Check Model solution that uses handles and requires a trustworthy time source available to the Handle Distributor role.<a href="#section-16.3-4" class="pilcrow">¶</a></p>
-<div class="artwork art-text alignLeft" id="section-16.3-5">
+<p id="section-16.3-1">The example in <a href="#fig-handle-passport" class="xref">Figure 10</a> illustrates a hypothetical Passport Model
+solution that uses handles instead of nonces or timestamps.<a href="#section-16.3-1" class="pilcrow">¶</a></p>
+<p id="section-16.3-2">The Handle Distributor broadcasts handle <code>H</code> which starts a new
+epoch <code>E</code> for a protocol participant upon reception at <code>time(HR)</code>.<a href="#section-16.3-2" class="pilcrow">¶</a></p>
+<p id="section-16.3-3">The Attester generates Evidence incorporating handle <code>H</code> and conveys it to the
+Verifier.<a href="#section-16.3-3" class="pilcrow">¶</a></p>
+<p id="section-16.3-4">The Verifier appraises that the received handle <code>H</code> is "fresh" according to the
+definition provided in <a href="#epochfreshness" class="xref">Section 10.3</a> whereby retries are required in the case of mismatching handles, and generates an Attestation Result.  The
+Attestation Result is conveyed to the Attester.<a href="#section-16.3-4" class="pilcrow">¶</a></p>
+<p id="section-16.3-5">After the transmission of handle <code>H'</code> a new epoch <code>E'</code> is
+established when <code>H'</code> is received by each protocol participant.  The Attester
+relays the Attestation Result obtained during epoch <code>E</code> (associated with handle
+<code>H</code>) to the Relying Party using the handle for the current epoch <code>H'</code>.
+If the Relying Party had not yet received <code>H'</code>, then the Attestation Result would be rejected, but in this example, it is received.<a href="#section-16.3-5" class="pilcrow">¶</a></p>
+<p id="section-16.3-6">In the illustrated scenario, the handle for relaying an Attestation Result to the Relying Party is current, while a previous handle was used to generate Verifier evaluated evidence.
+This indicates that at least one epoch transition has occurred, and the Attestation Results may only be as fresh as the previous epoch.
+If the Relying Party remembers the previous handle H during an epoch window
+as discussed in <a href="#epochfreshness" class="xref">Section 10.3</a>, and the message is received during
+that window, the Attestation Result is accepted as fresh, and otherwise
+it is rejected as stale.<a href="#section-16.3-6" class="pilcrow">¶</a></p>
+<span id="name-handle-based-passport-model"></span><div id="fig-handle-passport">
+<figure id="figure-10">
+          <div class="artwork art-text alignLeft" id="section-16.3-7.1">
 <pre>
                   .-------------.
    .----------.   | Handle      |   .----------.  .---------------.
@@ -3015,27 +3088,29 @@ The resulting granularity (time resolution) of Evidence freshness is typically l
         |                |                |               |
         ~                ~                ~               ~
         |                |                |               |
-     time(HR_a)&lt;---------+-------------time(HR_v)------&gt;time(HR_r)
+     time(HR_a)&lt;------H--+--H--------time(HR_v)-----&gt;time(HR_r)
         |                |                |               |
      time(EG_a)          |                |               |
-        |----Evidence{time(EG_a)}--------&gt;|               |
-        | {Handle1,time(EG_a)-time(VG_a)}|                |
-        |                |             time(RG_v)         |
-        |&lt;-----Attestation Result---------|               |
-        |   {time(RG_v),time(RX_v)}       |               |
-        |                |                                |
-        ~                ~                                ~
-        |                |                                |
-     time(HR_a')&lt;--------'----------------------------&gt;time(HR_r')
-        |                                                 |
-     time(RR_a)                                           /
-        |--Attestation Result{time(RX_v)-time(RG_v)}--&gt;time(RA_r)
-        |    {Handle2, time(RR_a)-time(EG_a)}             |
-        ~                                                 ~
-        |                                                 |
-        |                                              time(OP_r)
-        |                                                 |
-</pre><a href="#section-16.3-5" class="pilcrow">¶</a>
+        |---Evidence---------------------&gt;|               |
+        |   {H,time(EG_a)-time(VG_a)}     |               |
+        |                |                |               |
+        |                |           time(RG_v)           |
+        |&lt;--Attestation Result------------|               |
+        |   {H,time(RX_v)-time(RG_v)}     |               |
+        |                |                |               |
+     time(HR'_a)&lt;-----H'-+--H'-------time(HR'_v)----&gt;time(HR'_r)
+        |                |                |               |
+        |---[Attestation Result---------------------&gt;time(RA_r)
+        |   {H,time(RX_v)-time(RG_v)},H'] |               |
+        |                |                |               |
+        ~                ~                ~               ~
+        |                |                |               |
+        |                |                |          time(OP_r)
+</pre>
+</div>
+<figcaption><a href="#figure-10" class="selfRef">Figure 10</a>:
+<a href="#name-handle-based-passport-model" class="selfRef">Handle-based Passport Model</a>
+          </figcaption></figure>
 </div>
 </section>
 </div>
@@ -3128,11 +3203,11 @@ in terms of <code>time(RX_v)-time(RG_v)</code>, then the Relying Party can check
 <dl class="references">
 <dt id="RFC7519">[RFC7519]</dt>
         <dd>
-<span class="refAuthor">Jones, M.</span><span class="refAuthor">, Bradley, J.</span><span class="refAuthor">, and N. Sakimura</span>, <span class="refTitle">"JSON Web Token (JWT)"</span>, <span class="seriesInfo">RFC 7519</span>, <span class="seriesInfo">DOI 10.17487/RFC7519</span>, <time datetime="2015-05" class="refDate">May 2015</time>, <span>&lt;<a href="https://www.rfc-editor.org/info/rfc7519">https://www.rfc-editor.org/info/rfc7519</a>&gt;</span>. </dd>
+<span class="refAuthor">Jones, M.</span><span class="refAuthor">, Bradley, J.</span><span class="refAuthor">, and N. Sakimura</span>, <span class="refTitle">"JSON Web Token (JWT)"</span>, <span class="seriesInfo">RFC 7519</span>, <span class="seriesInfo">DOI 10.17487/RFC7519</span>, <time datetime="2015-05" class="refDate">May 2015</time>, <span>&lt;<a href="https://datatracker.ietf.org/doc/html/rfc7519">https://datatracker.ietf.org/doc/html/rfc7519</a>&gt;</span>. </dd>
 <dd class="break"></dd>
 <dt id="RFC8392">[RFC8392]</dt>
       <dd>
-<span class="refAuthor">Jones, M.</span><span class="refAuthor">, Wahlstroem, E.</span><span class="refAuthor">, Erdtman, S.</span><span class="refAuthor">, and H. Tschofenig</span>, <span class="refTitle">"CBOR Web Token (CWT)"</span>, <span class="seriesInfo">RFC 8392</span>, <span class="seriesInfo">DOI 10.17487/RFC8392</span>, <time datetime="2018-05" class="refDate">May 2018</time>, <span>&lt;<a href="https://www.rfc-editor.org/info/rfc8392">https://www.rfc-editor.org/info/rfc8392</a>&gt;</span>. </dd>
+<span class="refAuthor">Jones, M.</span><span class="refAuthor">, Wahlstroem, E.</span><span class="refAuthor">, Erdtman, S.</span><span class="refAuthor">, and H. Tschofenig</span>, <span class="refTitle">"CBOR Web Token (CWT)"</span>, <span class="seriesInfo">RFC 8392</span>, <span class="seriesInfo">DOI 10.17487/RFC8392</span>, <time datetime="2018-05" class="refDate">May 2018</time>, <span>&lt;<a href="https://datatracker.ietf.org/doc/html/rfc8392">https://datatracker.ietf.org/doc/html/rfc8392</a>&gt;</span>. </dd>
 <dd class="break"></dd>
 </dl>
 </section>
@@ -3151,19 +3226,19 @@ in terms of <code>time(RX_v)-time(RG_v)</code>, then the Relying Party can check
 <dd class="break"></dd>
 <dt id="I-D.birkholz-rats-tuda">[I-D.birkholz-rats-tuda]</dt>
         <dd>
-<span class="refAuthor">Fuchs, A.</span><span class="refAuthor">, Birkholz, H.</span><span class="refAuthor">, McDonald, I.</span><span class="refAuthor">, and C. Bormann</span>, <span class="refTitle">"Time-Based Uni-Directional Attestation"</span>, <span class="refContent">Work in Progress</span>, <span class="seriesInfo">Internet-Draft, draft-birkholz-rats-tuda-04</span>, <time datetime="2021-01-13" class="refDate">13 January 2021</time>, <span>&lt;<a href="http://www.ietf.org/internet-drafts/draft-birkholz-rats-tuda-04.txt">http://www.ietf.org/internet-drafts/draft-birkholz-rats-tuda-04.txt</a>&gt;</span>. </dd>
+<span class="refAuthor">Fuchs, A.</span><span class="refAuthor">, Birkholz, H.</span><span class="refAuthor">, McDonald, I. E.</span><span class="refAuthor">, and C. Bormann</span>, <span class="refTitle">"Time-Based Uni-Directional Attestation"</span>, <span class="refContent">Work in Progress</span>, <span class="seriesInfo">Internet-Draft, draft-birkholz-rats-tuda-04</span>, <time datetime="2021-01-13" class="refDate">13 January 2021</time>, <span>&lt;<a href="https://datatracker.ietf.org/doc/html/draft-birkholz-rats-tuda-04.txt">https://datatracker.ietf.org/doc/html/draft-birkholz-rats-tuda-04.txt</a>&gt;</span>. </dd>
 <dd class="break"></dd>
 <dt id="I-D.birkholz-rats-uccs">[I-D.birkholz-rats-uccs]</dt>
         <dd>
-<span class="refAuthor">Birkholz, H.</span><span class="refAuthor">, O'Donoghue, J.</span><span class="refAuthor">, Cam-Winget, N.</span><span class="refAuthor">, and C. Bormann</span>, <span class="refTitle">"A CBOR Tag for Unprotected CWT Claims Sets"</span>, <span class="refContent">Work in Progress</span>, <span class="seriesInfo">Internet-Draft, draft-birkholz-rats-uccs-02</span>, <time datetime="2020-12-02" class="refDate">2 December 2020</time>, <span>&lt;<a href="http://www.ietf.org/internet-drafts/draft-birkholz-rats-uccs-02.txt">http://www.ietf.org/internet-drafts/draft-birkholz-rats-uccs-02.txt</a>&gt;</span>. </dd>
+<span class="refAuthor">Birkholz, H.</span><span class="refAuthor">, O'Donoghue, J.</span><span class="refAuthor">, Cam-Winget, N.</span><span class="refAuthor">, and C. Bormann</span>, <span class="refTitle">"A CBOR Tag for Unprotected CWT Claims Sets"</span>, <span class="refContent">Work in Progress</span>, <span class="seriesInfo">Internet-Draft, draft-birkholz-rats-uccs-03</span>, <time datetime="2021-03-08" class="refDate">8 March 2021</time>, <span>&lt;<a href="https://datatracker.ietf.org/doc/html/draft-birkholz-rats-uccs-03.txt">https://datatracker.ietf.org/doc/html/draft-birkholz-rats-uccs-03.txt</a>&gt;</span>. </dd>
 <dd class="break"></dd>
 <dt id="I-D.ietf-teep-architecture">[I-D.ietf-teep-architecture]</dt>
         <dd>
-<span class="refAuthor">Pei, M.</span><span class="refAuthor">, Tschofenig, H.</span><span class="refAuthor">, Thaler, D.</span><span class="refAuthor">, and D. Wheeler</span>, <span class="refTitle">"Trusted Execution Environment Provisioning (TEEP) Architecture"</span>, <span class="refContent">Work in Progress</span>, <span class="seriesInfo">Internet-Draft, draft-ietf-teep-architecture-13</span>, <time datetime="2020-11-02" class="refDate">2 November 2020</time>, <span>&lt;<a href="http://www.ietf.org/internet-drafts/draft-ietf-teep-architecture-13.txt">http://www.ietf.org/internet-drafts/draft-ietf-teep-architecture-13.txt</a>&gt;</span>. </dd>
+<span class="refAuthor">Pei, M.</span><span class="refAuthor">, Tschofenig, H.</span><span class="refAuthor">, Thaler, D.</span><span class="refAuthor">, and D. Wheeler</span>, <span class="refTitle">"Trusted Execution Environment Provisioning (TEEP) Architecture"</span>, <span class="refContent">Work in Progress</span>, <span class="seriesInfo">Internet-Draft, draft-ietf-teep-architecture-14</span>, <time datetime="2021-02-22" class="refDate">22 February 2021</time>, <span>&lt;<a href="https://datatracker.ietf.org/doc/html/draft-ietf-teep-architecture-14.txt">https://datatracker.ietf.org/doc/html/draft-ietf-teep-architecture-14.txt</a>&gt;</span>. </dd>
 <dd class="break"></dd>
 <dt id="I-D.tschofenig-tls-cwt">[I-D.tschofenig-tls-cwt]</dt>
         <dd>
-<span class="refAuthor">Tschofenig, H.</span><span class="refAuthor"> and M. Brossard</span>, <span class="refTitle">"Using CBOR Web Tokens (CWTs) in Transport Layer Security (TLS) and Datagram Transport Layer Security (DTLS)"</span>, <span class="refContent">Work in Progress</span>, <span class="seriesInfo">Internet-Draft, draft-tschofenig-tls-cwt-02</span>, <time datetime="2020-07-13" class="refDate">13 July 2020</time>, <span>&lt;<a href="http://www.ietf.org/internet-drafts/draft-tschofenig-tls-cwt-02.txt">http://www.ietf.org/internet-drafts/draft-tschofenig-tls-cwt-02.txt</a>&gt;</span>. </dd>
+<span class="refAuthor">Tschofenig, H.</span><span class="refAuthor"> and M. Brossard</span>, <span class="refTitle">"Using CBOR Web Tokens (CWTs) in Transport Layer Security (TLS) and Datagram Transport Layer Security (DTLS)"</span>, <span class="refContent">Work in Progress</span>, <span class="seriesInfo">Internet-Draft, draft-tschofenig-tls-cwt-02</span>, <time datetime="2020-07-13" class="refDate">13 July 2020</time>, <span>&lt;<a href="https://datatracker.ietf.org/doc/html/draft-tschofenig-tls-cwt-02.txt">https://datatracker.ietf.org/doc/html/draft-tschofenig-tls-cwt-02.txt</a>&gt;</span>. </dd>
 <dd class="break"></dd>
 <dt id="OPCUA">[OPCUA]</dt>
         <dd>
@@ -3171,11 +3246,11 @@ in terms of <code>time(RX_v)-time(RG_v)</code>, then the Relying Party can check
 <dd class="break"></dd>
 <dt id="RFC4949">[RFC4949]</dt>
         <dd>
-<span class="refAuthor">Shirey, R.</span>, <span class="refTitle">"Internet Security Glossary, Version 2"</span>, <span class="seriesInfo">FYI 36</span>, <span class="seriesInfo">RFC 4949</span>, <span class="seriesInfo">DOI 10.17487/RFC4949</span>, <time datetime="2007-08" class="refDate">August 2007</time>, <span>&lt;<a href="https://www.rfc-editor.org/info/rfc4949">https://www.rfc-editor.org/info/rfc4949</a>&gt;</span>. </dd>
+<span class="refAuthor">Shirey, R.</span>, <span class="refTitle">"Internet Security Glossary, Version 2"</span>, <span class="seriesInfo">FYI 36</span>, <span class="seriesInfo">RFC 4949</span>, <span class="seriesInfo">DOI 10.17487/RFC4949</span>, <time datetime="2007-08" class="refDate">August 2007</time>, <span>&lt;<a href="https://datatracker.ietf.org/doc/html/rfc4949">https://datatracker.ietf.org/doc/html/rfc4949</a>&gt;</span>. </dd>
 <dd class="break"></dd>
 <dt id="RFC8322">[RFC8322]</dt>
         <dd>
-<span class="refAuthor">Field, J.</span><span class="refAuthor">, Banghart, S.</span><span class="refAuthor">, and D. Waltermire</span>, <span class="refTitle">"Resource-Oriented Lightweight Information Exchange (ROLIE)"</span>, <span class="seriesInfo">RFC 8322</span>, <span class="seriesInfo">DOI 10.17487/RFC8322</span>, <time datetime="2018-02" class="refDate">February 2018</time>, <span>&lt;<a href="https://www.rfc-editor.org/info/rfc8322">https://www.rfc-editor.org/info/rfc8322</a>&gt;</span>. </dd>
+<span class="refAuthor">Field, J.</span><span class="refAuthor">, Banghart, S.</span><span class="refAuthor">, and D. Waltermire</span>, <span class="refTitle">"Resource-Oriented Lightweight Information Exchange (ROLIE)"</span>, <span class="seriesInfo">RFC 8322</span>, <span class="seriesInfo">DOI 10.17487/RFC8322</span>, <time datetime="2018-02" class="refDate">February 2018</time>, <span>&lt;<a href="https://datatracker.ietf.org/doc/html/rfc8322">https://datatracker.ietf.org/doc/html/rfc8322</a>&gt;</span>. </dd>
 <dd class="break"></dd>
 <dt id="strengthoffunction">[strengthoffunction]</dt>
         <dd>
@@ -3239,7 +3314,7 @@ in terms of <code>time(RX_v)-time(RG_v)</code>, then the Relying Party can check
         <div dir="auto" class="left"><span class="fn nameRole">Andrew Guinn</span></div>
 </address>
 <address class="vcard">
-        <div dir="auto" class="left"><span class="fn nameRole">Peter Lostcco</span></div>
+        <div dir="auto" class="left"><span class="fn nameRole">Peter Loscocco</span></div>
 <div class="email">
 <span>Email:</span>
 <a href="mailto:pete.loscocco@gmail.com" class="email">pete.loscocco@gmail.com</a>
@@ -3270,6 +3345,27 @@ in terms of <code>time(RX_v)-time(RG_v)</code>, then the Relying Party can check
 <div class="email">
 <span>Email:</span>
 <a href="mailto:mandyam@qti.qualcomm.com" class="email">mandyam@qti.qualcomm.com</a>
+</div>
+</address>
+<address class="vcard">
+        <div dir="auto" class="left"><span class="fn nameRole">Kathleen Moriarty</span></div>
+<div class="email">
+<span>Email:</span>
+<a href="mailto:kathleen.moriarty.ietf@gmail.com" class="email">kathleen.moriarty.ietf@gmail.com</a>
+</div>
+</address>
+<address class="vcard">
+        <div dir="auto" class="left"><span class="fn nameRole">Guy Fedorkow</span></div>
+<div class="email">
+<span>Email:</span>
+<a href="mailto:gfedorkow@juniper.net" class="email">gfedorkow@juniper.net</a>
+</div>
+</address>
+<address class="vcard">
+        <div dir="auto" class="left"><span class="fn nameRole">Simon Frost</span></div>
+<div class="email">
+<span>Email:</span>
+<a href="mailto:Simon.Frost@arm.com" class="email">Simon.Frost@arm.com</a>
 </div>
 </address>
 </section>
