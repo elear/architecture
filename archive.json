@@ -1,6 +1,6 @@
 {
   "magic": "E!vIA5L86J2I",
-  "timestamp": "2021-02-27T00:11:47.869721+00:00",
+  "timestamp": "2021-03-09T08:43:42.775289+00:00",
   "repo": "ietf-rats-wg/architecture",
   "labels": [
     {
@@ -3120,7 +3120,7 @@
       "id": "MDU6SXNzdWU3NTU0MTAwNzg=",
       "title": "7.2 -- Attester",
       "url": "https://github.com/ietf-rats-wg/architecture/issues/208",
-      "state": "OPEN",
+      "state": "CLOSED",
       "author": "mcr",
       "authorAssociation": "COLLABORATOR",
       "assignees": [
@@ -3131,8 +3131,8 @@
       ],
       "body": "````\r\nIn some cases where Evidence contains sensitive information, an\r\n   Attester might even require that a Verifier first go through a TLS\r\n   authentication or a remote attestation procedure with it before the\r\n   Attester will send the sensitive Evidence.  _This can be done by\r\n   having the Attester first act as a Verifier/Relying Party, and the\r\n   Verifier act as its own Attester, as discussed above._\r\n````\r\n\r\nI don\u2019t know what it means, but all the cases here seem to ultimately rely on a unitary Verifier/Relying-Party somewhere in the chain.\r\n\r\nMaybe that\u2019s not true\u2026  if the verifier and relying party trust each other by fiat, the roles need not be combined.",
       "createdAt": "2020-12-02T16:11:27Z",
-      "updatedAt": "2021-02-09T21:33:46Z",
-      "closedAt": null,
+      "updatedAt": "2021-03-06T00:05:34Z",
+      "closedAt": "2021-03-06T00:05:33Z",
       "comments": [
         {
           "author": "dthaler",
@@ -3161,6 +3161,13 @@
           "body": "closed with email: https://mailarchive.ietf.org/arch/msg/rats/e0QYhqWO0MxmZHWx654AB5vrHtw",
           "createdAt": "2021-02-09T21:33:46Z",
           "updatedAt": "2021-02-09T21:33:46Z"
+        },
+        {
+          "author": "dthaler",
+          "authorAssociation": "COLLABORATOR",
+          "body": "Closing since Michael's comment above says \"closed with email\" but didn't actually close the issue",
+          "createdAt": "2021-03-06T00:05:33Z",
+          "updatedAt": "2021-03-06T00:05:33Z"
         }
       ]
     },
@@ -26889,6 +26896,139 @@
       },
       "comments": [],
       "reviews": []
+    },
+    {
+      "number": 290,
+      "id": "MDExOlB1bGxSZXF1ZXN0NTgxNDEyMTMx",
+      "title": "Fix layered attestation diagram",
+      "url": "https://github.com/ietf-rats-wg/architecture/pull/290",
+      "state": "OPEN",
+      "author": "dthaler",
+      "authorAssociation": "COLLABORATOR",
+      "assignees": [],
+      "labels": [],
+      "body": "Once we added Reference Value Provider as a role, the diagram wasn't updated.  The \"A, B, and C\" part is about reference values, not the endorsing of signing capabilities, which is just about A.\r\n\r\nSigned-off-by: Dave Thaler <dthaler@ntdev.microsoft.com>",
+      "createdAt": "2021-02-27T22:23:46Z",
+      "updatedAt": "2021-03-01T20:08:49Z",
+      "baseRepository": "ietf-rats-wg/architecture",
+      "baseRefName": "master",
+      "baseRefOid": "21edbcc064a344e12497462ddd41438fcfa89690",
+      "headRepository": "ietf-rats-wg/architecture",
+      "headRefName": "layered",
+      "headRefOid": "ba97c666228d6df4a940498171ada548cec6ea88",
+      "closedAt": null,
+      "mergedAt": null,
+      "mergedBy": null,
+      "mergeCommit": null,
+      "comments": [],
+      "reviews": [
+        {
+          "id": "MDE3OlB1bGxSZXF1ZXN0UmV2aWV3NjAwMjkwODgw",
+          "commit": {
+            "abbreviatedOid": "ba97c66"
+          },
+          "author": "mcr",
+          "authorAssociation": "COLLABORATOR",
+          "state": "APPROVED",
+          "body": "",
+          "createdAt": "2021-02-28T18:44:22Z",
+          "updatedAt": "2021-02-28T18:44:22Z",
+          "comments": []
+        },
+        {
+          "id": "MDE3OlB1bGxSZXF1ZXN0UmV2aWV3NjAwMzM3Nzg5",
+          "commit": {
+            "abbreviatedOid": "ba97c66"
+          },
+          "author": "William-PanWei",
+          "authorAssociation": "COLLABORATOR",
+          "state": "APPROVED",
+          "body": "",
+          "createdAt": "2021-03-01T01:30:47Z",
+          "updatedAt": "2021-03-01T01:30:47Z",
+          "comments": []
+        },
+        {
+          "id": "MDE3OlB1bGxSZXF1ZXN0UmV2aWV3NjAxMDIyNzEz",
+          "commit": {
+            "abbreviatedOid": "ba97c66"
+          },
+          "author": "nedmsmith",
+          "authorAssociation": "COLLABORATOR",
+          "state": "CHANGES_REQUESTED",
+          "body": "requesting adding \", b and c\" to the endorsements portion of the figure.",
+          "createdAt": "2021-03-01T18:07:51Z",
+          "updatedAt": "2021-03-01T18:08:46Z",
+          "comments": [
+            {
+              "originalPosition": 6,
+              "body": "I think it is correct to include \"Endorsement for A, B and C\" since it is possible that attestation keys could exist at other layers besides the first (A). The definition of endorsement focuses on the \"signing capability\" which doesn't have to be centralized into a single part of the device / platform. ",
+              "createdAt": "2021-03-01T18:07:51Z",
+              "updatedAt": "2021-03-01T18:08:46Z"
+            }
+          ]
+        },
+        {
+          "id": "MDE3OlB1bGxSZXF1ZXN0UmV2aWV3NjAxMDc4NDcw",
+          "commit": {
+            "abbreviatedOid": "ba97c66"
+          },
+          "author": "dthaler",
+          "authorAssociation": "COLLABORATOR",
+          "state": "COMMENTED",
+          "body": "",
+          "createdAt": "2021-03-01T19:14:48Z",
+          "updatedAt": "2021-03-01T19:14:48Z",
+          "comments": [
+            {
+              "originalPosition": 6,
+              "body": "Endorsement is defined as \"A secure statement that an Endorser vouches for the integrity of an Attester's various capabilities such as Claims collection and Evidence signing.\"   A is what vouches for the integrity of B's capabilities and similarly B is what vouches for C.\r\n\r\nWe have no discussion anywhere of having multiple components vouch for the same target environment, so I disagree with Ned's proposal as being insufficiently motivated by any other text.  This PR is just to make the doc be internally consistent and fix an accidental oversight when RV providers were added distinct from Endorsers.",
+              "createdAt": "2021-03-01T19:14:48Z",
+              "updatedAt": "2021-03-01T19:14:48Z"
+            }
+          ]
+        },
+        {
+          "id": "MDE3OlB1bGxSZXF1ZXN0UmV2aWV3NjAxMTA4MDM2",
+          "commit": {
+            "abbreviatedOid": "ba97c66"
+          },
+          "author": "nedmsmith",
+          "authorAssociation": "COLLABORATOR",
+          "state": "COMMENTED",
+          "body": "",
+          "createdAt": "2021-03-01T19:51:47Z",
+          "updatedAt": "2021-03-01T19:51:48Z",
+          "comments": [
+            {
+              "originalPosition": 6,
+              "body": "I agree that the diagram requires 'fixing' from the change made earlier. \r\nI disagree that that attesting environment A is effectively the Endorser for environment B and so on. While it is correct that A 'vouches' for B and B for C etc... I disagree that A can vouch for the signing capability of B beyond what is captured in software. Software has to run on hardware that A isn't capable of assessing. If B and C are not hardware (only A) then I agree with Dave's analysis. If B and C can be hardware (that isn't A hardware) then it is possible for B and C to also have Endorsers. ",
+              "createdAt": "2021-03-01T19:51:47Z",
+              "updatedAt": "2021-03-01T19:51:48Z"
+            }
+          ]
+        },
+        {
+          "id": "MDE3OlB1bGxSZXF1ZXN0UmV2aWV3NjAxMTIxNjQ2",
+          "commit": {
+            "abbreviatedOid": "ba97c66"
+          },
+          "author": "dthaler",
+          "authorAssociation": "COLLABORATOR",
+          "state": "COMMENTED",
+          "body": "",
+          "createdAt": "2021-03-01T20:08:49Z",
+          "updatedAt": "2021-03-01T20:08:49Z",
+          "comments": [
+            {
+              "originalPosition": 6,
+              "body": "The text says:\r\n> The device illustrated in {{layered}} includes (A) a BIOS stored in read-only memory,\r\n> (B) an operating system kernel, and (C) an application or workload.\r\n\r\nSo B and C are already explicitly stated to be software per above.",
+              "createdAt": "2021-03-01T20:08:49Z",
+              "updatedAt": "2021-03-01T20:08:49Z"
+            }
+          ]
+        }
+      ]
     }
   ]
 }
