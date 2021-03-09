@@ -80,7 +80,7 @@ Table of Contents
      2.2.  Confidential Machine Learning Model Protection
      2.3.  Confidential Data Protection
      2.4.  Critical Infrastructure Control
-     2.5.  Trusted Execution Environment (TEE) Provisioning
+     2.5.  Trusted Execution Environment Provisioning
      2.6.  Hardware Watchdog
      2.7.  FIDO Biometric Authentication
    3.  Architectural Overview
@@ -248,42 +248,43 @@ Table of Contents
 
 2.4.  Critical Infrastructure Control
 
-   In this use case, potentially harmful physical equipment (e.g., power
-   grid, traffic control, hazardous chemical processing, etc.) is
-   connected to a network.  The organization managing such
-   infrastructure needs to ensure that only authorized code and users
-   can control such processes, and that these processes are protected
-   from unauthorized manipulation or other threats.  When a protocol
-   operation can affect a component of a critical system, the device
-   attached to the critical equipment requires some assurances depending
-   on the security context, including that: the requesting device or
-   application has not been compromised, and the requesters and actors
-   act on applicable policies, As such, remote attestation can be used
-   to only accept commands from requesters that are within policy.
+   Potentially harmful physical equipment (e.g., power grid, traffic
+   control, hazardous chemical processing, etc.) is connected to a
+   network in support of critical infrastructure.  The organization
+   managing such infrastructure needs to ensure that only authorized
+   code and users can control corresponding critical processes, and that
+   these processes are protected from unauthorized manipulation or other
+   threats.  When a protocol operation can affect a critical system
+   component of the infrastructure, devices attached to that critical
+   component require some assurances depending on the security context,
+   including that: a requesting device or application has not been
+   compromised, and the requesters and actors act on applicable
+   policies.  As such, RATS can be used to only accept commands from
+   requesters that are within policy.
 
    Attester:  A device or application wishing to control physical
-      equipment
+      equipment.
 
    Relying Party:  A device or application connected to potentially
       dangerous physical equipment (hazardous chemical processing,
-      traffic control, power grid, etc.)
+      traffic control, power grid, etc.).
 
-2.5.  Trusted Execution Environment (TEE) Provisioning
+2.5.  Trusted Execution Environment Provisioning
 
-   A "Trusted Application Manager (TAM)" server is responsible for
-   managing the applications running in the TEE of a client device.  To
-   do this, the TAM wants to assess the state of a TEE, or of
-   applications in the TEE, of a client device.  The TEE conducts a
-   remote attestation procedure with the TAM, which can then decide
-   whether the TEE is already in compliance with the TAM's latest
-   policy, or if the TAM needs to uninstall, update, or install approved
-   applications in the TEE to bring it back into compliance with the
-   TAM's policy.
+   A Trusted Application Manager (TAM) server is responsible for
+   managing the applications running in a Trusted Execution Environment
+   (TEE) of a client device.  To achieve its purpose, the TAM needs to
+   assess the state of a TEE, or of applications in the TEE, of a client
+   device.  The TEE conducts Remote Attestation Procedure with the TAM,
+   which can then decide whether the TEE is already in compliance with
+   the TAM's latest policy.  Alternatively, the TAM has to uninstall,
+   update, or install approved applications in the TEE to bring it back
+   into compliance with the TAM's policy.
 
-   Attester:  A device with a trusted execution environment capable of
-      running trusted applications that can be updated
+   Attester:  A device with a TEE capable of running trusted
+      applications that can be updated.
 
-   Relying Party:  A Trusted Application Manager
+   Relying Party:  A TAM.
 
 2.6.  Hardware Watchdog
 
