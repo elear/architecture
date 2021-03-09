@@ -226,25 +226,25 @@ Table of Contents
    decrypt a model already deployed on the Attester in encrypted form,
    to the requester.
 
-   Attester:  A device desiring to run an ML model
+   Attester:  A device desiring to run an ML model.
 
    Relying Party:  A server or service holding ML models it desires to
-      protect
+      protect.
 
 2.3.  Confidential Data Protection
 
    This is a generalization of the ML model use case above, where the
    data can be any highly confidential data, such as health data about
    customers, payroll data about employees, future business plans, etc.
-   As part of the attestation procedure, an assessment is made against a
-   set of policies to evaluate the state of the system that is
+   As part of the Remote Attestation Procedures, an assessment is made
+   against a set of policies to evaluate the state of the system that is
    requesting the confidential data.  Attestation is desired to prevent
-   leaking data to compromised devices.
+   leaking data via compromised devices.
 
-   Attester:  An entity desiring to retrieve confidential data
+   Attester:  An entity desiring to retrieve confidential data.
 
    Relying Party:  An entity that holds confidential data for release to
-      authorized entities
+      authorized entities.
 
 2.4.  Critical Infrastructure Control
 
