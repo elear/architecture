@@ -2063,12 +2063,12 @@ This implies that interoperability and standardization is more relevant for Atte
        +------------+
            ^    |
   Evidence |    | Attestation
-           |    |    Result
+           |    | Result
            |    v
        +------------+              +-------------+
        |            |-------------&gt;|             | Compare Attestation
        |  Attester  | Attestation  |   Relying   | Result against
-       |            |    Result    |    Party    | appraisal policy
+       |            | Result       |    Party    | appraisal policy
        +------------+              +-------------+
 </pre>
 </div>
@@ -2115,13 +2115,13 @@ constrained node.<a href="#section-5.2-4" class="pilcrow">¶</a></p>
 <pre>
                                 +-------------+
                                 |             | Compare Evidence
-                                |  Verifier   | against appraisal
+                                |   Verifier  | against appraisal
                                 |             | policy
                                 +-------------+
-                                     ^    |
-                            Evidence |    | Attestation
-                                     |    |    Result
-                                     |    v
+                                     ^   |
+                            Evidence |   | Attestation
+                                     |   | Result
+                                     |   v
    +------------+               +-------------+
    |            |--------------&gt;|             | Compare Attestation
    |  Attester  |   Evidence    |   Relying   | Result against
@@ -2163,24 +2163,24 @@ plans to support in the TEEP architecture <span>[<a href="#I-D.ietf-teep-archite
       |   Verifier  | against appraisal policy
       |             |
       +-------------+
-           ^    |
-   Evidence|    |Attestation
-           |    |  Result
-           |    v
+           ^   |
+  Evidence |   | Attestation
+           |   | Result
+           |   v
       +-------------+
       |             | Compare
       |   Relying   | Attestation Result
       |   Party 2   | against appraisal policy
       +-------------+
-           ^    |
-   Evidence|    |Attestation
-           |    |  Result
-           |    v
-      +----------+               +----------+
-      |          |--------------&gt;|          | Compare Attestation
-      | Attester |  Attestation  |  Relying | Result against
-      |          |     Result    |  Party 1 | appraisal policy
-      +----------+               +----------+
+           ^   |
+  Evidence |   | Attestation
+           |   | Result
+           |   v
+      +-------------+               +-------------+
+      |             |--------------&gt;|             | Compare Attestation
+      |   Attester  |  Attestation  |   Relying   | Result against
+      |             |     Result    |   Party 1   | appraisal policy
+      +-------------+               +-------------+
 </pre>
 </div>
 <figcaption><a href="#figure-7" class="selfRef">Figure 7</a>:
