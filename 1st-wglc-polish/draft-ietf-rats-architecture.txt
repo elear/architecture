@@ -5,14 +5,14 @@
 RATS Working Group                                           H. Birkholz
 Internet-Draft                                            Fraunhofer SIT
 Intended status: Informational                                 D. Thaler
-Expires: 10 September 2021                                     Microsoft
+Expires: 11 September 2021                                     Microsoft
                                                            M. Richardson
                                                 Sandelman Software Works
                                                                 N. Smith
                                                                    Intel
                                                                   W. Pan
                                                      Huawei Technologies
-                                                            9 March 2021
+                                                           10 March 2021
 
 
                Remote Attestation Procedures Architecture
@@ -56,7 +56,7 @@ Status of This Memo
    time.  It is inappropriate to use Internet-Drafts as reference
    material or to cite them other than as "work in progress."
 
-   This Internet-Draft will expire on 10 September 2021.
+   This Internet-Draft will expire on 11 September 2021.
 
 Copyright Notice
 
@@ -662,8 +662,8 @@ Table of Contents
    while sub-Attesters generate Evidence about their respective
    (sub-)modules.
 
-   In this scenario, the trust model described in Section 7 is can also
-   be applied to this inside Verifier.
+   In this scenario, the trust model described in Section 7 can also be
+   applied to an inside Verifier.
 
 3.6.  Implementation Considerations
 
@@ -799,12 +799,12 @@ Table of Contents
 
    Figure 1 shows a data-flow diagram for communication between an
    Attester, a Verifier, and a Relying Party.  The Attester conveys its
-   Evidence to the Verifier for appraisal, and the Relying Party gets
-   the Attestation Result from the Verifier.  This section refines it by
-   describing two reference models, as well as one example composition
-   thereof.  The discussion that follows is for illustrative purposes
-   only and does not constrain the interactions between RATS roles to
-   the presented patterns.
+   Evidence to the Verifier for appraisal, and the Relying Party
+   receives the Attestation Result from the Verifier.  This section
+   refines the data-flow diagram by describing two reference models, as
+   well as one example composition thereof.  The discussion that follows
+   is for illustrative purposes only and does not constrain the
+   interactions between RATS roles to the presented patterns.
 
 5.1.  Passport Model
 
