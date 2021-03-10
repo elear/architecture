@@ -713,11 +713,11 @@ This implies that interoperability and standardization is more relevant for Atte
   Evidence |    | Attestation
            |    |    Result
            |    v
-        +----------+              +---------+
-        |          |------------->|         | Compare Attestation
-        | Attester | Attestation  | Relying | Result against
-        |          |    Result    |  Party  | appraisal policy
-        +----------+              +---------+
+       +------------+              +-------------+
+       |            |------------->|             | Compare Attestation
+       |  Attester  | Attestation  |   Relying   | Result against
+       |            |    Result    |    Party    | appraisal policy
+       +------------+              +-------------+
 ~~~~
 {: #passport title="Passport Model"}
 
@@ -754,18 +754,18 @@ Such minimization is especially important if the Relying Party is a
 constrained node.
 
 ~~~~
-                               +-------------+
-                               |             | Compare Evidence
-                               |   Verifier  | against appraisal
-                               |             | policy
-                               +-------------+
-                                    ^    |
-                            Evidence|    |Attestation
-                                    |    |  Result
-                                    |    v
+                                +-------------+
+                                |             | Compare Evidence
+                                |  Verifier   | against appraisal
+                                |             | policy
+                                +-------------+
+                                     ^    |
+                            Evidence |    | Attestation
+                                     |    |    Result
+                                     |    v
    +------------+               +-------------+
    |            |-------------->|             | Compare Attestation
-   |   Attester |   Evidence    |   Relying   | Result against
+   |  Attester  |   Evidence    |   Relying   | Result against
    |            |               |    Party    | appraisal policy
    +------------+               +-------------+
 ~~~~
