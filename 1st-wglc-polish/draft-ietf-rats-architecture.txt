@@ -853,14 +853,14 @@ Table of Contents
          |             |
          +-------------+
               ^    |
-      Evidence|    |Attestation
-              |    |  Result
+     Evidence |    | Attestation
+              |    |    Result
               |    v
          +----------+              +---------+
-         |          |------------->|         |Compare Attestation
+         |          |------------->|         | Compare Attestation
          | Attester | Attestation  | Relying | Result against
-         |          |    Result    |  Party  | appraisal
-         +----------+              +---------+  policy
+         |          |    Result    |  Party  | appraisal policy
+         +----------+              +---------+
 
                           Figure 5: Passport Model
 
