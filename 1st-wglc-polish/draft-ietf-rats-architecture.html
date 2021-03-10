@@ -2474,7 +2474,7 @@ done in a way that doesn't degrade the security properties of the system
 and should use the native extension mechanisms provided by the underlying
 protocol. For example, if the TLS handshake is to be extended with
 remote attestation capabilities, attestation Evidence may be embedded
-in an ad hoc X.509 certificate extension (e.g., <span>[<a href="#TCG-DICE" class="xref">TCG-DICE</a>]</span>), or into a new
+in an ad-hoc X.509 certificate extension (e.g., <span>[<a href="#TCG-DICE" class="xref">TCG-DICE</a>]</span>), or into a new
 TLS Certificate Type (e.g., <span>[<a href="#I-D.tschofenig-tls-cwt" class="xref">I-D.tschofenig-tls-cwt</a>]</span>).<a href="#section-9-5" class="pilcrow">¶</a></p>
 <p id="section-9-6">Especially for constrained nodes there is a desire to minimize
 the amount of parsing code needed in a Relying Party, in order to both
@@ -2554,9 +2554,9 @@ Attestation Result.<a href="#section-10-3" class="pilcrow">¶</a></p>
 <p id="section-10.1-1">The first approach is to rely on synchronized and trustworthy clocks, and
 include a signed timestamp (see <span>[<a href="#I-D.birkholz-rats-tuda" class="xref">I-D.birkholz-rats-tuda</a>]</span>) along with the
 Claims in the Evidence or Attestation Result.  Timestamps can also be added on a
-per-Claim basis to distinguish the time of creation of Evidence or Attestation
+per-Claim basis to distinguish the time of generation of Evidence or Attestation
 Result from the time that a specific Claim was generated.  The clock's
-trustworthiness typically requires additional Claims about the signer's time
+trustworthiness can be established via Endorsements and typically requires additional Claims about the signer's time
 synchronization mechanism.<a href="#section-10.1-1" class="pilcrow">¶</a></p>
 </section>
 </div>
