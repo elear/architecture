@@ -1153,7 +1153,7 @@ Table of Contents
    be done similarly to how a Relying Party might establish trust in a
    Verifier.
 
-   As discusssed in Section 7.3, authentication or attestation in both
+   As discussed in Section 7.3, authentication or attestation in both
    directions might be needed, in which case typically one side's
    identity or Evidence must be considered safe to share with an
    untrusted entity, in order to bootstrap the sequence.  See Section 11
@@ -1165,7 +1165,7 @@ Table of Contents
 
    Evidence is a set of Claims about the target environment that reveal
    operational status, health, configuration or construction that have
-   security relevance.  Evidence is evaluated by a Verifier to establish
+   security relevance.  Evidence is appraised by a Verifier to establish
    its relevance, compliance, and timeliness.  Claims need to be
    collected in a manner that is reliable.  Evidence needs to be
    securely associated with the target environment so that the Verifier
@@ -1199,13 +1199,13 @@ Table of Contents
    means of authorization for use cases that wish to constrain _which_
    compliant devices are considered authorized for some purpose.  For
    example, an enterprise using remote attestation for Network Endpoint
-   Assessment may not wish to let every healthy laptop from the same
-   manufacturer onto the network, but instead only want to let devices
-   that it legally owns onto the network.  Thus, an Endorsement may be
-   helpful information in authenticating information about a device, but
-   is not necessarily sufficient to authorize access to resources which
-   may need device-specific information such as a public key for the
-   device or component or user on the device.
+   Assessment [RFC5209] may not wish to let every healthy laptop from
+   the same manufacturer onto the network, but instead only want to let
+   devices that it legally owns onto the network.  Thus, an Endorsement
+   may be helpful information in authenticating information about a
+   device, but is not necessarily sufficient to authorize access to
+   resources which may need device-specific information such as a public
+   key for the device or component or user on the device.
 
 8.3.  Attestation Results
 
@@ -2089,6 +2089,11 @@ Table of Contents
    [RFC4949]  Shirey, R., "Internet Security Glossary, Version 2",
               FYI 36, RFC 4949, DOI 10.17487/RFC4949, August 2007,
               <https://datatracker.ietf.org/doc/html/rfc4949>.
+
+   [RFC5209]  Sangster, P., Khosravi, H., Mani, M., Narayan, K., and J.
+              Tardo, "Network Endpoint Assessment (NEA): Overview and
+              Requirements", RFC 5209, DOI 10.17487/RFC5209, June 2008,
+              <https://datatracker.ietf.org/doc/html/rfc5209>.
 
    [RFC8322]  Field, J., Banghart, S., and D. Waltermire, "Resource-
               Oriented Lightweight Information Exchange (ROLIE)",

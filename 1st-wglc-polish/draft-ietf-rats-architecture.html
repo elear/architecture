@@ -2347,7 +2347,7 @@ to convey Evidence that is otherwise unprotected (e.g., not signed). Appropriate
 <p id="section-7.5-1">In some scenarios, the Endorser, Reference Value Provider, and Verifier Owner may need to trust the Verifier
 before giving the Endorsement, Reference Values, or appraisal policy to it.  This can be done
 similarly to how a Relying Party might establish trust in a Verifier.<a href="#section-7.5-1" class="pilcrow">¶</a></p>
-<p id="section-7.5-2">As discusssed in <a href="#rpowner-trust" class="xref">Section 7.3</a>, authentication or attestation in both directions might be
+<p id="section-7.5-2">As discussed in <a href="#rpowner-trust" class="xref">Section 7.3</a>, authentication or attestation in both directions might be
 needed, in which case typically one side's identity or
 Evidence must be considered safe to share with an untrusted entity,
 in order to bootstrap the sequence.
@@ -2368,7 +2368,7 @@ See <a href="#privacy-considerations" class="xref">Section 11</a> for more discu
         </h3>
 <p id="section-8.1-1">Evidence is a set of Claims about the target environment that reveal operational
 status, health, configuration or construction that have security relevance.
-Evidence is evaluated by a Verifier to establish its relevance, compliance, and timeliness.
+Evidence is appraised by a Verifier to establish its relevance, compliance, and timeliness.
 Claims need to be collected in a manner that is reliable.
 Evidence needs to be securely associated with the target environment
 so that the Verifier cannot be tricked into accepting Claims originating
@@ -2397,7 +2397,7 @@ logic on how to appraise the validity of information.<a href="#section-8.2-1" cl
 may be appropriate for some use cases, it would be inappropriate to use such an appraisal policy
 as the sole means of authorization for use cases that wish to constrain <em>which</em> compliant devices
 are considered authorized for some purpose.  For example, an enterprise using remote attestation for
-Network Endpoint Assessment may not wish to let every healthy laptop from the same
+Network Endpoint Assessment <span>[<a href="#RFC5209" class="xref">RFC5209</a>]</span> may not wish to let every healthy laptop from the same
 manufacturer onto the network, but instead only want to let devices that it legally owns
 onto the network.  Thus, an Endorsement may be helpful information in authenticating
 information about a device, but is not necessarily sufficient to authorize access to
@@ -3254,6 +3254,10 @@ in terms of <code>time(RX_v)-time(RG_v)</code>, then the Relying Party can check
 <dt id="RFC4949">[RFC4949]</dt>
         <dd>
 <span class="refAuthor">Shirey, R.</span>, <span class="refTitle">"Internet Security Glossary, Version 2"</span>, <span class="seriesInfo">FYI 36</span>, <span class="seriesInfo">RFC 4949</span>, <span class="seriesInfo">DOI 10.17487/RFC4949</span>, <time datetime="2007-08" class="refDate">August 2007</time>, <span>&lt;<a href="https://datatracker.ietf.org/doc/html/rfc4949">https://datatracker.ietf.org/doc/html/rfc4949</a>&gt;</span>. </dd>
+<dd class="break"></dd>
+<dt id="RFC5209">[RFC5209]</dt>
+        <dd>
+<span class="refAuthor">Sangster, P.</span><span class="refAuthor">, Khosravi, H.</span><span class="refAuthor">, Mani, M.</span><span class="refAuthor">, Narayan, K.</span><span class="refAuthor">, and J. Tardo</span>, <span class="refTitle">"Network Endpoint Assessment (NEA): Overview and Requirements"</span>, <span class="seriesInfo">RFC 5209</span>, <span class="seriesInfo">DOI 10.17487/RFC5209</span>, <time datetime="2008-06" class="refDate">June 2008</time>, <span>&lt;<a href="https://datatracker.ietf.org/doc/html/rfc5209">https://datatracker.ietf.org/doc/html/rfc5209</a>&gt;</span>. </dd>
 <dd class="break"></dd>
 <dt id="RFC8322">[RFC8322]</dt>
         <dd>
