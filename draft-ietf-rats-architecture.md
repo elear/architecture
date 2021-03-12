@@ -1101,15 +1101,13 @@ a different format.
 
 # Freshness {#freshness}
 
-A Verifier or Relying Party may need to learn the point in time
+A Verifier or Relying Party need to learn the point in time
 (i.e., the "epoch") an Evidence or Attestation Result has been produced.  This
 is essential in deciding whether the included Claims and their values can be
 considered fresh, meaning they still reflect the latest state of the Attester,
 and that any Attestation Result was generated using the latest Appraisal Policy
 for Evidence.
 
-Freshness is assessed based on the Appraisal Policy for Evidence or Attestation Results
-that compares the estimated epoch against an "expiry" threshold defined locally to that policy.
 There is, however, always a
 race condition possible in that the state of the Attester, and the
 appraisal policies might change immediately after the Evidence or Attestation
@@ -1226,16 +1224,16 @@ For example, knowing that a device is
 running a weak version of firmware provides a way to aim attacks better.
 
 Many Claims in attestation Evidence and Attestation Results are potentially
-Personally Identifying Information) depending on the end-to-end use case of
+Personally Identifying Information (PII) depending on the end-to-end use case of
 the remote attestation procedure.
-Remote attestation that goes up to include containers and applications may further
+Remote attestation that goes up to include containers and applications, e.g., in a multi-tenant architecture, may further
 reveal details about specific systems or users.
 
 In some cases, an attacker may be able to make inferences about the contents of attestation Evidence
 from the resulting effects or timing of the processing.
 For example, an attacker might be able to infer the value of specific Claims if it knew that only certain values were accepted by the Relying Party.
 
-Evidence and Attestation Results are expected to be integrity protected (i.e. via signing or a secure channel) and optionally might be confidentiality protected via encryption.
+Evidence and Attestation Results are expected to be integrity protected (i.e. either via signing or a secure channel) and optionally might be confidentiality protected via encryption.
 If confidentiality protection via signing the conceptual messages is omitted or unavailable, the protecting protocols
 that convey Evidence or Attestation Results are responsible for detailing what
 kinds of information are disclosed, and to whom they are exposed.
@@ -1253,7 +1251,7 @@ an Attestation Result for any other purpose.
 Another approach to deal with Evidence is to remove PII from the Evidence
 while still being able to verify that the Attester is one of a large set.
 This approach is often called "Direct Anonymous Attestation".  See
-{{CCC-DeepDive}} section 6.2 for more discussion.
+{{CCC-DeepDive}} section 6.2 for more discussion and .
 
 # Security Considerations {#security-considerations}
 
