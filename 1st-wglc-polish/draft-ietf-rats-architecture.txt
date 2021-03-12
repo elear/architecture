@@ -1484,13 +1484,13 @@ Table of Contents
    or Attestation Results are responsible for detailing what kinds of
    information are disclosed, and to whom they are exposed.
 
-   As Evidence might contain sensitive information, Attesters are
-   responsible for only sending such Evidence to trusted Verifiers.
-   Some Attesters might want a stronger level of assurance of the
-   trustworthiness of a Verifier before sending Evidence to it.  In such
-   cases, an Attester can first act as a Relying Party and ask for the
-   Verifier's own Attestation Result, and appraising it just as a
-   Relying Party would appraise an Attestation Result for any other
+   As Evidence might contain sensitive or confidential information,
+   Attesters are responsible for only sending such Evidence to trusted
+   Verifiers.  Some Attesters might want a stronger level of assurance
+   of the trustworthiness of a Verifier before sending Evidence to it.
+   In such cases, an Attester can first act as a Relying Party and ask
+   for the Verifier's own Attestation Result, and appraising it just as
+   a Relying Party would appraise an Attestation Result for any other
    purpose.
 
    Another approach to deal with Evidence is to remove PII from the
@@ -1504,9 +1504,9 @@ Table of Contents
 12.1.  Attester and Attestation Key Protection
 
    Implementers need to pay close attention to the protection of the
-   Attester and the factory processes for provisioning attestation key
-   material.  If either of these are compromised, intended levels of
-   assurance for RATS are compromized because attackers can forge
+   Attester and the manufacturing processes for provisioning attestation
+   key material.  If either of these are compromised, intended levels of
+   assurance for RATS are compromised because attackers can forge
    Evidence or manipulate the Attesting Environment.  For example, a
    Target Environment should not be able to tamper with the Attesting
    Environment that measures it, by isolating the two environments from
@@ -1523,7 +1523,7 @@ Table of Contents
 
    It is assumed that an Attesting Environment is sufficiently isolated
    from the Target Environment it collects Claims about and that it
-   signs the resulting Claims set with an attestation Key, so that the
+   signs the resulting Claims set with an attestation key, so that the
    Target Environment cannot forge Evidence about itself.  Such an
    isolated environment might be provided by a process, a dedicated
    chip, a TEE, a virtual machine, or another secure mode of operation.
@@ -1537,8 +1537,8 @@ Table of Contents
    Attesting Environments.  For example, the owner or user of a mobile
    phone or FIDO authenticator, having full control over the keys, might
    not be trusted to use the keys to report Evidence about the
-   environment that protects the keys.  An essential value-add of remote
-   attestation is for the Relying Party to be able to trust the Attester
+   environment that protects the keys.  An essential value-add provided
+   by RATS is for the Relying Party to be able to trust the Attester
    even if the user or owner is not trusted.
 
    Measures for a minimally protected system might include process or
@@ -1546,7 +1546,7 @@ Table of Contents
    restricted access to root or system privileges.  In contrast, For
    really simple single-use devices that don't use a protected mode
    operating system, like a Bluetooth speaker, the only factual
-   isolation might be a sturdy housing of the device.
+   isolation might be the sturdy housing of the device.
 
    Measures for a moderately protected system could include a special
    restricted operating environment, such as a TEE.  In this case, only
@@ -1582,7 +1582,8 @@ Table of Contents
    Typically, cryptography is used to enable confidentiality protection.
    This can result in recursive problems, as the key material used to
    provision attestation keys must again somehow have been provisioned
-   securely beforehand.
+   securely beforehand (requiring an additional level of protection, and
+   so on).
 
    In general, a combination of some physical security measures and some
    cryptographic measures is used to establish confidentiality
@@ -1630,11 +1631,10 @@ Table of Contents
    Relying Party or for a Verifier, then integrity of the process is
    compromised.
 
-   The security protecting conveyed information may be applied at
+   Security protected conveyed information in RATS may be applied at
    different layers, whether by a conveyance protocol, or an information
-   encoding format.  This architecture expects attestation messages
-   (i.e., Evidence, Attestation Results, Endorsements, Reference Values,
-   and Policies) are end-to-end protected based on the role interaction
+   encoding format.  This architecture expects conceptual messages (see
+   messages) to be end-to-end protected based on the role interaction
    context.  For example, if an Attester produces Evidence that is
    relayed through some other entity that doesn't implement the Attester
    or the intended Verifier roles, then the relaying entity should not
