@@ -1759,7 +1759,7 @@ Table of Contents
    highlight various timing considerations.
 
    All times are relative to the local clocks, indicated by an "_a"
-   (Attester), "_v" (Verifier), or "r" (Relying Party) suffix.
+   (Attester), "_v" (Verifier), or "_r" (Relying Party) suffix.
 
    Times with an appended Prime (') indicate a second instance of the
    same event.
