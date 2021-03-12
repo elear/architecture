@@ -1335,7 +1335,7 @@ Handles, described in {{epochfreshness}}, can be tampered with, dropped, delayed
 reordered by an attacker.
 
 An attacker could be either external or belong to the distribution group, for
-example if one of the Attester entities have been compromised.
+example, if one of the Attester entities have been compromised.
 
 An attacker who is able to tamper with handles can potentially lock all the
 participants in a certain epoch of choice for ever, effectively freezing time.
@@ -1376,7 +1376,7 @@ Frank Xia,
 and
 David Wooten.
 
-# Notable Contributions
+# Contributors
 
 Thomas Hardjono created older versions of the terminology section in collaboration with Ned Smith.
 Eric Voit provided the conceptual separation between Attestation Provision Flows and Attestation Evidence Flows.
