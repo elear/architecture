@@ -5,14 +5,14 @@
 RATS Working Group                                           H. Birkholz
 Internet-Draft                                            Fraunhofer SIT
 Intended status: Informational                                 D. Thaler
-Expires: 12 September 2021                                     Microsoft
+Expires: 13 September 2021                                     Microsoft
                                                            M. Richardson
                                                 Sandelman Software Works
                                                                 N. Smith
                                                                    Intel
                                                                   W. Pan
                                                      Huawei Technologies
-                                                           11 March 2021
+                                                           12 March 2021
 
 
                Remote Attestation Procedures Architecture
@@ -56,7 +56,7 @@ Status of This Memo
    time.  It is inappropriate to use Internet-Drafts as reference
    material or to cite them other than as "work in progress."
 
-   This Internet-Draft will expire on 12 September 2021.
+   This Internet-Draft will expire on 13 September 2021.
 
 Copyright Notice
 
@@ -1332,26 +1332,23 @@ Table of Contents
 
 10.  Freshness
 
-   A Verifier or Relying Party may need to learn the point in time
-   (i.e., the "epoch") an Evidence or Attestation Result has been
-   produced.  This is essential in deciding whether the included Claims
-   and their values can be considered fresh, meaning they still reflect
-   the latest state of the Attester, and that any Attestation Result was
-   generated using the latest Appraisal Policy for Evidence.
+   A Verifier or Relying Party need to learn the point in time (i.e.,
+   the "epoch") an Evidence or Attestation Result has been produced.
+   This is essential in deciding whether the included Claims and their
+   values can be considered fresh, meaning they still reflect the latest
+   state of the Attester, and that any Attestation Result was generated
+   using the latest Appraisal Policy for Evidence.
 
-   Freshness is assessed based on the Appraisal Policy for Evidence or
-   Attestation Results that compares the estimated epoch against an
-   "expiry" threshold defined locally to that policy.  There is,
-   however, always a race condition possible in that the state of the
-   Attester, and the appraisal policies might change immediately after
-   the Evidence or Attestation Result was generated.  The goal is merely
-   to narrow their recentness to something the Verifier (for Evidence)
-   or Relying Party (for Attestation Result) is willing to accept.  Some
-   flexibility on the freshness requirement is a key component for
-   enabling caching and reuse of both Evidence and Attestation Results,
-   which is especially valuable in cases where their computation uses a
-   substantial part of the resource budget (e.g., energy in constrained
-   devices).
+   There is, however, always a race condition possible in that the state
+   of the Attester, and the appraisal policies might change immediately
+   after the Evidence or Attestation Result was generated.  The goal is
+   merely to narrow their recentness to something the Verifier (for
+   Evidence) or Relying Party (for Attestation Result) is willing to
+   accept.  Some flexibility on the freshness requirement is a key
+   component for enabling caching and reuse of both Evidence and
+   Attestation Results, which is especially valuable in cases where
+   their computation uses a substantial part of the resource budget
+   (e.g., energy in constrained devices).
 
    There are three common approaches for determining the epoch of
    Evidence or an Attestation Result.
@@ -1467,10 +1464,11 @@ Table of Contents
    aim attacks better.
 
    Many Claims in attestation Evidence and Attestation Results are
-   potentially Personally Identifying Information) depending on the end-
-   to-end use case of the remote attestation procedure.  Remote
-   attestation that goes up to include containers and applications may
-   further reveal details about specific systems or users.
+   potentially Personally Identifying Information (PII) depending on the
+   end-to-end use case of the remote attestation procedure.  Remote
+   attestation that goes up to include containers and applications,
+   e.g., in a multi-tenant architecture, may further reveal details
+   about specific systems or users.
 
    In some cases, an attacker may be able to make inferences about the
    contents of attestation Evidence from the resulting effects or timing
@@ -1479,11 +1477,11 @@ Table of Contents
    accepted by the Relying Party.
 
    Evidence and Attestation Results are expected to be integrity
-   protected (i.e. via signing or a secure channel) and optionally might
-   be confidentiality protected via encryption.  If confidentiality
-   protection via signing the conceptual messages is omitted or
-   unavailable, the protecting protocols that convey Evidence or
-   Attestation Results are responsible for detailing what kinds of
+   protected (i.e. either via signing or a secure channel) and
+   optionally might be confidentiality protected via encryption.  If
+   confidentiality protection via signing the conceptual messages is
+   omitted or unavailable, the protecting protocols that convey Evidence
+   or Attestation Results are responsible for detailing what kinds of
    information are disclosed, and to whom they are exposed.
 
    As Evidence might contain sensitive information, Attesters are
@@ -1498,7 +1496,8 @@ Table of Contents
    Another approach to deal with Evidence is to remove PII from the
    Evidence while still being able to verify that the Attester is one of
    a large set.  This approach is often called "Direct Anonymous
-   Attestation".  See [CCC-DeepDive] section 6.2 for more discussion.
+   Attestation".  See [CCC-DeepDive] section 6.2 for more discussion and
+   .
 
 12.  Security Considerations
 
