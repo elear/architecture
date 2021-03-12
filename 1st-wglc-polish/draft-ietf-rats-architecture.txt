@@ -181,7 +181,7 @@ Table of Contents
    a set of use cases that collectively cover all the functionality
    required in the architecture.
 
-   Each use case includes an description followed by an additional
+   Each use case includes a description followed by an additional
    summary of the Attester and Relying Party roles derived from the use
    case.
 
