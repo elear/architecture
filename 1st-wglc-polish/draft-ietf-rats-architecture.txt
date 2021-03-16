@@ -5,14 +5,14 @@
 RATS Working Group                                           H. Birkholz
 Internet-Draft                                            Fraunhofer SIT
 Intended status: Informational                                 D. Thaler
-Expires: 13 September 2021                                     Microsoft
+Expires: 17 September 2021                                     Microsoft
                                                            M. Richardson
                                                 Sandelman Software Works
                                                                 N. Smith
                                                                    Intel
                                                                   W. Pan
                                                      Huawei Technologies
-                                                           12 March 2021
+                                                           16 March 2021
 
 
                Remote Attestation Procedures Architecture
@@ -56,7 +56,7 @@ Status of This Memo
    time.  It is inappropriate to use Internet-Drafts as reference
    material or to cite them other than as "work in progress."
 
-   This Internet-Draft will expire on 13 September 2021.
+   This Internet-Draft will expire on 17 September 2021.
 
 Copyright Notice
 
@@ -275,11 +275,11 @@ Table of Contents
    managing the applications running in a Trusted Execution Environment
    (TEE) of a client device.  To achieve its purpose, the TAM needs to
    assess the state of a TEE, or of applications in the TEE, of a client
-   device.  The TEE conducts Remote Attestation Procedure with the TAM,
+   device.  The TEE conducts Remote Attestation Procedures with the TAM,
    which can then decide whether the TEE is already in compliance with
-   the TAM's latest policy.  Alternatively, the TAM has to uninstall,
-   update, or install approved applications in the TEE to bring it back
-   into compliance with the TAM's policy.
+   the TAM's latest policy.  If not, the TAM has to uninstall, update,
+   or install approved applications in the TEE to bring it back into
+   compliance with the TAM's policy.
 
    Attester:  A device with a TEE capable of running trusted
       applications that can be updated.
