@@ -1,6 +1,6 @@
 {
   "magic": "E!vIA5L86J2I",
-  "timestamp": "2021-03-12T11:46:51.292425+00:00",
+  "timestamp": "2021-03-16T14:07:29.856353+00:00",
   "repo": "ietf-rats-wg/architecture",
   "labels": [
     {
@@ -4274,9 +4274,24 @@
       "labels": [],
       "body": "At the IETF 110 meeting, Brendan Moran asked why local clocks are a problem since even MCUs have them.\r\nCurrently we have text in the doc like...\r\n\r\nin the nonce section:\r\n> and might be suitable, for example, in case the Attester does not have\r\n> a reliable clock or time synchronization is otherwise impaired\r\n\r\nin the handles section:\r\n\r\n> Like the nonce approach, this allows associating a \"rough\" epoch without\r\n> requiring a reliable clock or time synchronization in order to generate or\r\n> appraise the freshness of Evidence or Attestation Results.\r\n\r\nI answered this by saying in the TEE use case for example, attesting the TEE needs a trusted clock, and having a trusted clock is not common.   Brendan suggested clarifying the clock text.",
       "createdAt": "2021-03-09T13:26:49Z",
-      "updatedAt": "2021-03-09T13:26:49Z",
+      "updatedAt": "2021-03-16T02:50:31Z",
       "closedAt": null,
-      "comments": []
+      "comments": [
+        {
+          "author": "mcr",
+          "authorAssociation": "COLLABORATOR",
+          "body": "Isn't it synchronized clocks that are the requirement?\r\nWhen you say \"trusted clocks\", do you mean, I can trust that they are securely synchronized?\r\n(Or that I can trust that Cesium still has that frequency, and that the laws of physics haven't been altered?)",
+          "createdAt": "2021-03-16T02:45:37Z",
+          "updatedAt": "2021-03-16T02:45:37Z"
+        },
+        {
+          "author": "dthaler",
+          "authorAssociation": "COLLABORATOR",
+          "body": "I mean a clock for which code outside the TEE cannot tamper with.   Whether it's synchronized or not is not about whether the clock itself is trusted.\r\n\r\nIf a TEE wants to know how much time has passed since a previous event, and it has to ask the REE, and the REE can lie, then that clock is not trusted by the TEE.",
+          "createdAt": "2021-03-16T02:50:31Z",
+          "updatedAt": "2021-03-16T02:50:31Z"
+        }
+      ]
     },
     {
       "number": 293,
@@ -4416,11 +4431,26 @@
       "authorAssociation": "MEMBER",
       "assignees": [],
       "labels": [],
-      "body": "Maybe we should add a \u201cout of scope\u201d summary section that provides a concise overview about the scope statements littered throughout the documents?",
+      "body": "Maybe we should add a \u201cout of scope\u201d summary section that provides a concise overview about the scope statements littered throughout this document?",
       "createdAt": "2021-03-12T11:41:17Z",
-      "updatedAt": "2021-03-12T11:41:17Z",
+      "updatedAt": "2021-03-16T08:51:48Z",
       "closedAt": null,
-      "comments": []
+      "comments": [
+        {
+          "author": "mcr",
+          "authorAssociation": "COLLABORATOR",
+          "body": "This feels wrong to me.  As long as \"out of scope\" is searchable (i.e. we use the same word sequence), I think it is good.",
+          "createdAt": "2021-03-16T02:46:38Z",
+          "updatedAt": "2021-03-16T02:46:38Z"
+        },
+        {
+          "author": "henkbirkholz",
+          "authorAssociation": "MEMBER",
+          "body": "Thanks! In other documents and also other SDOs it is considered \"bad style\" to chase the reader on a scavenger hunt for all scoping statements. I am agnostic to the outcome. Any other opinions?",
+          "createdAt": "2021-03-16T08:51:18Z",
+          "updatedAt": "2021-03-16T08:51:18Z"
+        }
+      ]
     },
     {
       "number": 304,
@@ -27253,24 +27283,26 @@
       "id": "MDExOlB1bGxSZXF1ZXN0NTgxNDEyMTMx",
       "title": "Fix layered attestation diagram",
       "url": "https://github.com/ietf-rats-wg/architecture/pull/290",
-      "state": "OPEN",
+      "state": "MERGED",
       "author": "dthaler",
       "authorAssociation": "COLLABORATOR",
       "assignees": [],
       "labels": [],
       "body": "Once we added Reference Value Provider as a role, the diagram wasn't updated.  The \"A, B, and C\" part is about reference values, not the endorsing of signing capabilities, which is just about A.\r\n\r\nSigned-off-by: Dave Thaler <dthaler@ntdev.microsoft.com>",
       "createdAt": "2021-02-27T22:23:46Z",
-      "updatedAt": "2021-03-01T20:08:49Z",
+      "updatedAt": "2021-03-16T14:07:07Z",
       "baseRepository": "ietf-rats-wg/architecture",
       "baseRefName": "master",
       "baseRefOid": "21edbcc064a344e12497462ddd41438fcfa89690",
       "headRepository": "ietf-rats-wg/architecture",
       "headRefName": "layered",
       "headRefOid": "ba97c666228d6df4a940498171ada548cec6ea88",
-      "closedAt": null,
-      "mergedAt": null,
-      "mergedBy": null,
-      "mergeCommit": null,
+      "closedAt": "2021-03-16T14:07:01Z",
+      "mergedAt": "2021-03-16T14:07:01Z",
+      "mergedBy": "mcr",
+      "mergeCommit": {
+        "oid": "818a0d3498860751712fe5412a3a3ae9d7ece64f"
+      },
       "comments": [],
       "reviews": [
         {
@@ -27378,6 +27410,19 @@
               "updatedAt": "2021-03-01T20:08:49Z"
             }
           ]
+        },
+        {
+          "id": "MDE3OlB1bGxSZXF1ZXN0UmV2aWV3NjEyODA3ODM3",
+          "commit": {
+            "abbreviatedOid": "ba97c66"
+          },
+          "author": "mcr",
+          "authorAssociation": "COLLABORATOR",
+          "state": "APPROVED",
+          "body": "",
+          "createdAt": "2021-03-16T02:43:07Z",
+          "updatedAt": "2021-03-16T02:43:07Z",
+          "comments": []
         }
       ]
     },
@@ -27393,7 +27438,7 @@
       "labels": [],
       "body": "I've tried to stick to exactly describing the construct of layered attestation (as I understand it). I've left out discussion of terms like root of trust and trust anchor because they aren't specific to layered attestation and they are not necessary to do layered attestation.",
       "createdAt": "2021-03-10T17:55:26Z",
-      "updatedAt": "2021-03-10T17:55:26Z",
+      "updatedAt": "2021-03-16T08:49:06Z",
       "baseRepository": "ietf-rats-wg/architecture",
       "baseRefName": "master",
       "baseRefOid": "21edbcc064a344e12497462ddd41438fcfa89690",
@@ -27404,8 +27449,37 @@
       "mergedAt": null,
       "mergedBy": null,
       "mergeCommit": null,
-      "comments": [],
-      "reviews": []
+      "comments": [
+        {
+          "author": "dthaler",
+          "authorAssociation": "COLLABORATOR",
+          "body": "This PR introduces a significant change in meaning that I'm not comfortable with, so we should discuss.\r\nSpecifically, previously there was 1 attester with multiple layers.\r\nThis changes the terminology so that each layer is an attester, which is a terminology change I don't think we should make.",
+          "createdAt": "2021-03-16T02:46:38Z",
+          "updatedAt": "2021-03-16T02:46:38Z"
+        },
+        {
+          "author": "henkbirkholz",
+          "authorAssociation": "MEMBER",
+          "body": "This PR is defiantly a significant change to the content and would create ripple effects throughout the document. I am hesitant to open that can of worms, actually. Maybe we can isolate an issue that motivated this set of changes? ",
+          "createdAt": "2021-03-16T08:49:06Z",
+          "updatedAt": "2021-03-16T08:49:06Z"
+        }
+      ],
+      "reviews": [
+        {
+          "id": "MDE3OlB1bGxSZXF1ZXN0UmV2aWV3NjEyODA3NjEz",
+          "commit": {
+            "abbreviatedOid": "5d1a197"
+          },
+          "author": "mcr",
+          "authorAssociation": "COLLABORATOR",
+          "state": "COMMENTED",
+          "body": "I find the result more readable, but I'm not yet clear if there are semantic changes.",
+          "createdAt": "2021-03-16T02:42:32Z",
+          "updatedAt": "2021-03-16T02:42:32Z",
+          "comments": []
+        }
+      ]
     },
     {
       "number": 296,
@@ -27419,19 +27493,208 @@
       "labels": [],
       "body": "This is the portion of the complete review that contains minor/editorial changes aggregated in a single PR and various commits as discussed in the last editor meeting.",
       "createdAt": "2021-03-12T11:40:47Z",
-      "updatedAt": "2021-03-12T11:46:21Z",
+      "updatedAt": "2021-03-16T14:00:01Z",
       "baseRepository": "ietf-rats-wg/architecture",
       "baseRefName": "master",
       "baseRefOid": "21edbcc064a344e12497462ddd41438fcfa89690",
       "headRepository": "ietf-rats-wg/architecture",
       "headRefName": "1st-wglc-polish",
-      "headRefOid": "4a4616edf87aed181a5b679f96e51e1ad27e894b",
+      "headRefOid": "e50856fa63328132c5c4397152966c2084728596",
       "closedAt": null,
       "mergedAt": null,
       "mergedBy": null,
       "mergeCommit": null,
-      "comments": [],
-      "reviews": []
+      "comments": [
+        {
+          "author": "mcr",
+          "authorAssociation": "COLLABORATOR",
+          "body": "Are you sure that making Composite Device a term isn't a better idea?",
+          "createdAt": "2021-03-16T02:40:43Z",
+          "updatedAt": "2021-03-16T02:40:43Z"
+        },
+        {
+          "author": "henkbirkholz",
+          "authorAssociation": "MEMBER",
+          "body": "> Are you sure that making Composite Device a term isn't a better idea?\r\n\r\nI agree with that. There are also some other terms that I would capitalize. But this is the editorial part of the changes so I stuck with the groups consensus.\r\n\r\nCould you open an issue on \"terms you want to capitalize\"?",
+          "createdAt": "2021-03-16T08:46:02Z",
+          "updatedAt": "2021-03-16T08:46:02Z"
+        }
+      ],
+      "reviews": [
+        {
+          "id": "MDE3OlB1bGxSZXF1ZXN0UmV2aWV3NjEwOTQxNDU4",
+          "commit": {
+            "abbreviatedOid": "4a4616e"
+          },
+          "author": "henkbirkholz",
+          "authorAssociation": "MEMBER",
+          "state": "COMMENTED",
+          "body": "",
+          "createdAt": "2021-03-12T16:15:12Z",
+          "updatedAt": "2021-03-12T16:15:13Z",
+          "comments": [
+            {
+              "originalPosition": 49,
+              "body": "```suggestion\r\nEach use case includes a description followed by an additional summary of the\r\n```",
+              "createdAt": "2021-03-12T16:15:13Z",
+              "updatedAt": "2021-03-12T17:57:14Z"
+            }
+          ]
+        },
+        {
+          "id": "MDE3OlB1bGxSZXF1ZXN0UmV2aWV3NjEwOTQ3MTAz",
+          "commit": {
+            "abbreviatedOid": "5eadadc"
+          },
+          "author": "henkbirkholz",
+          "authorAssociation": "MEMBER",
+          "state": "COMMENTED",
+          "body": "",
+          "createdAt": "2021-03-12T16:21:29Z",
+          "updatedAt": "2021-03-12T16:21:29Z",
+          "comments": [
+            {
+              "originalPosition": 883,
+              "body": "```suggestion\r\n\"_v\" (Verifier), or \"_r\" (Relying Party) suffix.\r\n```",
+              "createdAt": "2021-03-12T16:21:29Z",
+              "updatedAt": "2021-03-12T17:57:14Z"
+            }
+          ]
+        },
+        {
+          "id": "MDE3OlB1bGxSZXF1ZXN0UmV2aWV3NjExMDEyMjgw",
+          "commit": {
+            "abbreviatedOid": "3ab3a43"
+          },
+          "author": "henkbirkholz",
+          "authorAssociation": "MEMBER",
+          "state": "COMMENTED",
+          "body": "",
+          "createdAt": "2021-03-12T17:35:36Z",
+          "updatedAt": "2021-03-12T17:35:36Z",
+          "comments": [
+            {
+              "originalPosition": 839,
+              "body": "protecting vs. protected. As Giri just quoted this exact snippet and seemed to have no problems with it at all. Maybe I simply did not get the original meaning? Nevertheless, as it confuses me, maybe it also confuses other non-native speakers?",
+              "createdAt": "2021-03-12T17:35:36Z",
+              "updatedAt": "2021-03-12T17:57:14Z"
+            }
+          ]
+        },
+        {
+          "id": "MDE3OlB1bGxSZXF1ZXN0UmV2aWV3NjExMDIwNzcx",
+          "commit": {
+            "abbreviatedOid": "3ab3a43"
+          },
+          "author": "henkbirkholz",
+          "authorAssociation": "MEMBER",
+          "state": "COMMENTED",
+          "body": "",
+          "createdAt": "2021-03-12T17:46:28Z",
+          "updatedAt": "2021-03-12T17:46:28Z",
+          "comments": [
+            {
+              "originalPosition": 94,
+              "body": "```suggestion\r\na model already deployed on the Attester in encrypted form, to the requester.\r\n```",
+              "createdAt": "2021-03-12T17:46:28Z",
+              "updatedAt": "2021-03-12T17:57:14Z"
+            }
+          ]
+        },
+        {
+          "id": "MDE3OlB1bGxSZXF1ZXN0UmV2aWV3NjExMDI4NzAy",
+          "commit": {
+            "abbreviatedOid": "8f06afa"
+          },
+          "author": "henkbirkholz",
+          "authorAssociation": "MEMBER",
+          "state": "COMMENTED",
+          "body": "",
+          "createdAt": "2021-03-12T17:56:47Z",
+          "updatedAt": "2021-03-12T17:56:47Z",
+          "comments": [
+            {
+              "originalPosition": 39,
+              "body": "```suggestion\r\nThis section covers a number of representative and generic use cases for remote attestation, independent of specific\r\n```",
+              "createdAt": "2021-03-12T17:56:47Z",
+              "updatedAt": "2021-03-12T17:57:14Z"
+            }
+          ]
+        },
+        {
+          "id": "MDE3OlB1bGxSZXF1ZXN0UmV2aWV3NjEyODA3MTQ2",
+          "commit": {
+            "abbreviatedOid": "e50856f"
+          },
+          "author": "mcr",
+          "authorAssociation": "COLLABORATOR",
+          "state": "APPROVED",
+          "body": "These changes mostly all seem fine to me.\r\nI am not prepared to argue each word.",
+          "createdAt": "2021-03-16T02:41:14Z",
+          "updatedAt": "2021-03-16T02:41:14Z",
+          "comments": []
+        },
+        {
+          "id": "MDE3OlB1bGxSZXF1ZXN0UmV2aWV3NjEzMjc3MTM2",
+          "commit": {
+            "abbreviatedOid": "e50856f"
+          },
+          "author": "dthaler",
+          "authorAssociation": "COLLABORATOR",
+          "state": "COMMENTED",
+          "body": "",
+          "createdAt": "2021-03-16T13:58:45Z",
+          "updatedAt": "2021-03-16T13:58:46Z",
+          "comments": [
+            {
+              "originalPosition": 170,
+              "body": "```suggestion\r\nin the TEE, of a client device.  The TEE conducts a Remote Attestation\r\n```\r\ngrammar",
+              "createdAt": "2021-03-16T13:58:45Z",
+              "updatedAt": "2021-03-16T13:58:46Z"
+            }
+          ]
+        },
+        {
+          "id": "MDE3OlB1bGxSZXF1ZXN0UmV2aWV3NjEzMjc3NzA0",
+          "commit": {
+            "abbreviatedOid": "e50856f"
+          },
+          "author": "dthaler",
+          "authorAssociation": "COLLABORATOR",
+          "state": "COMMENTED",
+          "body": "",
+          "createdAt": "2021-03-16T13:59:12Z",
+          "updatedAt": "2021-03-16T13:59:12Z",
+          "comments": [
+            {
+              "originalPosition": 174,
+              "body": "```suggestion\r\npolicy. If not, the TAM has to uninstall, update, or install approved\r\n```",
+              "createdAt": "2021-03-16T13:59:12Z",
+              "updatedAt": "2021-03-16T13:59:12Z"
+            }
+          ]
+        },
+        {
+          "id": "MDE3OlB1bGxSZXF1ZXN0UmV2aWV3NjEzMjc4NzU3",
+          "commit": {
+            "abbreviatedOid": "e50856f"
+          },
+          "author": "dthaler",
+          "authorAssociation": "COLLABORATOR",
+          "state": "COMMENTED",
+          "body": "",
+          "createdAt": "2021-03-16T14:00:00Z",
+          "updatedAt": "2021-03-16T14:00:01Z",
+          "comments": [
+            {
+              "originalPosition": 210,
+              "body": "What's the rule your following for \"remote attestation\" like here vs \"Remote Attestation Procedures\" like in 333?",
+              "createdAt": "2021-03-16T14:00:01Z",
+              "updatedAt": "2021-03-16T14:00:01Z"
+            }
+          ]
+        }
+      ]
     }
   ]
 }
