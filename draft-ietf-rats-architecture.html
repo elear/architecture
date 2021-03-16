@@ -849,11 +849,11 @@ address div.right {
 <thead><tr>
 <td class="left">Internet-Draft</td>
 <td class="center">RATS Arch &amp; Terms</td>
-<td class="right">February 2021</td>
+<td class="right">March 2021</td>
 </tr></thead>
 <tfoot><tr>
 <td class="left">Birkholz, et al.</td>
-<td class="center">Expires 31 August 2021</td>
+<td class="center">Expires 17 September 2021</td>
 <td class="right">[Page]</td>
 </tr></tfoot>
 </table>
@@ -866,12 +866,12 @@ address div.right {
 <dd class="internet-draft">draft-ietf-rats-architecture-latest</dd>
 <dt class="label-published">Published:</dt>
 <dd class="published">
-<time datetime="2021-02-27" class="published">27 February 2021</time>
+<time datetime="2021-03-16" class="published">16 March 2021</time>
     </dd>
 <dt class="label-intended-status">Intended Status:</dt>
 <dd class="intended-status">Informational</dd>
 <dt class="label-expires">Expires:</dt>
-<dd class="expires"><time datetime="2021-08-31">31 August 2021</time></dd>
+<dd class="expires"><time datetime="2021-09-17">17 September 2021</time></dd>
 <dt class="label-authors">Authors:</dt>
 <dd class="authors">
 <div class="author">
@@ -939,7 +939,7 @@ operational state.<a href="#section-abstract-1" class="pilcrow">¶</a></p>
         time. It is inappropriate to use Internet-Drafts as reference
         material or to cite them other than as "work in progress."<a href="#section-boilerplate.1-3" class="pilcrow">¶</a></p>
 <p id="section-boilerplate.1-4">
-        This Internet-Draft will expire on 31 August 2021.<a href="#section-boilerplate.1-4" class="pilcrow">¶</a></p>
+        This Internet-Draft will expire on 17 September 2021.<a href="#section-boilerplate.1-4" class="pilcrow">¶</a></p>
 </section>
 </div>
 <div id="copyright">
@@ -1605,18 +1605,22 @@ In layered attestation, a root of trust is the initial Attesting Environment.
 Claims can be collected from or about each layer.
 The corresponding Claims can be structured in a nested fashion that reflects the nesting of the Attester's layers.
 Normally, Claims are not self-asserted, rather a previous layer acts as the Attesting Environment for the next layer.
-Claims about a root of trust typically are asserted by Endorsers.<a href="#section-3.4-1" class="pilcrow">¶</a></p>
+Claims about a root of trust typically are asserted by an Endorser.<a href="#section-3.4-1" class="pilcrow">¶</a></p>
 <p id="section-3.4-2">The device illustrated in <a href="#layered" class="xref">Figure 3</a> includes (A) a BIOS stored in read-only memory,
 (B) an operating system kernel, and (C) an application or workload.<a href="#section-3.4-2" class="pilcrow">¶</a></p>
 <span id="name-layered-attester"></span><div id="layered">
 <figure id="figure-3">
           <div class="artwork art-text alignCenter art-LAYERED" id="section-3.4-3.1">
 <pre>
-    .----------.                    .----------.
-    |          |                    |          |
-    | Endorser |-------------------&gt;| Verifier |
-    |          |    Endorsements    |          |
-    '----------'  for A, B, and C   '----------'
+    .-------------.   Endorsement for A
+    |  Endorser   |-----------------------.
+    '-------------'                       |
+                                          v
+    .-------------.   Reference     .----------.
+    | Reference   |    Values       |          |
+    | Value       |----------------&gt;| Verifier |
+    | Provider(s) |   for A, B,     |          |
+    '-------------'     and C       '----------'
                                           ^
 .------------------------------------.    |
 |                                    |    |
@@ -1718,8 +1722,8 @@ each router is an Attester and the main router is the lead Attester.<a href="#se
 <p id="section-3.5-5"><a href="#composite" class="xref">Figure 4</a> depicts the conceptual data flow for a Composite Device.<a href="#section-3.5-5" class="pilcrow">¶</a></p>
 <span id="name-composite-device-2"></span><div id="composite">
 <figure id="figure-4">
-          <div class="artwork art-text alignLeft art-COMPOSITE" id="section-3.5-6.1">
-<pre>
+          <div id="section-3.5-6.1">
+<pre class="sourcecode lang-COMPOSITE">
                    .-----------------------------.
                    |           Verifier          |
                    '-----------------------------'
@@ -3230,7 +3234,7 @@ in terms of <code>time(RX_v)-time(RG_v)</code>, then the Relying Party can check
 <dd class="break"></dd>
 <dt id="I-D.birkholz-rats-uccs">[I-D.birkholz-rats-uccs]</dt>
         <dd>
-<span class="refAuthor">Birkholz, H.</span><span class="refAuthor">, O'Donoghue, J.</span><span class="refAuthor">, Cam-Winget, N.</span><span class="refAuthor">, and C. Bormann</span>, <span class="refTitle">"A CBOR Tag for Unprotected CWT Claims Sets"</span>, <span class="refContent">Work in Progress</span>, <span class="seriesInfo">Internet-Draft, draft-birkholz-rats-uccs-02</span>, <time datetime="2020-12-02" class="refDate">2 December 2020</time>, <span>&lt;<a href="https://datatracker.ietf.org/doc/html/draft-birkholz-rats-uccs-02.txt">https://datatracker.ietf.org/doc/html/draft-birkholz-rats-uccs-02.txt</a>&gt;</span>. </dd>
+<span class="refAuthor">Birkholz, H.</span><span class="refAuthor">, O'Donoghue, J.</span><span class="refAuthor">, Cam-Winget, N.</span><span class="refAuthor">, and C. Bormann</span>, <span class="refTitle">"A CBOR Tag for Unprotected CWT Claims Sets"</span>, <span class="refContent">Work in Progress</span>, <span class="seriesInfo">Internet-Draft, draft-birkholz-rats-uccs-03</span>, <time datetime="2021-03-08" class="refDate">8 March 2021</time>, <span>&lt;<a href="https://datatracker.ietf.org/doc/html/draft-birkholz-rats-uccs-03.txt">https://datatracker.ietf.org/doc/html/draft-birkholz-rats-uccs-03.txt</a>&gt;</span>. </dd>
 <dd class="break"></dd>
 <dt id="I-D.ietf-teep-architecture">[I-D.ietf-teep-architecture]</dt>
         <dd>

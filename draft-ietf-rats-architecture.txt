@@ -5,14 +5,14 @@
 RATS Working Group                                           H. Birkholz
 Internet-Draft                                            Fraunhofer SIT
 Intended status: Informational                                 D. Thaler
-Expires: 31 August 2021                                        Microsoft
+Expires: 17 September 2021                                     Microsoft
                                                            M. Richardson
                                                 Sandelman Software Works
                                                                 N. Smith
                                                                    Intel
                                                                   W. Pan
                                                      Huawei Technologies
-                                                        27 February 2021
+                                                           16 March 2021
 
 
                Remote Attestation Procedures Architecture
@@ -56,7 +56,7 @@ Status of This Memo
    time.  It is inappropriate to use Internet-Drafts as reference
    material or to cite them other than as "work in progress."
 
-   This Internet-Draft will expire on 31 August 2021.
+   This Internet-Draft will expire on 17 September 2021.
 
 Copyright Notice
 
@@ -488,17 +488,21 @@ Table of Contents
    structured in a nested fashion that reflects the nesting of the
    Attester's layers.  Normally, Claims are not self-asserted, rather a
    previous layer acts as the Attesting Environment for the next layer.
-   Claims about a root of trust typically are asserted by Endorsers.
+   Claims about a root of trust typically are asserted by an Endorser.
 
    The device illustrated in Figure 3 includes (A) a BIOS stored in
    read-only memory, (B) an operating system kernel, and (C) an
    application or workload.
 
-               .----------.                    .----------.
-               |          |                    |          |
-               | Endorser |------------------->| Verifier |
-               |          |    Endorsements    |          |
-               '----------'  for A, B, and C   '----------'
+               .-------------.   Endorsement for A
+               |  Endorser   |-----------------------.
+               '-------------'                       |
+                                                     v
+               .-------------.   Reference     .----------.
+               | Reference   |    Values       |          |
+               | Value       |---------------->| Verifier |
+               | Provider(s) |   for A, B,     |          |
+               '-------------'     and C       '----------'
                                                      ^
            .------------------------------------.    |
            |                                    |    |
@@ -2039,9 +2043,9 @@ Table of Contents
               Birkholz, H., O'Donoghue, J., Cam-Winget, N., and C.
               Bormann, "A CBOR Tag for Unprotected CWT Claims Sets",
               Work in Progress, Internet-Draft, draft-birkholz-rats-
-              uccs-02, 2 December 2020,
+              uccs-03, 8 March 2021,
               <https://datatracker.ietf.org/doc/html/draft-birkholz-
-              rats-uccs-02.txt>.
+              rats-uccs-03.txt>.
 
    [I-D.ietf-teep-architecture]
               Pei, M., Tschofenig, H., Thaler, D., and D. Wheeler,
